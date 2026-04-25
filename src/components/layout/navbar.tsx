@@ -77,39 +77,37 @@ export default function Navbar() {
       </motion.header>
 
       {/* Mobile Menu */}
-      <AnimatePresence>
-        {isOpen && (
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
-            exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-[#0A0E27] border-b border-[rgba(255,255,255,0.05)]"
+      {/* Mobile Menu */}
+<AnimatePresence>
+  {isOpen && (
+    <motion.div
+      initial={{ opacity: 0, height: 0 }}
+      animate={{ opacity: 1, height: "auto" }}
+      exit={{ opacity: 0, height: 0 }}
+      className="md:hidden bg-[#0A0E27] border-b border-[rgba(255,255,255,0.05)]"
+    >
+      <div className="px-4 py-4 space-y-4">
+        {navLinks.map((link) => (
+          <Link
+            key={link.href}
+            href={link.href}
+            onClick={() => setIsOpen(false)}
+            className="block text-base font-medium text-gray-300 hover:text-cyan-400 transition-colors py-2"
           >
-            <div className="px-4 py-4 space-y-4">
-              {navLinks.map((link) => (
-               // In the navbar, replace the logo section with:
-<Link href="/en" className="flex items-center gap-2 group">
-  <div className="flex items-center">
-    <span className="font-orbitron font-bold text-xl tracking-wide text-white">
-      NEXARO
-    </span>
-    <span className="font-orbitron font-bold text-xl text-cyan-400">
-      .TECH
-    </span>
-  </div>
-</Link>
-              ))}
-              <Link
-                href="/en/contact"
-                onClick={() => setIsOpen(false)}
-                className="block w-full text-center px-4 py-3 bg-cyan-400 text-black font-semibold rounded-lg hover:bg-cyan-300 transition-colors"
-              >
-                Get in touch
-              </Link>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+            {link.label}  {/* This should show the label, not the logo */}
+          </Link>
+        ))}
+        <Link
+          href="/contact"
+          onClick={() => setIsOpen(false)}
+          className="block w-full text-center px-4 py-3 bg-cyan-400 text-black font-semibold rounded-lg hover:bg-cyan-300 transition-colors"
+        >
+          Get in touch
+        </Link>
+      </div>
+    </motion.div>
+  )}
+</AnimatePresence>
     </>
   );
 }
