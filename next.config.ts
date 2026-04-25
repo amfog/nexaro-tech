@@ -4,15 +4,16 @@ import createNextIntlPlugin from "next-intl/plugin";
 const withNextIntl = createNextIntlPlugin('./src/lib/i18n/request.ts');
 
 const nextConfig: NextConfig = {
-  // Ensure trailing slashes don't cause issues
-  trailingSlash: false,
-  
-  // Optimize for Vercel
+  // Vercel-specific optimizations
   output: 'standalone',
   
+  // Ensure proper image handling
   images: {
-    remotePatterns: [],
+    unoptimized: true, // Disable image optimization for now to test
   },
+  
+  // Don't add trailing slashes
+  trailingSlash: false,
 };
 
 export default withNextIntl(nextConfig);
