@@ -27,13 +27,11 @@ export default function Navbar() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             
-            {/* LOGO - USING SVG */}
+            {/* LOGO - TEXT ONLY (RELIABLE) */}
             <Link href="/" className="flex items-center gap-2 group">
-              <img 
-                src="/nexaro-node-lockup-dark.svg" 
-                alt="NEXARO" 
-                className="h-8 w-auto group-hover:scale-105 transition-transform"
-              />
+              <span className="font-orbitron font-bold text-2xl tracking-wide text-white group-hover:text-cyan-400 transition-colors">
+                NEXARO
+              </span>
             </Link>
 
             {/* Desktop Links */}
