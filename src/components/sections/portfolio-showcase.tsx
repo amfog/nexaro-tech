@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { useTranslations } from "next-intl";
 import GlassCard from "@/components/ui/glass-card";
 import NeonButton from "@/components/ui/neon-button";
-import { ExternalLink, Github } from "lucide-react";
+import { ExternalLink, Code } from "lucide-react";
 
 interface PortfolioShowcaseProps { locale: string; t: ReturnType<typeof useTranslations>; }
 
@@ -32,7 +32,7 @@ export default function PortfolioShowcase({ locale, t }: PortfolioShowcaseProps)
                   </div>
                   <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-4">
                     <NeonButton variant="outline" size="sm" href={project.demo}><ExternalLink className="w-4 h-4" /> Demo</NeonButton>
-                    {project.github && <NeonButton variant="secondary" size="sm" href={project.github}><Github className="w-4 h-4" /> Code</NeonButton>}
+                    {project.github && <NeonButton variant="secondary" size="sm" href={project.github}><Code className="w-4 h-4" /> Code</NeonButton>}
                   </div>
                 </div>
                 <div className="flex items-center justify-between mb-2">
