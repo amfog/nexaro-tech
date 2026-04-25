@@ -25,9 +25,9 @@ export default function Footer() {
           <div>
             <h4 className="font-rajdhani font-semibold mb-4 text-white">Services</h4>
             <ul className="space-y-2 text-sm text-gray-400">
-              <li><Link href="/services" className="hover:text-cyan-400 transition-colors">Web Development</Link></li>
-              <li><Link href="/services" className="hover:text-cyan-400 transition-colors">Mobile Apps</Link></li>
-              <li><Link href="/services" className="hover:text-cyan-400 transition-colors">Event Tech</Link></li>
+              <li><Link href="/en/services" className="hover:text-cyan-400 transition-colors">Web Development</Link></li>
+              <li><Link href="/en/services" className="hover:text-cyan-400 transition-colors">Mobile Apps</Link></li>
+              <li><Link href="/en/services" className="hover:text-cyan-400 transition-colors">Event Tech</Link></li>
             </ul>
           </div>
 
@@ -35,9 +35,9 @@ export default function Footer() {
           <div>
             <h4 className="font-rajdhani font-semibold mb-4 text-white">Company</h4>
             <ul className="space-y-2 text-sm text-gray-400">
-              <li><Link href="/about" className="hover:text-cyan-400 transition-colors">About Us</Link></li>
-              <li><Link href="/portfolio" className="hover:text-cyan-400 transition-colors">Portfolio</Link></li>
-              <li><Link href="/contact" className="hover:text-cyan-400 transition-colors">Contact</Link></li>
+              <li><Link href="/en/about" className="hover:text-cyan-400 transition-colors">About Us</Link></li>
+              <li><Link href="/en/portfolio" className="hover:text-cyan-400 transition-colors">Portfolio</Link></li>
+              <li><Link href="/en/contact" className="hover:text-cyan-400 transition-colors">Contact</Link></li>
             </ul>
           </div>
 

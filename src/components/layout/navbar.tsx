@@ -1,16 +1,16 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
-import Logo from "@/components/ui/logo";
 
 const navLinks = [
-  { href: "/", label: "Home" },
-  { href: "/services", label: "Services" },
-  { href: "/portfolio", label: "Portfolio" },
-  { href: "/about", label: "About" },
-  { href: "/blog", label: "Blog" },
+  { href: "/en", label: "Home" },
+  { href: "/en/services", label: "Services" },
+  { href: "/en/portfolio", label: "Portfolio" },
+  { href: "/en/about", label: "About" },
+  { href: "/en/blog", label: "Blog" },
 ];
 
 export default function Navbar() {
@@ -27,30 +27,42 @@ export default function Navbar() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             
-            {/* LOGO COMPONENT */}
-            <Logo />
+            {/* LOGO */}
+            <Link href="/en" className="flex items-center gap-2 group">
+              <div className="w-8 h-8 bg-gradient-to-br from-cyan-400 to-purple-500 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
+                <span className="font-bold text-black text-lg">N</span>
+              </div>
+              <div className="flex items-center">
+                <span className="font-orbitron font-bold text-xl tracking-wide text-white">
+                  NEXARO
+                </span>
+                <span className="font-orbitron font-bold text-xl text-cyan-400">
+                  .TECH
+                </span>
+              </div>
+            </Link>
 
             {/* Desktop Links */}
             <nav className="hidden md:flex items-center gap-8">
               {navLinks.map((link) => (
-                <a
+                <Link
                   key={link.href}
                   href={link.href}
-                  className="text-sm font-medium text-gray-300 hover:text-cyan-400 transition-colors cursor-pointer"
+                  className="text-sm font-medium text-gray-300 hover:text-cyan-400 transition-colors"
                 >
                   {link.label}
-                </a>
+                </Link>
               ))}
             </nav>
 
             {/* CTA Button */}
             <div className="hidden md:block">
-              <a
-                href="/contact"
-                className="inline-flex items-center px-4 py-2 bg-cyan-400 text-black text-sm font-semibold rounded-lg hover:bg-cyan-300 transition-colors cursor-pointer"
+              <Link
+                href="/en/contact"
+                className="inline-flex items-center px-4 py-2 bg-cyan-400 text-black text-sm font-semibold rounded-lg hover:bg-cyan-300 transition-colors"
               >
                 Get in touch
-              </a>
+              </Link>
             </div>
 
             {/* Mobile Toggle */}
@@ -75,22 +87,22 @@ export default function Navbar() {
           >
             <div className="px-4 py-4 space-y-4">
               {navLinks.map((link) => (
-                <a
+                <Link
                   key={link.href}
                   href={link.href}
                   onClick={() => setIsOpen(false)}
-                  className="block text-base font-medium text-gray-300 hover:text-cyan-400 transition-colors py-2 cursor-pointer"
+                  className="block text-base font-medium text-gray-300 hover:text-cyan-400 transition-colors py-2"
                 >
                   {link.label}
-                </a>
+                </Link>
               ))}
-              <a
-                href="/contact"
+              <Link
+                href="/en/contact"
                 onClick={() => setIsOpen(false)}
-                className="block w-full text-center px-4 py-3 bg-cyan-400 text-black font-semibold rounded-lg hover:bg-cyan-300 transition-colors cursor-pointer"
+                className="block w-full text-center px-4 py-3 bg-cyan-400 text-black font-semibold rounded-lg hover:bg-cyan-300 transition-colors"
               >
                 Get in touch
-              </a>
+              </Link>
             </div>
           </motion.div>
         )}
