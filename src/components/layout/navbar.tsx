@@ -1,11 +1,10 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
+import Logo from "@/components/ui/logo";
 
-// RELATIVE LINKS: These allow the i18n middleware to automatically add /en/ or /ar/
 const navLinks = [
   { href: "/", label: "Home" },
   { href: "/services", label: "Services" },
@@ -28,36 +27,30 @@ export default function Navbar() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             
-            {/* LOGO - USING THE ACTUAL SVG FILE */}
-            <Link href="/" className="flex items-center gap-2 group">
-              <img 
-                src="/logo.svg" 
-                alt="NEXARO.TECH" 
-                className="h-8 w-auto group-hover:scale-105 transition-transform"
-              />
-            </Link>
+            {/* LOGO COMPONENT */}
+            <Logo />
 
             {/* Desktop Links */}
             <nav className="hidden md:flex items-center gap-8">
               {navLinks.map((link) => (
-                <Link
+                <a
                   key={link.href}
                   href={link.href}
-                  className="text-sm font-medium text-gray-300 hover:text-cyan-400 transition-colors"
+                  className="text-sm font-medium text-gray-300 hover:text-cyan-400 transition-colors cursor-pointer"
                 >
                   {link.label}
-                </Link>
+                </a>
               ))}
             </nav>
 
             {/* CTA Button */}
             <div className="hidden md:block">
-              <Link
+              <a
                 href="/contact"
-                className="inline-flex items-center px-4 py-2 bg-cyan-400 text-black text-sm font-semibold rounded-lg hover:bg-cyan-300 transition-colors"
+                className="inline-flex items-center px-4 py-2 bg-cyan-400 text-black text-sm font-semibold rounded-lg hover:bg-cyan-300 transition-colors cursor-pointer"
               >
                 Get in touch
-              </Link>
+              </a>
             </div>
 
             {/* Mobile Toggle */}
@@ -82,22 +75,22 @@ export default function Navbar() {
           >
             <div className="px-4 py-4 space-y-4">
               {navLinks.map((link) => (
-                <Link
+                <a
                   key={link.href}
                   href={link.href}
                   onClick={() => setIsOpen(false)}
-                  className="block text-base font-medium text-gray-300 hover:text-cyan-400 transition-colors py-2"
+                  className="block text-base font-medium text-gray-300 hover:text-cyan-400 transition-colors py-2 cursor-pointer"
                 >
                   {link.label}
-                </Link>
+                </a>
               ))}
-              <Link
+              <a
                 href="/contact"
                 onClick={() => setIsOpen(false)}
-                className="block w-full text-center px-4 py-3 bg-cyan-400 text-black font-semibold rounded-lg hover:bg-cyan-300 transition-colors"
+                className="block w-full text-center px-4 py-3 bg-cyan-400 text-black font-semibold rounded-lg hover:bg-cyan-300 transition-colors cursor-pointer"
               >
                 Get in touch
-              </Link>
+              </a>
             </div>
           </motion.div>
         )}
