@@ -1,0 +1,68 @@
+{
+  "metadata": {
+    "home": {
+      "title": "Nexaro.tech | Building Tomorrow's Digital Experiences",
+      "description": "From concept to launch — websites, apps, and platforms that scale."
+    }
+  },
+  "home": {
+    "hero": {
+      "badge": "🚀 Now accepting Q2 2026 projects",
+      "title": {
+        "line1": "We Build Digital Products",
+        "line2": "That Matter"
+      },
+      "subtitle": "From concept to launch — websites, apps, and platforms that scale with cutting-edge technology and stunning design.",
+      "cta": {
+        "viewWork": "View Our Work",
+        "startProject": "Start Your Project"
+      }
+    },
+    "services": {
+      "title": "What We Do",
+      "subtitle": "End-to-end digital solutions powered by modern technology",
+      "items": {
+        "web": {
+          "title": "Web Development",
+          "desc": "Custom websites, e-commerce, and web applications."
+        },
+        "mobile": {
+          "title": "Mobile Apps",
+          "desc": "Native & cross-platform iOS/Android apps."
+        },
+        "events": {
+          "title": "Event Tech",
+          "desc": "Festival platforms, ticketing systems, and live event apps."
+        },
+        "strategy": {
+          "title": "Digital Strategy",
+          "desc": "UX/UI design, brand identity, and technical consulting."
+        }
+      }
+    },
+    "poweredBy": "Powered By",
+    "portfolio": {
+      "title": "Featured Work",
+      "subtitle": "Explore our latest projects and case studies",
+      "filters": ["All", "Web Apps", "Mobile", "Events", "Enterprise"],
+      "viewCase": "View Case Study"
+    },
+    "testimonials": {
+      "title": "Client Love",
+      "quote": "Nexaro transformed our vision into a scalable platform that exceeded expectations."
+    },
+    "cta": {
+      "title": "Ready to Build Something Amazing?",
+      "subtitle": "Let's discuss how we can bring your digital vision to life.",
+      "button": "Start Your Project"
+    }
+  },
+  "navigation": {
+    "home": "Home",
+    "services": "Services",
+    "portfolio": "Portfolio",
+    "about": "About",
+    "contact": "Contact",
+    "blog": "Blog"
+  }
+}
