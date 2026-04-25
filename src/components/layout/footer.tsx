@@ -7,10 +7,8 @@ export default function Footer() {
         <div className="grid md:grid-cols-4 gap-8 mb-8">
           <div>
             {/* LOGO */}
-            <Link href="/" className="inline-block">
-  <span className="font-orbitron font-bold text-xl tracking-wide text-white">
-    NEXARO
-  </span>
+            <Link href="/" className="inline-block mb-4">
+  <img src="/logo.svg" alt="NEXARO.TECH" className="h-8 w-auto" />
 </Link>
             <p className="text-gray-400 text-sm">Building Tomorrow's Digital Experiences Today</p>
           </div>

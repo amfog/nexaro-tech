@@ -28,11 +28,14 @@ export default function Navbar() {
           <div className="flex items-center justify-between h-16">
             
             {/* LOGO - TEXT ONLY (RELIABLE) */}
-            <Link href="/" className="flex items-center gap-2 group">
-              <span className="font-orbitron font-bold text-2xl tracking-wide text-white group-hover:text-cyan-400 transition-colors">
-                NEXARO
-              </span>
-            </Link>
+           {/* LOGO - SVG */}
+<Link href="/" className="flex items-center gap-2 group">
+  <img 
+    src="/logo.svg" 
+    alt="NEXARO.TECH" 
+    className="h-8 w-auto group-hover:scale-105 transition-transform"
+  />
+</Link>
 
             {/* Desktop Links */}
             <nav className="hidden md:flex items-center gap-8">
