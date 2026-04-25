@@ -5,6 +5,7 @@ import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 
+// RELATIVE LINKS: These allow the i18n middleware to automatically add /en/ or /ar/
 const navLinks = [
   { href: "/", label: "Home" },
   { href: "/services", label: "Services" },
@@ -27,15 +28,14 @@ export default function Navbar() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             
-            {/* LOGO - TEXT ONLY (RELIABLE) */}
-           {/* LOGO - SVG */}
-<Link href="/" className="flex items-center gap-2 group">
-  <img 
-    src="/logo.svg" 
-    alt="NEXARO.TECH" 
-    className="h-8 w-auto group-hover:scale-105 transition-transform"
-  />
-</Link>
+            {/* LOGO - USING THE ACTUAL SVG FILE */}
+            <Link href="/" className="flex items-center gap-2 group">
+              <img 
+                src="/logo.svg" 
+                alt="NEXARO.TECH" 
+                className="h-8 w-auto group-hover:scale-105 transition-transform"
+              />
+            </Link>
 
             {/* Desktop Links */}
             <nav className="hidden md:flex items-center gap-8">
