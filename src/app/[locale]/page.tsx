@@ -108,6 +108,7 @@ export default function HomePage() {
 
         {/* 4. NODE FAMILY / ECOSYSTEM */}
                 {/* 4. NODE FAMILY / ECOSYSTEM */}
+                {/* 4. NODE FAMILY / ECOSYSTEM */}
         <section className="py-24 px-4 bg-[#080b1a]">
           <div className="max-w-5xl mx-auto text-center mb-12">
             <h2 className="font-orbitron text-3xl font-bold mb-4 text-white">The Nexaro <span className="text-cyan-400">Node Family</span></h2>
@@ -121,14 +122,18 @@ export default function HomePage() {
               <p className="text-white font-semibold text-lg">Nexaro Platform</p>
             </div>
 
-            {/* Product Nodes - TEXT ONLY, NO LOGOS */}
+            {/* Product Nodes WITH LOGOS */}
             {[
-              { code: "NX-001.L", name: "Nexaro Life", desc: "Personal AI OS" },
-              { code: "NX-002.O", name: "Vicious OS", desc: "Esports Operations" },
-              { code: "NX-003.C", name: "Nexaro CRM", desc: "Smart Business CRM" },
-              { code: "NX-004.R", name: "Rent OS", desc: "HR & Salary Tracking" },
+              { code: "NX-001.L", name: "Nexaro Life", desc: "Personal AI OS", logo: "/nexaro-life.svg" },
+              { code: "NX-002.O", name: "Vicious OS", desc: "Esports Operations", logo: "/vicious-os.svg" },
+              { code: "NX-003.C", name: "Nexaro CRM", desc: "Smart Business CRM", logo: "/nexaro-crm.svg" },
+              { code: "NX-004.R", name: "Rent OS", desc: "HR & Salary Tracking", logo: "/rent-os.svg" },
             ].map((node, i) => (
               <div key={i} className="bg-[#0d122d] border border-[rgba(255,255,255,0.05)] rounded-xl p-4 text-center hover:border-cyan-400/30 transition-colors group">
+                {/* Logo Image */}
+                <div className="mb-3 flex justify-center">
+                  <img src={node.logo} alt={node.name} className="w-full h-auto max-h-[80px] object-contain" />
+                </div>
                 <span className="text-xs font-mono text-gray-500 block mb-1">{node.code}</span>
                 <h4 className="font-bold text-white group-hover:text-cyan-400 transition-colors">{node.name}</h4>
                 <p className="text-xs text-gray-400 mt-1">{node.desc}</p>

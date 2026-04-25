@@ -6,11 +6,11 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 
 const navLinks = [
-  { href: "/en", label: "Home" },
-  { href: "/en/services", label: "Services" },
-  { href: "/en/portfolio", label: "Portfolio" },
-  { href: "/en/about", label: "About" },
-  { href: "/en/blog", label: "Blog" },
+  { href: "/", label: "Home" },
+  { href: "/services", label: "Services" },
+  { href: "/portfolio", label: "Portfolio" },
+  { href: "/about", label: "About" },
+  { href: "/blog", label: "Blog" },
 ];
 
 export default function Navbar() {
@@ -27,13 +27,12 @@ export default function Navbar() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             
-            {/* LOGO - LEFT SIDE ONLY, NO .TECH */}
-           {/* LOGO - LEFT SIDE */}
-<Link href="/en" className="flex items-center gap-2 group">
-  <span className="font-orbitron font-bold text-xl tracking-wide text-white hover:text-cyan-400 transition-colors">
-    NEXARO
-  </span>
-</Link>
+            {/* LOGO - LEFT SIDE, NO .TECH */}
+            <Link href="/" className="flex items-center gap-2 group">
+              <span className="font-orbitron font-bold text-2xl tracking-wide text-white hover:text-cyan-400 transition-colors">
+                NEXARO
+              </span>
+            </Link>
 
             {/* Desktop Links */}
             <nav className="hidden md:flex items-center gap-8">
@@ -51,7 +50,7 @@ export default function Navbar() {
             {/* CTA Button */}
             <div className="hidden md:block">
               <Link
-                href="/en/contact"
+                href="/contact"
                 className="inline-flex items-center px-4 py-2 bg-cyan-400 text-black text-sm font-semibold rounded-lg hover:bg-cyan-300 transition-colors"
               >
                 Get in touch
@@ -90,7 +89,7 @@ export default function Navbar() {
                 </Link>
               ))}
               <Link
-                href="/en/contact"
+                href="/contact"
                 onClick={() => setIsOpen(false)}
                 className="block w-full text-center px-4 py-3 bg-cyan-400 text-black font-semibold rounded-lg hover:bg-cyan-300 transition-colors"
               >
