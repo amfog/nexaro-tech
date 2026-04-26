@@ -32,8 +32,8 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <h3 className="font-bold text-white">Email</h3>
-                    <a href="mailto:hello@nexaro.tech" className="text-gray-400 hover:text-cyan-400 transition-colors">
-                      hello@nexaro.tech
+                    <a href="mailto:nexarotch@gmail.com" className="text-gray-400 hover:text-cyan-400 transition-colors">
+                      nexarotch@gmail.com
                     </a>
                   </div>
                 </div>

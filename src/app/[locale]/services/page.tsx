@@ -78,9 +78,9 @@ export default function ServicesPage() {
         {/* Services Grid */}
         <div className="grid md:grid-cols-2 gap-8 mb-20">
           {services.map((service, index) => (
-            <GlassCard key={index} className="relative overflow-hidden group">
+            <GlassCard key={index} className="relative overflow-hidden group flex flex-col">
               <div className={`absolute top-0 right-0 w-32 h-32 bg-gradient-to-br ${service.color} opacity-10 rounded-bl-full -mr-8 -mt-8 transition-transform group-hover:scale-110`} />
-              
+
               <div className="flex items-start gap-4 mb-6">
                 <div className={`p-3 rounded-xl bg-gradient-to-br ${service.color} text-white shadow-lg`}>
                   <service.icon className="w-6 h-6" />
@@ -106,7 +106,7 @@ export default function ServicesPage() {
                 </div>
               )}
 
-              <Link href="/en/contact" className="inline-flex items-center gap-2 text-cyan-400 hover:text-white transition-colors font-medium group-hover:underline">
+              <Link href="/en/contact" className="inline-flex items-center gap-2 text-cyan-400 hover:text-white transition-colors font-medium group-hover:underline mt-auto pt-4">
                 Start a project <ArrowRight className="w-4 h-4" />
               </Link>
             </GlassCard>

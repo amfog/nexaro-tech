@@ -31,7 +31,7 @@ const projects = [
     title: "Vicious OS",
     category: "Product",
     tags: ["Esports", "Operations", "AI"],
-    description: "The first esports-native operations system in MENA. Combines team management, player data, task workflows, AI assistance, and content planning into one platform.",
+    description: "The first esports-native operations system in MENA — built by Vicious Esports, who also developed the Alahsa Festival Platform. Combines team management, player data, task workflows, AI assistance, and content planning into one platform.",
     features: [
       "12 live modules (Dashboard, Tasks, Approvals, AI)",
       "49+ players managed across 13 games",
@@ -81,7 +81,7 @@ const projects = [
       "Web + Mobile (cross-platform)"
     ],
     tech: ["Flutter", "Supabase", "Groq AI", "Netlify"],
-    liveUrl: "https://nexaro.app",
+    liveUrl: "https://precious-moxie-67ff79.netlify.app",
     githubUrl: null,
     logoSrc: "/nexaro-crm.svg",
     color: "from-cyan-500 to-blue-600",
@@ -101,7 +101,8 @@ const projects = [
       "AI-Powered Financial Insights"
     ],
     tech: ["Flutter", "Supabase", "AI Integration"],
-    liveUrl: "#",
+    liveUrl: "https://project-buner.vercel.app",
+    buttonLabel: "Reach to Us",
     githubUrl: null,
     logoSrc: "/rent-os.svg",
     color: "from-emerald-500 to-teal-500",
@@ -122,6 +123,7 @@ const projects = [
     ],
     tech: ["Flutter", "Supabase", "AI Integration"],
     liveUrl: "#",
+    buttonLabel: "Reach to Us",
     githubUrl: null,
     logoSrc: "/nexaro-hr.svg",
     color: "from-orange-500 to-red-500",
@@ -258,7 +260,7 @@ export default function PortfolioPage() {
 
                     <div className="flex gap-4">
                       <NeonButton size="sm" href={project.liveUrl}>
-                        <ExternalLink className="w-4 h-4" /> View Live
+                        <ExternalLink className="w-4 h-4" /> {project.buttonLabel ?? "View Live"}
                       </NeonButton>
                       {project.githubUrl && (
                         <NeonButton variant="secondary" size="sm" href={project.githubUrl}>

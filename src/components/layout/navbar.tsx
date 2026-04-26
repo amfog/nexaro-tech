@@ -8,7 +8,7 @@ import { Menu, X } from "lucide-react";
 const navLinks = [
   { href: "/en", label: "Home" },
   { href: "/en/services", label: "Services" },
-  { href: "/en/portfolio", label: "Portfolio" },
+  { href: "/en/portfolio", label: "Products" },
   { href: "/en/about", label: "About" },
   { href: "/en/blog", label: "Blog" },
 ];
@@ -28,8 +28,13 @@ export default function Navbar() {
           <div className="flex items-center justify-between h-16">
             
             {/* LOGO */}
-            <Link href="/en" className="flex items-center group">
-              <img src="/nexaro-master.svg" alt="NEXARO.TECH" className="h-8 w-auto" />
+            <Link href="/en" className="flex items-center gap-2 group">
+              <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-cyan-400 to-purple-500 flex items-center justify-center font-orbitron font-bold text-black text-lg flex-shrink-0">
+                N
+              </div>
+              <span className="font-orbitron font-bold text-sm tracking-wider text-white group-hover:text-cyan-400 transition-colors">
+                NEXARO<span className="text-cyan-400">.TECH</span>
+              </span>
             </Link>
 
             {/* Desktop Links */}

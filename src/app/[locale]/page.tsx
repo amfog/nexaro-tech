@@ -100,13 +100,7 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* 3. TECH MARQUEE */}
-        <section className="py-12 bg-[#080b1a]">
-          <p className="text-center text-gray-500 font-rajdhani text-sm tracking-widest uppercase mb-6">Powered By</p>
-          <TechMarquee />
-        </section>
-
-        {/* 4. NODE FAMILY / ECOSYSTEM */}
+        {/* 3. NODE FAMILY / ECOSYSTEM */}
         <section className="py-24 px-4 bg-[#080b1a]">
           <div className="max-w-5xl mx-auto text-center mb-12">
             <h2 className="font-orbitron text-3xl font-bold mb-4 text-white">The Nexaro <span className="text-cyan-400">Node Family</span></h2>
@@ -149,28 +143,46 @@ export default function HomePage() {
 
         {/* 5. TESTIMONIALS */}
         <section className="py-24 px-4">
-          <div className="max-w-3xl mx-auto text-center">
+          <div className="max-w-5xl mx-auto text-center">
             <h2 className="font-orbitron text-3xl font-bold mb-12 text-purple-400">Client Love</h2>
-            <GlassCard className="text-center">
-              <div className="flex justify-center gap-1 mb-4 text-yellow-400">
-                {[...Array(5)].map((_, i) => <Star key={i} className="w-5 h-5 fill-current" />)}
-              </div>
-              <blockquote className="text-lg text-gray-300 mb-6 italic">
-                "Nexaro transformed our vision into a scalable platform that exceeded expectations."
-              </blockquote>
-              <div className="flex items-center justify-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-cyan-400 to-purple-500" />
-                <div className="text-left">
-                  <p className="font-semibold text-sm">Ahmed Al-Rashid</p>
-                  <p className="text-xs text-gray-500">CTO, Future Events KSA</p>
-                </div>
-              </div>
-            </GlassCard>
+            <div className="grid md:grid-cols-2 gap-6">
+              {[
+                {
+                  quote: "Nexaro transformed our vision into a scalable platform that exceeded expectations.",
+                  name: "Ahmed Alhassan",
+                  title: "CEO, Vicious Esports",
+                  project: "Alahsa Festival Platform",
+                },
+                {
+                  quote: "The most comprehensive esports operations system we've seen. It eliminated 80% of our manual work and unified our entire team.",
+                  name: "Ahmed Alhassan",
+                  title: "Founder & CEO, Vicious Esports",
+                  project: "Vicious OS",
+                },
+              ].map((t, i) => (
+                <GlassCard key={i} className="text-center flex flex-col">
+                  <div className="flex justify-center gap-1 mb-4 text-yellow-400">
+                    {[...Array(5)].map((_, j) => <Star key={j} className="w-5 h-5 fill-current" />)}
+                  </div>
+                  <blockquote className="text-lg text-gray-300 mb-6 italic flex-1">
+                    &ldquo;{t.quote}&rdquo;
+                  </blockquote>
+                  <div className="flex items-center justify-center gap-3">
+                    <div className="w-10 h-10 rounded-full bg-gradient-to-br from-cyan-400 to-purple-500 flex-shrink-0" />
+                    <div className="text-left">
+                      <p className="font-semibold text-sm">{t.name}</p>
+                      <p className="text-xs text-gray-500">{t.title}</p>
+                      <p className="text-xs text-cyan-400/70 mt-0.5">{t.project}</p>
+                    </div>
+                  </div>
+                </GlassCard>
+              ))}
+            </div>
           </div>
         </section>
 
         {/* 6. CTA */}
-        <section className="py-24 px-4 pb-40">
+        <section className="py-24 px-4">
           <div className="max-w-4xl mx-auto text-center bg-[rgba(255,255,255,0.02)] p-12 rounded-3xl">
             <h2 className="font-orbitron text-3xl md:text-4xl font-bold mb-4">Ready to Build Something Amazing?</h2>
             <p className="text-gray-300 mb-8">Let's discuss how we can bring your digital vision to life.</p>
@@ -178,6 +190,12 @@ export default function HomePage() {
               <NeonButton size="lg">Start Your Project</NeonButton>
             </Link>
           </div>
+        </section>
+
+        {/* 7. POWERED BY */}
+        <section className="py-12 pb-40 bg-[#080b1a]">
+          <p className="text-center text-gray-500 font-rajdhani text-sm tracking-widest uppercase mb-6">Powered By</p>
+          <TechMarquee />
         </section>
 
       </div>

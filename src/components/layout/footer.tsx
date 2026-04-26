@@ -29,7 +29,7 @@ export default function Footer() {
             <h4 className="font-rajdhani font-semibold mb-4 text-white">Company</h4>
             <ul className="space-y-2 text-sm text-gray-400">
               <li><Link href="/en/about" className="hover:text-cyan-400 transition-colors">About Us</Link></li>
-              <li><Link href="/en/portfolio" className="hover:text-cyan-400 transition-colors">Portfolio</Link></li>
+              <li><Link href="/en/portfolio" className="hover:text-cyan-400 transition-colors">Products</Link></li>
               <li><Link href="/en/contact" className="hover:text-cyan-400 transition-colors">Contact</Link></li>
             </ul>
           </div>
@@ -38,7 +38,7 @@ export default function Footer() {
           <div>
             <h4 className="font-rajdhani font-semibold mb-4 text-white">Connect</h4>
             <ul className="space-y-2 text-sm text-gray-400">
-              <li>hello@nexaro.tech</li>
+              <li>nexarotch@gmail.com</li>
               <li>Egypt (Global Remote)</li>
               <li className="flex gap-4 mt-4">
                 <a href="#" className="hover:text-cyan-400 transition-colors">Twitter</a>

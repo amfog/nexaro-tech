@@ -2,14 +2,13 @@
 
 import { motion } from "framer-motion";
 import { Mail, Phone, MapPin, ExternalLink, Award, Zap, Users, Trophy, Target, Eye, Lightbulb } from "lucide-react";
-import Link from "next/link";
 
 export default function AboutPage() {
   const stats = [
-    { label: "Participants Managed", value: "3,500+", icon: Users },
-    { label: "Players on Platform", value: "170+", icon: Trophy },
-    { label: "Time Reduction", value: "40%", icon: Zap },
-    { label: "Tournament Editions", value: "5", icon: Award },
+    { label: "Participants Managed", value: "3,500+", icon: Users, subtitle: "" },
+    { label: "Employees Managed", value: "170+", icon: Trophy, subtitle: "" },
+    { label: "Time Reduction", value: "40%", icon: Zap, subtitle: "" },
+    { label: "Tournament Editions", value: "7", icon: Award, subtitle: "Pyramids Cup · League of Legends: Wild Rift" },
   ];
 
   const skills = [
@@ -60,8 +59,8 @@ export default function AboutPage() {
                     <a href="tel:+201507144461" className="flex items-center justify-center gap-2 text-gray-300 hover:text-cyan-400 transition-colors">
                       <Phone className="w-4 h-4" /> +20 150 714 4461
                     </a>
-                    <a href="https://linkedin.com/in/devabdelrhaman" target="_blank" className="flex items-center justify-center gap-2 text-gray-300 hover:text-cyan-400 transition-colors">
-                      <ExternalLink className="w-4 h-4" /> LinkedIn
+                    <a href="https://project-8qxfy.vercel.app" target="_blank" className="flex items-center justify-center gap-2 text-gray-300 hover:text-cyan-400 transition-colors">
+                      <ExternalLink className="w-4 h-4" /> Portfolio
                     </a>
                     <div className="flex items-center justify-center gap-2 text-gray-400 mt-2">
                       <MapPin className="w-4 h-4" /> Cairo, Egypt
@@ -87,6 +86,7 @@ export default function AboutPage() {
                         <p className="text-2xl font-bold text-white">{stat.value}</p>
                       </div>
                       <p className="text-xs text-gray-400 uppercase tracking-wider">{stat.label}</p>
+                      {stat.subtitle && <p className="text-xs text-gray-500 mt-1">{stat.subtitle}</p>}
                     </div>
                   ))}
                 </div>
@@ -163,24 +163,6 @@ export default function AboutPage() {
           </motion.div>
         </section>
 
-        {/* CTA */}
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.4 }}
-          className="text-center py-12 border-t border-[rgba(255,255,255,0.05)]"
-        >
-          <h3 className="text-xl font-bold mb-4">Open to new opportunities</h3>
-          <p className="text-gray-400 mb-6">Seeking Product Operations · Program Management · Systems Leadership roles</p>
-          <div className="flex flex-wrap justify-center gap-4">
-            <Link href="/contact" className="px-6 py-3 bg-cyan-400 text-black font-semibold rounded-lg hover:bg-cyan-300 transition-colors">
-              Get in touch
-            </Link>
-            <a href="#" className="px-6 py-3 bg-[#0d122d] text-white font-semibold rounded-lg border border-[rgba(255,255,255,0.1)] hover:border-cyan-400/30 transition-colors">
-              Download CV
-            </a>
-          </div>
-        </motion.div>
 
       </div>
     </main>
