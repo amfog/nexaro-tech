@@ -28,18 +28,8 @@ export default function Navbar() {
           <div className="flex items-center justify-between h-16">
             
             {/* LOGO */}
-            <Link href="/en" className="flex items-center gap-2 group">
-              <div className="w-8 h-8 bg-gradient-to-br from-cyan-400 to-purple-500 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
-                <span className="font-bold text-black text-lg">N</span>
-              </div>
-              <div className="flex items-center">
-                <span className="font-orbitron font-bold text-xl tracking-wide text-white">
-                  NEXARO
-                </span>
-                <span className="font-orbitron font-bold text-xl text-cyan-400">
-                  .TECH
-                </span>
-              </div>
+            <Link href="/en" className="flex items-center group">
+              <img src="/nexaro-master.svg" alt="NEXARO.TECH" className="h-8 w-auto" />
             </Link>
 
             {/* Desktop Links */}

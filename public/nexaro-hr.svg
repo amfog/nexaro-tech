@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 160">
+  <defs>
+    <linearGradient id="nh-border" x1="0" y1="0" x2="240" y2="160" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#F97316"/>
+      <stop offset="100%" stop-color="#DC2626"/>
+    </linearGradient>
+    <linearGradient id="nh-fill-a" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F97316"/>
+      <stop offset="100%" stop-color="#EF4444"/>
+    </linearGradient>
+    <linearGradient id="nh-fill-b" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FB923C"/>
+      <stop offset="100%" stop-color="#DC2626"/>
+    </linearGradient>
+    <radialGradient id="nh-glow-bg" cx="50%" cy="55%" r="38%">
+      <stop offset="0%" stop-color="#F97316" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#F97316" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="nh-glow">
+      <feGaussianBlur stdDeviation="1.5" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- Gradient border -->
+  <rect width="240" height="160" rx="12" fill="url(#nh-border)"/>
+  <!-- Dark inner bg -->
+  <rect x="2" y="2" width="236" height="156" rx="10" fill="#0A0E27"/>
+  <!-- Radial glow -->
+  <ellipse cx="120" cy="78" rx="58" ry="42" fill="url(#nh-glow-bg)"/>
+
+  <!-- Product code -->
+  <text x="120" y="22" text-anchor="middle" fill="#6B7280" font-size="9" font-family="monospace" letter-spacing="1.5">NX-005.H</text>
+  <!-- Product name -->
+  <text x="120" y="42" text-anchor="middle" fill="white" font-size="15" font-weight="bold" font-family="system-ui, sans-serif">Nexaro HR</text>
+
+  <!-- Left person: head -->
+  <circle cx="108" cy="62" r="9" fill="url(#nh-fill-a)" filter="url(#nh-glow)"/>
+  <!-- Left person: body -->
+  <path d="M90 96 Q90 78 108 78 Q126 78 126 96 Z" fill="url(#nh-fill-a)" opacity="0.85"/>
+
+  <!-- Right person: head -->
+  <circle cx="134" cy="62" r="9" fill="url(#nh-fill-b)" filter="url(#nh-glow)"/>
+  <!-- Right person: body -->
+  <path d="M116 96 Q116 78 134 78 Q152 78 152 96 Z" fill="url(#nh-fill-b)" opacity="0.85"/>
+
+  <!-- HR badge -->
+  <rect x="103" y="99" width="34" height="12" rx="3" fill="url(#nh-border)" filter="url(#nh-glow)"/>
+  <text x="120" y="109" text-anchor="middle" fill="white" font-size="7" font-weight="bold" font-family="monospace" letter-spacing="1.5">HR</text>
+
+  <!-- Subtitle -->
+  <text x="120" y="148" text-anchor="middle" fill="#F97316" font-size="9" font-family="monospace" letter-spacing="0.3">HR &amp; Payroll Management</text>
+</svg>

@@ -1,12 +1,46 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 140">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 160">
   <defs>
-    <linearGradient id="bg-vicious" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#0A0E27;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#1a0b2e;stop-opacity:1" />
+    <linearGradient id="vo-border" x1="0" y1="0" x2="240" y2="160" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#A855F7"/>
+      <stop offset="100%" stop-color="#DB2777"/>
     </linearGradient>
+    <radialGradient id="vo-glow-bg" cx="50%" cy="55%" r="35%">
+      <stop offset="0%" stop-color="#A855F7" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#A855F7" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="vo-glow">
+      <feGaussianBlur stdDeviation="2" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
   </defs>
-  <rect width="100%" height="100%" rx="16" fill="url(#bg-vicious)" stroke="#B829F7" stroke-width="2"/>
-  <text x="50%" y="35" text-anchor="middle" font-family="monospace" font-size="12" fill="#A0A0A0">NX-002.O</text>
-  <text x="50%" y="75" text-anchor="middle" font-family="sans-serif" font-weight="bold" font-size="20" fill="#FFFFFF">Vicious OS</text>
-  <text x="50%" y="100" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#B829F7">Esports Operations</text>
+
+  <!-- Gradient border -->
+  <rect width="240" height="160" rx="12" fill="url(#vo-border)"/>
+  <!-- Dark inner bg -->
+  <rect x="2" y="2" width="236" height="156" rx="10" fill="#0A0E27"/>
+  <!-- Radial glow -->
+  <ellipse cx="120" cy="82" rx="55" ry="40" fill="url(#vo-glow-bg)"/>
+
+  <!-- Product code -->
+  <text x="120" y="22" text-anchor="middle" fill="#6B7280" font-size="9" font-family="monospace" letter-spacing="1.5">NX-002.O</text>
+  <!-- Product name -->
+  <text x="120" y="42" text-anchor="middle" fill="white" font-size="15" font-weight="bold" font-family="system-ui, sans-serif">Vicious OS</text>
+
+  <!-- Shield outline -->
+  <path d="M120 54 L143 62 L143 82 Q143 97 120 104 Q97 97 97 82 L97 62 Z"
+    fill="rgba(168,85,247,0.12)" stroke="url(#vo-border)" stroke-width="1.5" stroke-linejoin="round"/>
+
+  <!-- V-mark inside shield -->
+  <path d="M108 68 L120 86 L132 68"
+    stroke="url(#vo-border)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+
+  <!-- Center glow dot on V-apex -->
+  <circle cx="120" cy="86" r="3" fill="#A855F7" filter="url(#vo-glow)"/>
+
+  <!-- Top shield highlight dots -->
+  <circle cx="109" cy="62" r="2" fill="#A855F7" opacity="0.6"/>
+  <circle cx="131" cy="62" r="2" fill="#DB2777" opacity="0.6"/>
+
+  <!-- Subtitle -->
+  <text x="120" y="148" text-anchor="middle" fill="#A855F7" font-size="9" font-family="monospace" letter-spacing="0.5">Esports Operations</text>
 </svg>

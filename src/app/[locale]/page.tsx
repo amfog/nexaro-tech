@@ -107,38 +107,43 @@ export default function HomePage() {
         </section>
 
         {/* 4. NODE FAMILY / ECOSYSTEM */}
-                {/* 4. NODE FAMILY / ECOSYSTEM */}
-                {/* 4. NODE FAMILY / ECOSYSTEM */}
         <section className="py-24 px-4 bg-[#080b1a]">
           <div className="max-w-5xl mx-auto text-center mb-12">
             <h2 className="font-orbitron text-3xl font-bold mb-4 text-white">The Nexaro <span className="text-cyan-400">Node Family</span></h2>
             <p className="text-gray-400">Our unified ecosystem of digital products.</p>
           </div>
-          
-          <div className="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-5 gap-4">
-            {/* Master Node */}
-            <div className="col-span-2 md:col-span-5 bg-gradient-to-r from-cyan-500/10 to-purple-500/10 border border-cyan-500/20 rounded-xl p-6 mb-4 text-center">
-              <h3 className="font-orbitron text-xl font-bold text-cyan-400">MASTER</h3>
-              <p className="text-white font-semibold text-lg">Nexaro Platform</p>
+
+          <div className="max-w-6xl mx-auto space-y-4">
+            {/* MASTER card — full width */}
+            <div className="bg-gradient-to-r from-cyan-500/10 to-purple-500/10 border border-cyan-500/20 rounded-xl p-6 flex flex-col sm:flex-row items-center justify-center gap-6">
+              <img src="/nexaro-master.svg" alt="Nexaro Platform" className="h-32 w-auto" />
+              <div className="text-center sm:text-left">
+                <span className="font-orbitron text-xs font-bold tracking-widest text-cyan-400 block mb-1">MASTER</span>
+                <p className="text-white font-semibold text-xl">Nexaro Platform</p>
+                <p className="text-gray-400 text-sm mt-1">The unified ecosystem core</p>
+              </div>
             </div>
 
-            {/* Product Nodes WITH LOGOS */}
-            {[
-              { code: "NX-001.L", name: "Nexaro Life", desc: "Personal AI OS", logo: "/nexaro-life.svg" },
-              { code: "NX-002.O", name: "Vicious OS", desc: "Esports Operations", logo: "/vicious-os.svg" },
-              { code: "NX-003.C", name: "Nexaro CRM", desc: "Smart Business CRM", logo: "/nexaro-crm.svg" },
-              { code: "NX-004.R", name: "Rent OS", desc: "HR & Salary Tracking", logo: "/rent-os.svg" },
-            ].map((node, i) => (
-              <div key={i} className="bg-[#0d122d] border border-[rgba(255,255,255,0.05)] rounded-xl p-4 text-center hover:border-cyan-400/30 transition-colors group">
-                {/* Logo Image */}
-                <div className="mb-3 flex justify-center">
-                  <img src={node.logo} alt={node.name} className="w-full h-auto max-h-[80px] object-contain" />
+            {/* Product grid — 2 cols mobile, 4 cols desktop */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+              {[
+                { code: "NX-001.L", name: "Nexaro Life", desc: "Personal AI OS", logo: "/nexaro-life.svg" },
+                { code: "NX-002.O", name: "Vicious OS", desc: "Esports Operations", logo: "/vicious-os.svg" },
+                { code: "NX-003.C", name: "Nexaro CRM", desc: "Smart Business CRM", logo: "/nexaro-crm.svg" },
+                { code: "NX-004.R", name: "Rent OS", desc: "Property & Rent Management", logo: "/rent-os.svg" },
+                { code: "NX-005.H", name: "Nexaro HR", desc: "HR & Payroll Management", logo: "/nexaro-hr.svg" },
+                { code: "NX-002.T", name: "Teams OS", desc: "Core Operations Platform", logo: "/teams-os.svg" },
+              ].map((node, i) => (
+                <div key={i} className="bg-[#0d122d] border border-[rgba(255,255,255,0.05)] rounded-xl p-4 text-center hover:border-cyan-400/30 transition-colors group">
+                  <div className="mb-3 flex justify-center">
+                    <img src={node.logo} alt={node.name} className="w-full h-auto max-h-[80px] object-contain" />
+                  </div>
+                  <span className="text-xs font-mono text-gray-500 block mb-1">{node.code}</span>
+                  <h4 className="font-bold text-white text-sm group-hover:text-cyan-400 transition-colors">{node.name}</h4>
+                  <p className="text-xs text-gray-400 mt-1">{node.desc}</p>
                 </div>
-                <span className="text-xs font-mono text-gray-500 block mb-1">{node.code}</span>
-                <h4 className="font-bold text-white group-hover:text-cyan-400 transition-colors">{node.name}</h4>
-                <p className="text-xs text-gray-400 mt-1">{node.desc}</p>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </section>
 

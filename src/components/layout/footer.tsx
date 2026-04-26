@@ -9,15 +9,8 @@ export default function Footer() {
           {/* Brand */}
           <div>
             <Link href="/" className="inline-block mb-4">
-  <div className="flex items-center gap-2">
-    <span className="font-orbitron font-bold text-lg tracking-wide text-white">
-      NEXARO
-    </span>
-    <span className="font-orbitron font-bold text-lg text-cyan-400">
-      .TECH
-    </span>
-  </div>
-</Link>
+              <img src="/nexaro-master.svg" alt="NEXARO.TECH" className="h-8 w-auto" />
+            </Link>
             <p className="text-gray-400 text-sm">Building Tomorrow's Digital Experiences Today</p>
           </div>
           

@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 160">
+  <defs>
+    <linearGradient id="af-border" x1="0" y1="0" x2="240" y2="160" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#059669"/>
+      <stop offset="100%" stop-color="#065F46"/>
+    </linearGradient>
+    <linearGradient id="af-trunk" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1B4D3E"/>
+      <stop offset="100%" stop-color="#0C2218"/>
+    </linearGradient>
+    <radialGradient id="af-glow-bg" cx="50%" cy="50%" r="40%">
+      <stop offset="0%" stop-color="#059669" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#059669" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="af-glow">
+      <feGaussianBlur stdDeviation="1.8" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- Gradient border -->
+  <rect width="240" height="160" rx="12" fill="url(#af-border)"/>
+  <!-- Dark inner bg -->
+  <rect x="2" y="2" width="236" height="156" rx="10" fill="#0A0E27"/>
+  <!-- Radial glow -->
+  <ellipse cx="120" cy="80" rx="55" ry="42" fill="url(#af-glow-bg)"/>
+
+  <!-- Product code -->
+  <text x="120" y="22" text-anchor="middle" fill="#6B7280" font-size="9" font-family="monospace" letter-spacing="1.5">EVENT TECH</text>
+  <!-- Product name -->
+  <text x="120" y="42" text-anchor="middle" fill="white" font-size="14" font-weight="bold" font-family="system-ui, sans-serif">Alahsa Festival</text>
+
+  <!-- Palm tree trunk -->
+  <rect x="116" y="84" width="8" height="22" rx="2" fill="url(#af-trunk)"/>
+
+  <!-- Palm fronds -->
+  <path d="M120 84 C119 76 118 66 120 55 C122 66 121 76 120 84" fill="#1B4D3E"/>
+  <path d="M120 81 C113 73 104 65 95 60 C104 68 113 76 120 81" fill="#1B4D3E" opacity="0.9"/>
+  <path d="M120 83 C110 80 99 78 89 80 C99 79 110 82 120 83" fill="#1B4D3E" opacity="0.75"/>
+  <path d="M120 81 C127 73 136 65 145 60 C136 68 127 76 120 81" fill="#1B4D3E" opacity="0.9"/>
+  <path d="M120 83 C130 80 141 78 151 80 C141 79 130 82 120 83" fill="#1B4D3E" opacity="0.75"/>
+
+  <!-- Gold frond tip circles -->
+  <circle cx="108" cy="70" r="2.5" fill="#D4AF37" filter="url(#af-glow)"/>
+  <circle cx="132" cy="70" r="2.5" fill="#D4AF37" filter="url(#af-glow)"/>
+
+  <!-- Pulse / EKG wave -->
+  <polyline points="78,112 94,112 100,100 110,124 120,112 124,112 130,92 136,132 142,112 162,112"
+    stroke="#D4AF37" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity="0.8"/>
+
+  <!-- Subtitle -->
+  <text x="120" y="148" text-anchor="middle" fill="#059669" font-size="9" font-family="monospace" letter-spacing="0.5">Festival Platform</text>
+</svg>
