@@ -122,11 +122,16 @@
 
 **Products to Showcase:**
 1. Nexaro Life (Personal AI OS)
-2. Nexaro Website (this site)
-3. Alahsa Festival Platform
-4. Future projects...
+2. Nexaro Teams OS (AI assistant renamed to Nexaro AI)
+3. Nexaro CRM, Rent OS, Nexaro HR
+4. Vicious OS (Esports)
+5. Nexaro Master Control (Dashboard/Operations)
+6. Nexaro Website (this site)
+7. Alahsa Festival Platform (Website — View Live)
+8. Pyramids Queue (Website — View Live, https://project-c3kqs.vercel.app/)
 
 ---
 
-**Last Updated:** April 23, 2026  
+**Last Updated:** May 14, 2026  
+**Availability:** Now accepting Q4 2026 projects  
 **Next Sprint:** Styling Polish → Portfolio Page

@@ -30,7 +30,7 @@ export default function HomePage() {
               className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[rgba(255,255,255,0.03)] mb-8 text-sm text-cyan-400"
             >
               <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse" />
-              Now accepting Q2 2026 projects
+              Now accepting Q4 2026 projects
             </motion.div>
             
             <motion.h1 
@@ -127,12 +127,13 @@ export default function HomePage() {
                 { code: "NX-004.R", name: "Rent OS", desc: "Property & Rent Management", logo: "/rent-os.svg" },
                 { code: "NX-005.H", name: "Nexaro HR", desc: "HR & Payroll Management", logo: "/nexaro-hr.svg" },
                 { code: "NX-002.T", name: "Teams OS", desc: "Core Operations Platform", logo: "/teams-os.svg" },
+                { code: "NX-008.M", name: "Nexaro Command Center", desc: "Master Control Dashboard", logo: "/nexaro-master-control.svg", accent: "#FFD700" },
               ].map((node, i) => (
-                <div key={i} className="bg-[#0d122d] border border-[rgba(255,255,255,0.05)] rounded-xl p-4 text-center hover:border-cyan-400/30 transition-colors group">
+                <div key={i} className="bg-[#0d122d] rounded-xl p-4 text-center transition-colors group" style={{border: `1px solid ${node.accent ? node.accent + '33' : 'rgba(255,255,255,0.05)'}`}}>
                   <div className="mb-3 flex justify-center">
                     <img src={node.logo} alt={node.name} className="w-full h-auto max-h-[80px] object-contain" />
                   </div>
-                  <span className="text-xs font-mono text-gray-500 block mb-1">{node.code}</span>
+                  <span className="text-xs font-mono block mb-1" style={{color: node.accent ? node.accent + 'cc' : '#6b7280'}}>{node.code}</span>
                   <h4 className="font-bold text-white text-sm group-hover:text-cyan-400 transition-colors">{node.name}</h4>
                   <p className="text-xs text-gray-400 mt-1">{node.desc}</p>
                 </div>

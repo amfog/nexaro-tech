@@ -2,8 +2,8 @@
 
 **Founder:** Abdelrahman Mohamed  
 **Location:** Egypt  
-**Current Status:** MVP Functional, Needs Design Polish  
-**Last Updated:** April 23, 2026
+**Current Status:** Live - Portfolio Active  
+**Last Updated:** May 14, 2026
 
 ---
 
@@ -12,8 +12,8 @@
 
 **Founder:** Abdelrahman Mohamed  
 **Location:** Egypt  
-**Current Status:** MVP Functional, Needs Design Polish  
-**Last Updated:** April 23, 2026
+**Current Status:** Live - Portfolio Active  
+**Last Updated:** May 14, 2026
 
 ---
 
@@ -100,3 +100,13 @@ src/ ├── app/ │ ├── [locale]/ │ │ ├── layout.tsx (Root l
 ---
 
 **Next Sprint:** Design Polish & Component Refinement
+
+---
+
+## 📦 Portfolio Updates (May 14, 2026)
+
+- **Nexaro AI**: AI assistant in Nexaro Teams OS renamed from "Fog AI" to "Nexaro AI"
+- **Availability**: Now accepting Q4 2026 projects (updated from Q2)
+- **New project**: Pyramids Queue - Website, Esports/Events/Registration, live at https://project-c3kqs.vercel.app/
+- **New project**: Nexaro Master Control - Product, Dashboard/Operations/AI, reach out only
+- **Button logic**: All Products show "Reach Out to Learn More" → /contact; only Alahsa Festival and Pyramids Queue show "View Live"

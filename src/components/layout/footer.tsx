@@ -9,18 +9,25 @@ export default function Footer() {
           {/* Brand */}
           <div>
             <Link href="/" className="inline-block mb-4">
-              <img src="/nexaro-master.svg" alt="NEXARO.TECH" className="h-8 w-auto" />
+              <div className="flex items-center gap-2">
+                <div className="w-7 h-7 rounded-lg bg-gradient-to-br from-cyan-400 to-purple-500 flex items-center justify-center font-orbitron font-bold text-black text-sm flex-shrink-0">
+                  N
+                </div>
+                <span className="font-orbitron font-bold text-lg tracking-wider text-white">
+                  NEXARO<span className="text-cyan-400">.TECH</span>
+                </span>
+              </div>
             </Link>
-            <p className="text-gray-400 text-sm">Building Tomorrow's Digital Experiences Today</p>
+            <p className="text-gray-400 text-sm">Building Tomorrow&apos;s Digital Experiences Today</p>
           </div>
           
           {/* Services */}
           <div>
             <h4 className="font-rajdhani font-semibold mb-4 text-white">Services</h4>
             <ul className="space-y-2 text-sm text-gray-400">
-              <li><Link href="/en/services" className="hover:text-cyan-400 transition-colors">Web Development</Link></li>
-              <li><Link href="/en/services" className="hover:text-cyan-400 transition-colors">Mobile Apps</Link></li>
-              <li><Link href="/en/services" className="hover:text-cyan-400 transition-colors">Event Tech</Link></li>
+              <li><Link href="/en/services" className="hover:text-cyan-400 transition-colors">Workflow Automation</Link></li>
+              <li><Link href="/en/services" className="hover:text-cyan-400 transition-colors">AI Integration</Link></li>
+              <li><Link href="/en/services" className="hover:text-cyan-400 transition-colors">Esports Platforms</Link></li>
             </ul>
           </div>
 

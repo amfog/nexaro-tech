@@ -37,7 +37,7 @@ export default function AboutPage() {
                 <div>
                   <h3 className="font-orbitron text-2xl font-bold mb-3 text-white">Mission</h3>
                   <p className="text-gray-300 leading-relaxed">
-                    To eliminate operational chaos for teams that need to move fast. We build intelligent systems that automate workflows, unify data, and accelerate growth — allowing organizations to focus on what matters most: innovation and impact.
+                    To eliminate operational chaos for teams that need to move fast. We build intelligent systems that automate workflows, unify data, and accelerate growth, allowing organizations to focus on what matters most: innovation and impact.
                   </p>
                 </div>
               </div>
