@@ -29,9 +29,7 @@ export default function Navbar() {
             
             {/* LOGO */}
             <Link href="/en" className="flex items-center gap-2 group">
-              <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-cyan-400 to-purple-500 flex items-center justify-center font-orbitron font-bold text-black text-lg flex-shrink-0">
-                N
-              </div>
+              <img src="/nexaro-logo.svg" alt="Nexaro" className="w-8 h-8" />
               <span className="font-orbitron font-bold text-sm tracking-wider text-white group-hover:text-cyan-400 transition-colors">
                 NEXARO<span className="text-cyan-400">.TECH</span>
               </span>

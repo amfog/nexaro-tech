@@ -1,0 +1,36 @@
+<svg width="1024" height="1024" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="bgGlow" cx="50%" cy="50%" r="60%">
+      <stop offset="0%" stop-color="#0D2A3A" />
+      <stop offset="100%" stop-color="#0A0E27" />
+    </radialGradient>
+    <filter id="nodeGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="10" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- background -->
+  <rect width="1024" height="1024" fill="url(#bgGlow)" />
+
+  <!-- N strokes -->
+  <g stroke="#00F5FF" stroke-width="34" stroke-linecap="round" fill="none" filter="url(#nodeGlow)">
+    <!-- left vertical -->
+    <line x1="272" y1="271" x2="272" y2="747" />
+    <!-- diagonal -->
+    <line x1="272" y1="271" x2="752" y2="747" />
+    <!-- right vertical -->
+    <line x1="752" y1="271" x2="752" y2="747" />
+  </g>
+
+  <!-- nodes -->
+  <circle cx="272" cy="271" r="52" fill="#00F5FF" filter="url(#nodeGlow)" />
+  <circle cx="752" cy="747" r="52" fill="#00F5FF" filter="url(#nodeGlow)" />
+  <circle cx="752" cy="271" r="52" fill="#B829F7" filter="url(#nodeGlow)" />
+
+  <!-- bottom-left hollow node -->
+  <circle cx="272" cy="747" r="44" fill="none" stroke="#00F5FF" stroke-width="18" filter="url(#nodeGlow)" />
+</svg>

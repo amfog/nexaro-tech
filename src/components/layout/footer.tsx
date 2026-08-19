@@ -10,9 +10,7 @@ export default function Footer() {
           <div>
             <Link href="/" className="inline-block mb-4">
               <div className="flex items-center gap-2">
-                <div className="w-7 h-7 rounded-lg bg-gradient-to-br from-cyan-400 to-purple-500 flex items-center justify-center font-orbitron font-bold text-black text-sm flex-shrink-0">
-                  N
-                </div>
+                <img src="/nexaro-logo.svg" alt="Nexaro" className="w-8 h-8" />
                 <span className="font-orbitron font-bold text-lg tracking-wider text-white">
                   NEXARO<span className="text-cyan-400">.TECH</span>
                 </span>
@@ -48,9 +46,8 @@ export default function Footer() {
               <li>nexarotch@gmail.com</li>
               <li>Egypt (Global Remote)</li>
               <li className="flex gap-4 mt-4">
-                <a href="#" className="hover:text-cyan-400 transition-colors">Twitter</a>
-                <a href="#" className="hover:text-cyan-400 transition-colors">LinkedIn</a>
-                <a href="#" className="hover:text-cyan-400 transition-colors">GitHub</a>
+                <a href="https://www.facebook.com/Nexarotch" target="_blank" rel="noopener noreferrer" className="hover:text-cyan-400 transition-colors">Facebook</a>
+                <a href="https://www.linkedin.com/company/nexarotch/about/?viewAsMember=true" target="_blank" rel="noopener noreferrer" className="hover:text-cyan-400 transition-colors">LinkedIn</a>
               </li>
             </ul>
           </div>
