@@ -281,33 +281,6 @@ const projects = [
     color: "from-indigo-500 to-purple-600",
     contactOnly: false,
   },
-  {
-    id: 13,
-    title: "The Vicious Esports",
-    category: "Website",
-    tags: ["Esports", "Team Website", "Gaming"],
-    description: "Official website for The Vicious esports organization, showcasing rosters across traditional sports and esports, news, partnerships, and fan engagement.",
-    features: [
-      "Team Roster Display",
-      "News & Updates",
-      "Multi-Sport Coverage",
-      "Partnership Showcase",
-      "Bilingual Support (EN/AR)",
-      "Join The Vicious CTA"
-    ],
-    tech: ["Next.js", "TypeScript", "Tailwind CSS"],
-    liveUrl: "#",
-    iframeUrl: null,
-    githubUrl: null,
-    logoSrc: "/vicious-website.png",
-    screenshots: [
-      "/images/vicious-website-home.webp",
-      "/images/vicious-website-roster.webp",
-      "/images/vicious-website-news.webp"
-    ],
-    color: "from-purple-500 to-pink-600",
-    contactOnly: true,
-  },
   // Products without screenshots (logo only) - Moved to bottom
   {
     id: 3,
