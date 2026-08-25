@@ -1,58 +1,82 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { showcaseItems, type ShowcaseItem } from "@/data/nexaro-showcase";
 
-interface Product {
-  code: string;
-  name: string;
-  sub: string;
-  color: string;
-  logo: string;
-  shot?: string;
+const count = showcaseItems.length;
+const angleStep = 360 / count;
+const IFRAME_TIMEOUT_MS = 3000;
+
+function getCardWidth() {
+  const w = window.innerWidth;
+  if (w >= 1440) return 260;
+  if (w >= 1024) return 220;
+  return 180;
 }
 
-const products: Product[] = [
-  { code: "NX-001.L", name: "Nexaro Life", sub: "Personal AI OS", color: "#00F5FF", logo: "/nexaro-life.svg", shot: "/images/nexaro-life-dashboard.webp" },
-  { code: "NX-002.O", name: "Vicious OS", sub: "Esports Operations", color: "#B829F7", logo: "/vicious-os.svg", shot: "/images/vicious-os-dashboard.webp" },
-  { code: "NX-008.M", name: "Nexaro Command Center", sub: "Master Control Dashboard", color: "#FFD700", logo: "/nexaro-master-control.svg", shot: "/images/nexaro-master-dashboard.webp" },
-  { code: "NX-002.T", name: "Teams OS", sub: "Core Operations", color: "#00F5FF", logo: "/teams-os.svg", shot: "/images/teams-os-dashboard.webp" },
-  { code: "NX-003.C", name: "Nexaro CRM", sub: "Smart Business CRM", color: "#B829F7", logo: "/nexaro-crm.svg" },
-];
-
-const count = products.length;
-const angleStep = 360 / count;
-
 function getRadius() {
-  const w = window.innerWidth;
-  if (w >= 1440) return 540;
-  if (w >= 1024) return 460;
-  return 380;
+  const cardWidth = getCardWidth();
+  return Math.round(((cardWidth + 40) * count) / (2 * Math.PI));
+}
+
+function WebsiteVisual({ item }: { item: ShowcaseItem }) {
+  const [loaded, setLoaded] = useState(false);
+  const [failed, setFailed] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setFailed((prev) => prev || !loaded);
+    }, IFRAME_TIMEOUT_MS);
+    return () => clearTimeout(timer);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  if (failed && !loaded) {
+    return (
+      <div className="mh-card-icon-wrap">
+        {item.icon && <img src={item.icon} alt={item.name} className="mh-card-icon" />}
+      </div>
+    );
+  }
+
+  return (
+    <div className="mh-card-shot-frame">
+      <iframe
+        src={item.liveUrl}
+        className="mh-card-iframe"
+        style={{ pointerEvents: "none" }}
+        sandbox="allow-scripts allow-same-origin"
+        loading="lazy"
+        title={item.name}
+        onLoad={() => setLoaded(true)}
+      />
+    </div>
+  );
 }
 
 function RingCards({ radius }: { radius: number }) {
   return (
     <>
-      {products.map((p, i) => (
+      {showcaseItems.map((item, i) => (
         <div
-          key={p.code}
+          key={item.code}
           className="mh-card-slot"
-          style={{
-            transform: `rotateY(${i * angleStep}deg) translateZ(${radius}px)`,
-            borderColor: `${p.color}55`,
-          }}
+          style={{ transform: `rotateY(${i * angleStep}deg) translateZ(${radius}px)` }}
         >
-          {p.shot ? (
-            <div className="mh-card-shot" style={{ backgroundImage: `url(${p.shot})` }} />
-          ) : (
-            <div className="mh-card-icon-wrap">
-              <img src={p.logo} alt={p.name} className="mh-card-icon" />
+          <div className={`mh-card-inner bg-gradient-to-br ${item.color}`}>
+            <div className="mh-card-content">
+              {item.type === "website" && item.liveUrl ? (
+                <WebsiteVisual item={item} />
+              ) : (
+                <div className="mh-card-icon-wrap">
+                  {item.icon && <img src={item.icon} alt={item.name} className="mh-card-icon" />}
+                </div>
+              )}
+              <div className="mh-card-overlay">
+                <span className={`mh-card-code bg-gradient-to-r ${item.color}`}>{item.code}</span>
+                <span className="mh-card-name">{item.name}</span>
+              </div>
             </div>
-          )}
-          <div className="mh-card-overlay">
-            <span className="mh-card-code" style={{ color: p.color }}>
-              {p.code}
-            </span>
-            <span className="mh-card-name">{p.name}</span>
           </div>
         </div>
       ))}
@@ -254,17 +278,40 @@ export default function MirrorHallCarousel() {
           left: 0;
           top: 0;
           border-radius: 10px;
-          border: 1px solid rgba(255, 255, 255, 0.08);
           backface-visibility: hidden;
+          overflow: hidden;
+        }
+
+        .mh-card-inner {
+          width: 100%;
+          height: 100%;
+          padding: 2px;
+          border-radius: 10px;
+        }
+
+        .mh-card-content {
+          position: relative;
+          width: 100%;
+          height: 100%;
+          border-radius: 8px;
           overflow: hidden;
           background: #0d122d;
         }
 
-        .mh-card-shot {
+        .mh-card-shot-frame {
           position: absolute;
           inset: 0;
-          background-size: cover;
-          background-position: top center;
+          overflow: hidden;
+        }
+        .mh-card-iframe {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 200%;
+          height: 200%;
+          border: none;
+          transform: scale(0.5);
+          transform-origin: top left;
         }
 
         .mh-card-icon-wrap {
@@ -292,13 +339,18 @@ export default function MirrorHallCarousel() {
           background: linear-gradient(to top, rgba(5, 7, 20, 0.92), transparent);
           display: flex;
           flex-direction: column;
-          gap: 1px;
+          align-items: flex-start;
+          gap: 3px;
         }
         .mh-card-code {
           font-family: monospace;
-          font-size: 9px;
+          font-size: 8px;
           letter-spacing: 0.5px;
-          font-weight: 600;
+          font-weight: 700;
+          color: #fff;
+          padding: 1px 6px;
+          border-radius: 999px;
+          width: fit-content;
         }
         .mh-card-name {
           font-size: 11px;
@@ -307,6 +359,7 @@ export default function MirrorHallCarousel() {
           white-space: nowrap;
           overflow: hidden;
           text-overflow: ellipsis;
+          max-width: 100%;
         }
 
         .mh-hint {
@@ -353,8 +406,14 @@ export default function MirrorHallCarousel() {
             height: 140px;
             border-radius: 12px;
           }
+          .mh-card-inner {
+            border-radius: 12px;
+          }
+          .mh-card-content {
+            border-radius: 10px;
+          }
           .mh-card-code {
-            font-size: 10px;
+            font-size: 9px;
           }
           .mh-card-name {
             font-size: 12px;
@@ -376,8 +435,14 @@ export default function MirrorHallCarousel() {
             height: 165px;
             border-radius: 14px;
           }
+          .mh-card-inner {
+            border-radius: 14px;
+          }
+          .mh-card-content {
+            border-radius: 12px;
+          }
           .mh-card-code {
-            font-size: 11px;
+            font-size: 10px;
           }
           .mh-card-name {
             font-size: 13px;

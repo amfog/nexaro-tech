@@ -5,11 +5,18 @@ import GlassCard from "@/components/ui/glass-card";
 import NeonButton from "@/components/ui/neon-button";
 import { ExternalLink, ArrowLeft, Code, Mail } from "lucide-react";
 import Link from "next/link";
+import { showcaseItems } from "@/data/nexaro-showcase";
+
+function sc(code: string) {
+  const item = showcaseItems.find((i) => i.code === code);
+  if (!item) throw new Error(`Missing showcase item for code: ${code}`);
+  return item;
+}
 
 const projects = [
   {
     id: 1,
-    title: "Nexaro Life",
+    title: sc("NX-001.L").name,
     category: "Product",
     tags: ["AI", "Productivity", "SaaS"],
     description: "Personal AI Operating System - A unified dashboard for tasks, projects, habits, ideas, and AI assistant integration.",
@@ -23,18 +30,18 @@ const projects = [
     tech: ["Flutter", "Supabase", "Groq", "Claude", "OpenAI"],
     liveUrl: null,
     githubUrl: null,
-    logoSrc: "/nexaro-life.svg",
+    logoSrc: sc("NX-001.L").icon,
     screenshots: [
       "/images/nexaro-life-dashboard.webp",
       "/images/nexaro-life-ai.webp",
       "/images/nexaro-life-modules.webp"
     ],
-    color: "from-cyan-500 to-blue-600",
+    color: sc("NX-001.L").color,
     contactOnly: true,
   },
   {
     id: 2,
-    title: "Vicious OS",
+    title: sc("NX-002.O").name,
     category: "Product",
     tags: ["Esports", "Operations", "AI"],
     description: "The first esports-native operations system in MENA - built by Vicious Esports, who also developed the Alahsa Festival Platform. Combines team management, player data, task workflows, AI assistance, and content planning into one platform.",
@@ -49,18 +56,18 @@ const projects = [
     tech: ["Flutter Web", "Supabase", "Riverpod", "Groq AI"],
     liveUrl: null,
     githubUrl: null,
-    logoSrc: "/vicious-os.svg",
+    logoSrc: sc("NX-002.O").icon,
     screenshots: [
       "/images/vicious-os-dashboard.webp",
       "/images/vicious-os-players.webp",
       "/images/vicious-os-ai.webp"
     ],
-    color: "from-purple-500 to-pink-500",
+    color: sc("NX-002.O").color,
     contactOnly: true,
   },
   {
     id: 9,
-    title: "Nexaro Teams OS",
+    title: sc("NX-002.T").name,
     category: "Product",
     tags: ["Operations", "Teams", "AI", "SaaS"],
     description: "The core operational engine behind our specialized platforms. Nexaro Teams OS is a fully customized, ready-to-ship system for task management, team workflows, and AI-assisted operations.",
@@ -75,18 +82,18 @@ const projects = [
     tech: ["Next.js", "Flutter", "Supabase", "AI"],
     liveUrl: null,
     githubUrl: null,
-    logoSrc: "/teams-os.svg",
+    logoSrc: sc("NX-002.T").icon,
     screenshots: [
       "/images/teams-os-dashboard.webp",
       "/images/teams-os-workflows.webp",
       "/images/teams-os-security.webp"
     ],
-    color: "from-slate-500 to-zinc-500",
+    color: sc("NX-002.T").color,
     contactOnly: true,
   },
   {
     id: 6,
-    title: "Abdelrahman Mohamed Portfolio",
+    title: sc("WS-001").name,
     category: "Website",
     tags: ["Operations", "Esports", "Systems"],
     description: "Personal portfolio showcasing 3+ years of building scalable workflow ecosystems, internal platforms, and esports infrastructures across MENA.",
@@ -99,19 +106,19 @@ const projects = [
       "Vercel deployment"
     ],
     tech: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
-    liveUrl: "https://project-8qxfy.vercel.app/",
-    iframeUrl: "https://project-8qxfy.vercel.app/",
+    liveUrl: sc("WS-001").liveUrl ?? null,
+    iframeUrl: sc("WS-001").liveUrl,
     githubUrl: null,
-    logoSrc: "/personal-portfolio.svg",
+    logoSrc: sc("WS-001").icon,
     screenshots: [
       "/images/Abdelrahman-Mohamed-Portfolio.webp"
     ],
-    color: "from-blue-500 to-cyan-500",
+    color: sc("WS-001").color,
     contactOnly: false,
   },
   {
     id: 7,
-    title: "Alahsa Festival Platform",
+    title: sc("WS-002").name,
     category: "Website",
     tags: ["Festival", "Ticketing", "Saudi Arabia"],
     description: "Comprehensive festival management platform with ticketing, scheduling, and live event experiences.",
@@ -123,16 +130,16 @@ const projects = [
       "Mobile-responsive design"
     ],
     tech: ["Next.js", "Supabase", "Stripe", "Tailwind CSS"],
-    liveUrl: "https://project-i9fer.vercel.app/ar",
-    iframeUrl: "https://project-i9fer.vercel.app/ar",
+    liveUrl: sc("WS-002").liveUrl ?? null,
+    iframeUrl: sc("WS-002").liveUrl,
     githubUrl: null,
-    logoSrc: "/alahsa-festival.svg",
+    logoSrc: sc("WS-002").icon,
     screenshots: [
       "/images/alahsa-festival-home.webp",
       "/images/alahsa-festival-tickets.webp",
       "/images/alahsa-festival-schedule.webp"
     ],
-    color: "from-emerald-600 to-green-600",
+    color: sc("WS-002").color,
     contactOnly: false,
   },
   {
@@ -163,7 +170,7 @@ const projects = [
   },
   {
     id: 10,
-    title: "Pyramids Queue",
+    title: sc("WS-003").name,
     category: "Website",
     tags: ["Esports", "Events", "Registration"],
     description: "Online queue and registration platform for Pyramids Cup events.",
@@ -175,20 +182,20 @@ const projects = [
       "Mobile-responsive design"
     ],
     tech: ["Next.js", "Tailwind CSS"],
-    liveUrl: "https://project-c3kqs.vercel.app/",
-    iframeUrl: "https://project-c3kqs.vercel.app",
+    liveUrl: sc("WS-003").liveUrl ?? null,
+    iframeUrl: sc("WS-003").liveUrl,
     githubUrl: null,
-    logoSrc: "/pyramids-queue.png",
+    logoSrc: sc("WS-003").icon,
     screenshots: [
       "/images/pyramids-queue-home.webp",
       "/images/pyramids-queue-register.webp"
     ],
-    color: "from-yellow-500 to-orange-500",
+    color: sc("WS-003").color,
     contactOnly: false,
   },
   {
     id: 11,
-    title: "Nexaro Master Control",
+    title: sc("NX-008.M").name,
     category: "Product",
     tags: ["Dashboard", "Operations", "AI"],
     description: "Visual business command center for the Nexaro ecosystem.",
@@ -202,17 +209,17 @@ const projects = [
     tech: ["Next.js", "Supabase", "AI Integration"],
     liveUrl: null,
     githubUrl: null,
-    logoSrc: "/nexaro-master-control.svg",
+    logoSrc: sc("NX-008.M").icon,
     screenshots: [
       "/images/nexaro-master-dashboard.webp",
       "/images/nexaro-master-alerts.webp"
     ],
-    color: "from-violet-500 to-purple-600",
+    color: sc("NX-008.M").color,
     contactOnly: true,
   },
   {
     id: 14,
-    title: "Vicious Esports Website",
+    title: sc("WS-004").name,
     category: "Website",
     tags: ["Esports", "Website", "Bilingual"],
     description: "Official website for The Vicious, a Saudi esports organization.",
@@ -224,17 +231,17 @@ const projects = [
       "Bilingual Support (EN/AR)"
     ],
     tech: ["Next.js", "TypeScript", "Tailwind CSS"],
-    liveUrl: "https://vicioussa.vercel.app/en",
-    iframeUrl: "https://vicioussa.vercel.app/en",
+    liveUrl: sc("WS-004").liveUrl ?? null,
+    iframeUrl: sc("WS-004").liveUrl,
     githubUrl: null,
-    logoSrc: "/vicious-website.png",
+    logoSrc: sc("WS-004").icon,
     screenshots: [],
-    color: "from-purple-600 to-pink-600",
+    color: sc("WS-004").color,
     contactOnly: false,
   },
   {
     id: 15,
-    title: "Nexaro IP",
+    title: sc("NX-006.P").name,
     category: "Product",
     tags: ["IP", "Dashboard", "Operations"],
     description: "IP management and tracking platform with a dedicated operations dashboard.",
@@ -249,14 +256,14 @@ const projects = [
     liveUrl: null,
     iframeUrl: "https://nexaroip.vercel.app/en/how-it-works",
     githubUrl: null,
-    logoSrc: "/nexaro-ip.svg",
+    logoSrc: sc("NX-006.P").icon,
     screenshots: [],
-    color: "from-blue-600 to-indigo-600",
+    color: sc("NX-006.P").color,
     contactOnly: true,
   },
   {
     id: 12,
-    title: "Phygital KSA",
+    title: sc("WS-005").name,
     category: "Website",
     tags: ["Phygital", "Esports", "Saudi Arabia"],
     description: "National phygital competition platform across Saudi Arabia, hosting SEF Arena tournaments with Al-Ittihad Al-Saudi and deploying standardized frameworks across schools, universities, and corporates.",
@@ -269,22 +276,22 @@ const projects = [
       "Bilingual Support (EN/AR)"
     ],
     tech: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
-    liveUrl: "https://phygital-ksa.vercel.app",
-    iframeUrl: "https://phygital-ksa.vercel.app",
+    liveUrl: sc("WS-005").liveUrl ?? null,
+    iframeUrl: sc("WS-005").liveUrl,
     githubUrl: null,
-    logoSrc: "/phygital-ksa-logo.png",
+    logoSrc: sc("WS-005").icon,
     screenshots: [
       "/images/phygital-ksa-hero.webp",
       "/images/phygital-ksa-calendar.webp",
       "/images/phygital-ksa-directory.webp"
     ],
-    color: "from-indigo-500 to-purple-600",
+    color: sc("WS-005").color,
     contactOnly: false,
   },
   // Products without screenshots (logo only) - Moved to bottom
   {
     id: 3,
-    title: "Nexaro CRM",
+    title: sc("NX-003.C").name,
     category: "Product",
     tags: ["CRM", "AI", "Arabic/RTL"],
     description: "Smart CRM for modern businesses. Combines contact management, deal tracking, task management, and AI assistant with full Arabic RTL support.",
@@ -299,13 +306,13 @@ const projects = [
     tech: ["Flutter", "Supabase", "Groq AI", "Netlify"],
     liveUrl: "https://precious-moxie-67ff79.netlify.app",
     githubUrl: null,
-    logoSrc: "/nexaro-crm.svg",
-    color: "from-cyan-500 to-blue-600",
+    logoSrc: sc("NX-003.C").icon,
+    color: sc("NX-003.C").color,
     contactOnly: false,
   },
   {
     id: 4,
-    title: "Rent OS",
+    title: sc("NX-004.R").name,
     category: "Product",
     tags: ["PropTech", "RealEstate", "Finance", "AI"],
     description: "A comprehensive property management platform for landlords. Track rent payments, manage lease agreements, automate installment plans, and handle tenant communications in one unified dashboard.",
@@ -320,13 +327,13 @@ const projects = [
     tech: ["Flutter", "Supabase", "AI Integration"],
     liveUrl: "https://project-buner.vercel.app",
     githubUrl: null,
-    logoSrc: "/rent-os.svg",
-    color: "from-emerald-500 to-teal-500",
+    logoSrc: sc("NX-004.R").icon,
+    color: sc("NX-004.R").color,
     contactOnly: false,
   },
   {
     id: 5,
-    title: "Nexaro HR",
+    title: sc("NX-005.H").name,
     category: "Product",
     tags: ["HR", "Payroll", "Employee Management", "AI"],
     description: "Comprehensive HR management system for employee tracking, payroll processing, attendance monitoring, and performance management with AI-powered insights.",
@@ -341,8 +348,8 @@ const projects = [
     tech: ["Flutter", "Supabase", "AI Integration"],
     liveUrl: null,
     githubUrl: null,
-    logoSrc: "/nexaro-hr.svg",
-    color: "from-orange-500 to-red-500",
+    logoSrc: sc("NX-005.H").icon,
+    color: sc("NX-005.H").color,
     contactOnly: true,
   },
 ];
