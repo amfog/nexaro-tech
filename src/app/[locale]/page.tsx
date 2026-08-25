@@ -5,6 +5,8 @@ import NeonButton from "@/components/ui/neon-button";
 import GlassCard from "@/components/ui/glass-card";
 import ParticlesBg from "@/components/ui/particles-bg";
 import TechMarquee from "@/components/ui/tech-marquee";
+import MirrorHallCarousel from "@/components/hero/mirror-hall-carousel";
+import ProductNodeCard from "@/components/products/product-node-card";
 import { ArrowRight, Code, Smartphone, Rocket, Users, Bot, Star } from "lucide-react";
 import Link from "next/link";
 
@@ -22,39 +24,41 @@ export default function HomePage() {
       <div className="relative z-10">
         
         {/* 1. HERO */}
-        <section className="min-h-screen flex items-center justify-center pt-20 pb-32 px-4">
+        <section className="flex flex-col items-center justify-center pt-20 pb-32 px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <motion.div 
-              initial={{ opacity: 0, y: 20 }} 
-              animate={{ opacity: 1, y: 0 }} 
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
               className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[rgba(255,255,255,0.03)] mb-8 text-sm text-cyan-400"
             >
               <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse" />
               Now accepting Q4 2026 projects
             </motion.div>
-            
-            <motion.h1 
-              initial={{ opacity: 0, y: 30 }} 
-              animate={{ opacity: 1, y: 0 }} 
+
+            <motion.h1
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
               className="font-orbitron text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight"
             >
               We Build Digital Products<br />
               <span className="text-cyan-400">That Matter</span>
             </motion.h1>
-            
-            <motion.p 
-              initial={{ opacity: 0, y: 20 }} 
-              animate={{ opacity: 1, y: 0 }} 
+
+            <MirrorHallCarousel />
+
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4 }}
               className="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto mb-10"
             >
-              From concept to launch — websites, apps, and platforms that scale with cutting-edge technology and stunning design.
+              From concept to launch, websites, apps, and platforms that scale with cutting-edge technology and stunning design.
             </motion.p>
-            
-            <motion.div 
-              initial={{ opacity: 0, y: 20 }} 
-              animate={{ opacity: 1, y: 0 }} 
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.6 }}
               className="flex flex-col sm:flex-row items-center justify-center gap-4"
             >
@@ -129,14 +133,7 @@ export default function HomePage() {
                 { code: "NX-002.T", name: "Teams OS", desc: "Core Operations Platform", logo: "/teams-os.svg" },
                 { code: "NX-008.M", name: "Nexaro Command Center", desc: "Master Control Dashboard", logo: "/nexaro-master-control.svg", accent: "#FFD700" },
               ].map((node, i) => (
-                <div key={i} className="bg-[#0d122d] rounded-xl p-4 text-center transition-colors group" style={{border: `1px solid ${node.accent ? node.accent + '33' : 'rgba(255,255,255,0.05)'}`}}>
-                  <div className="mb-3 flex justify-center">
-                    <img src={node.logo} alt={node.name} className="w-full h-auto max-h-[80px] object-contain" />
-                  </div>
-                  <span className="text-xs font-mono block mb-1" style={{color: node.accent ? node.accent + 'cc' : '#6b7280'}}>{node.code}</span>
-                  <h4 className="font-bold text-white text-sm group-hover:text-cyan-400 transition-colors">{node.name}</h4>
-                  <p className="text-xs text-gray-400 mt-1">{node.desc}</p>
-                </div>
+                <ProductNodeCard key={i} code={node.code} name={node.name} desc={node.desc} logo={node.logo} accent={node.accent} />
               ))}
             </div>
           </div>
