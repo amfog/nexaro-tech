@@ -65,7 +65,7 @@ function RingCards({ radius }: { radius: number }) {
         >
           <div className={`mh-card-inner bg-gradient-to-br ${item.color}`}>
             <div className="mh-card-content">
-              {item.type === "website" && item.liveUrl ? (
+              {Boolean(item.liveUrl) ? (
                 <WebsiteVisual item={item} />
               ) : (
                 <div className="mh-card-icon-wrap">
@@ -235,7 +235,7 @@ export default function MirrorHallCarousel() {
         .mh-perspective {
           position: relative;
           width: 100%;
-          height: 220px;
+          height: 253px;
           padding-top: 10px;
           padding-bottom: 0;
           perspective: 1800px;
@@ -248,7 +248,7 @@ export default function MirrorHallCarousel() {
         .mh-ring-reflection {
           position: relative;
           width: 180px;
-          height: 115px;
+          height: 132px;
           transform-style: preserve-3d;
         }
 
@@ -274,7 +274,7 @@ export default function MirrorHallCarousel() {
         .mh-card-slot {
           position: absolute;
           width: 180px;
-          height: 115px;
+          height: 132px;
           left: 0;
           top: 0;
           border-radius: 10px;
@@ -365,6 +365,7 @@ export default function MirrorHallCarousel() {
         .mh-hint {
           position: relative;
           margin-top: 8px;
+          margin-bottom: 16px;
           text-align: center;
           color: #a0a0b0;
           font-size: 12px;
@@ -393,17 +394,17 @@ export default function MirrorHallCarousel() {
 
         @media (min-width: 1024px) {
           .mh-perspective {
-            height: 260px;
+            height: 299px;
             perspective: 2200px;
           }
           .mh-ring,
           .mh-ring-reflection {
             width: 220px;
-            height: 140px;
+            height: 161px;
           }
           .mh-card-slot {
             width: 220px;
-            height: 140px;
+            height: 161px;
             border-radius: 12px;
           }
           .mh-card-inner {
@@ -422,17 +423,17 @@ export default function MirrorHallCarousel() {
 
         @media (min-width: 1440px) {
           .mh-perspective {
-            height: 290px;
+            height: 334px;
             perspective: 2600px;
           }
           .mh-ring,
           .mh-ring-reflection {
             width: 260px;
-            height: 165px;
+            height: 190px;
           }
           .mh-card-slot {
             width: 260px;
-            height: 165px;
+            height: 190px;
             border-radius: 14px;
           }
           .mh-card-inner {

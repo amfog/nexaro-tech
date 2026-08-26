@@ -80,7 +80,8 @@ const projects = [
       "Cross-Department Communication Hub"
     ],
     tech: ["Next.js", "Flutter", "Supabase", "AI"],
-    liveUrl: null,
+    liveUrl: sc("NX-002.T").liveUrl ?? null,
+    iframeUrl: sc("NX-002.T").liveUrl,
     githubUrl: null,
     logoSrc: sc("NX-002.T").icon,
     screenshots: [
@@ -89,7 +90,7 @@ const projects = [
       "/images/teams-os-security.webp"
     ],
     color: sc("NX-002.T").color,
-    contactOnly: true,
+    contactOnly: false,
   },
   {
     id: 6,
