@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import GlassCard from "@/components/ui/glass-card";
 import NeonButton from "@/components/ui/neon-button";
-import { ExternalLink, ArrowLeft, Code, Mail } from "lucide-react";
+import { ExternalLink, ArrowLeft, Code, Mail, FileText } from "lucide-react";
 import Link from "next/link";
 import { showcaseItems } from "@/data/nexaro-showcase";
 
@@ -173,18 +173,19 @@ const projects = [
     id: 10,
     title: sc("WS-003").name,
     category: "Website",
-    tags: ["Esports", "Events", "Registration"],
-    description: "Online queue and registration platform for Pyramids Cup events.",
+    tags: ["Esports", "Operations", "Multi-tenant"],
+    description: "Four production systems on one Postgres database that run a 500-player MENA Wild Rift circuit end to end — a Discord bot, the staff platform, and the public site.",
     features: [
-      "Online queue management",
-      "Event registration system",
-      "Pyramids Cup integration",
-      "Real-time participant tracking",
-      "Mobile-responsive design"
+      "536 players, 195+ matches, 7 circuits on one deployment",
+      "4 systems on one Postgres database: Discord bot, Teams OS, public site, database",
+      "147K live views, 4,394 hours watched",
+      "57 staff screens, 36 of them a dedicated esports module",
+      "86,000 lines across bot, staff platform, public site, and marketing site"
     ],
-    tech: ["Next.js", "Tailwind CSS"],
+    tech: ["Next.js", "TypeScript", "discord.js", "Flutter", "Supabase", "Postgres"],
     liveUrl: sc("WS-003").liveUrl ?? null,
     iframeUrl: sc("WS-003").liveUrl,
+    caseStudyUrl: "/case-studies/pyramids-queue",
     githubUrl: null,
     logoSrc: sc("WS-003").icon,
     screenshots: [
@@ -440,6 +441,11 @@ export default function PortfolioPage() {
                       {project.githubUrl && (
                         <NeonButton variant="secondary" size="sm" href={project.githubUrl}>
                           <Code className="w-4 h-4" /> Source Code
+                        </NeonButton>
+                      )}
+                      {project.caseStudyUrl && (
+                        <NeonButton variant="secondary" size="sm" href={project.caseStudyUrl}>
+                          <FileText className="w-4 h-4" /> Read Case Study
                         </NeonButton>
                       )}
                     </div>
