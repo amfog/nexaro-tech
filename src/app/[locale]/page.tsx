@@ -169,16 +169,30 @@ export default function HomePage() {
                 </div>
 
                 <div>
-                  {/* The screenshot rather than a live frame: the site sends
-                      X-Frame-Options DENY, which is correct for a site that
-                      takes registrations and cannot be embedded because of it. */}
+                  {/* THE LIVE SITE, NOT A SCREENSHOT.
+
+                      Same treatment as the hero carousel and the portfolio
+                      cards: a scaled iframe, pointer events off so it reads as
+                      an image and never steals a scroll. A screenshot goes
+                      stale the first time the site changes and nobody
+                      remembers to retake it; this cannot. */}
                   <div className="rounded-2xl bg-gradient-to-br from-yellow-500/20 to-orange-500/20 p-2 mb-6">
-                    <img
-                      src="/images/pyramids-queue-home.webp"
-                      alt="The Pyramids Queue public site"
-                      loading="lazy"
-                      className="w-full rounded-xl border border-[rgba(255,255,255,0.08)]"
-                    />
+                    <div className="relative overflow-hidden rounded-xl border border-[rgba(255,255,255,0.08)] bg-[#0A0E27] aspect-[16/10]">
+                      <iframe
+                        src="https://project-c3kqs.vercel.app/"
+                        title="The Pyramids Queue public site"
+                        loading="lazy"
+                        sandbox="allow-scripts allow-same-origin"
+                        style={{
+                          width: "200%",
+                          height: "200%",
+                          border: "none",
+                          transform: "scale(0.5)",
+                          transformOrigin: "top left",
+                          pointerEvents: "none",
+                        }}
+                      />
+                    </div>
                   </div>
 
                   <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">

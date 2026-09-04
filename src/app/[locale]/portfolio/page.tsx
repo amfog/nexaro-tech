@@ -35,14 +35,12 @@ const projects = [
     ],
     tech: ["Next.js", "TypeScript", "discord.js", "Flutter", "Supabase", "Postgres"],
     liveUrl: sc("WS-003").liveUrl ?? null,
-    // NO iframeUrl ON PURPOSE, AND IT IS NOT A MISTAKE TO "FIX" LATER.
-    //
-    // The card showed a grey box with a broken-image icon because the Pyramids
-    // Queue site sends `X-Frame-Options: DENY`. That header is deliberate: it
-    // is what stops somebody framing a live tournament site inside a fake one
-    // and collecting registrations. Weakening a production security header so a
-    // marketing card looks nicer is the wrong trade, so this card uses the
-    // screenshots instead.
+    // The live preview is back. It went grey when the Pyramids Queue site
+    // started sending X-Frame-Options: DENY, which blocked every embed
+    // including ours. That site now sends a CSP frame-ancestors allowlist
+    // naming this one instead, so the frame renders and every other origin is
+    // still refused. Nothing to change here; it just works again.
+    iframeUrl: sc("WS-003").liveUrl,
     caseStudyUrl: "/case-studies/pyramids-queue",
     githubUrl: null,
     logoSrc: sc("WS-003").icon,
