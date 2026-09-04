@@ -91,7 +91,7 @@ export default function PyramidsQueueCaseStudy() {
             <ArrowLeft className="w-4 h-4" /> Back to Portfolio
           </Link>
           <p className="font-orbitron text-xs md:text-sm tracking-[0.3em] uppercase text-cyan-400 mb-5">
-            Case Study — Pyramids Queue
+            Case Study: Pyramids Queue
           </p>
           <h1 className="font-orbitron text-3xl md:text-5xl font-bold leading-tight max-w-4xl">
             One operator was running a 500-player esports circuit out of a spreadsheet, a Discord
@@ -170,7 +170,7 @@ export default function PyramidsQueueCaseStudy() {
               />
             </div>
             <figcaption className="text-xs text-gray-500 mt-3 text-center">
-              Nexaro Teams OS — operations dashboard
+              Nexaro Teams OS, the operations dashboard
             </figcaption>
           </figure>
         </motion.section>
@@ -206,7 +206,7 @@ export default function PyramidsQueueCaseStudy() {
               />
             </div>
             <figcaption className="text-xs text-gray-500 mt-3 text-center">
-              Nexaro Teams OS — player records, where extracted stats wait for a human check
+              Nexaro Teams OS player records, where extracted stats wait for a human check
             </figcaption>
           </figure>
         </motion.section>
@@ -314,7 +314,7 @@ export default function PyramidsQueueCaseStudy() {
               />
             </div>
             <figcaption className="text-xs text-gray-500 mt-3 text-center">
-              Nexaro Teams OS — media reporting
+              Nexaro Teams OS media reporting
             </figcaption>
           </figure>
         </motion.section>

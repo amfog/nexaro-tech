@@ -71,7 +71,7 @@ export default function ServicesPage() {
             Our <span className="text-cyan-400">Services</span>
           </h1>
           <p className="text-gray-300 text-lg max-w-2xl mx-auto">
-            We don't just build tools — we build systems that eliminate operational chaos and accelerate growth.
+            We don't just build tools, we build systems that eliminate operational chaos and accelerate growth.
           </p>
         </motion.div>
 

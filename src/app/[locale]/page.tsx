@@ -104,6 +104,104 @@ export default function HomePage() {
           </div>
         </section>
 
+        {/* 2b. FEATURED CASE STUDY */}
+        {/*
+          BETWEEN WHAT WE DO AND THE PRODUCT FAMILY, ON PURPOSE.
+
+          "What We Do" is a list of claims. The node family is a list of things
+          we own. Neither is evidence. This sits between them and answers the
+          question a prospect is actually holding: has any of this been run in
+          anger by somebody who is not you. Numbers first, prose second, because
+          536 players is a fact and "scalable platform" is an adjective.
+        */}
+        <section className="py-24 px-4">
+          <div className="max-w-6xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-80px" }}
+              transition={{ duration: 0.5 }}
+              className="rounded-3xl border border-cyan-500/20 bg-gradient-to-br from-cyan-500/[0.07] via-[rgba(255,255,255,0.02)] to-purple-500/[0.07] p-8 md:p-12"
+            >
+              <p className="font-orbitron text-xs tracking-[0.3em] uppercase text-cyan-400 mb-4">
+                Featured case study
+              </p>
+
+              <div className="grid lg:grid-cols-2 gap-10 items-center">
+                <div>
+                  <h2 className="font-orbitron text-2xl md:text-4xl font-bold leading-tight mb-5">
+                    A 500-player esports circuit ran on a spreadsheet.
+                    <br />
+                    <span className="text-cyan-400">We replaced it with four systems on one database.</span>
+                  </h2>
+
+                  <p className="text-gray-300 leading-relaxed mb-6">
+                    A Discord bot that registers teams from a pasted roster and runs match night,
+                    a staff platform where every result is verified by a human before it is
+                    published, and a public site where standings, player statistics and champion
+                    picks update within a minute of a referee confirming a score.
+                  </p>
+
+                  <div className="flex flex-wrap gap-2 mb-8">
+                    {["Next.js", "TypeScript", "discord.js", "Flutter", "Supabase", "Postgres"].map((t) => (
+                      <span
+                        key={t}
+                        className="px-3 py-1 rounded-full text-xs bg-[rgba(255,255,255,0.05)] border border-[rgba(255,255,255,0.1)] text-gray-300"
+                      >
+                        {t}
+                      </span>
+                    ))}
+                  </div>
+
+                  <div className="flex flex-wrap gap-3">
+                    <Link href="/en/case-studies/pyramids-queue">
+                      <NeonButton>Read the case study</NeonButton>
+                    </Link>
+                    <a
+                      href="https://project-c3kqs.vercel.app/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-[rgba(255,255,255,0.15)] text-sm text-gray-200 hover:border-cyan-400/50 hover:text-white transition-colors"
+                    >
+                      View it live <ArrowRight className="w-4 h-4" />
+                    </a>
+                  </div>
+                </div>
+
+                <div>
+                  {/* The screenshot rather than a live frame: the site sends
+                      X-Frame-Options DENY, which is correct for a site that
+                      takes registrations and cannot be embedded because of it. */}
+                  <div className="rounded-2xl bg-gradient-to-br from-yellow-500/20 to-orange-500/20 p-2 mb-6">
+                    <img
+                      src="/images/pyramids-queue-home.webp"
+                      alt="The Pyramids Queue public site"
+                      loading="lazy"
+                      className="w-full rounded-xl border border-[rgba(255,255,255,0.08)]"
+                    />
+                  </div>
+
+                  <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+                    {[
+                      { value: "536", label: "Players in one cup" },
+                      { value: "195+", label: "Matches operated" },
+                      { value: "147K", label: "Live views" },
+                      { value: "86K", label: "Lines of code" },
+                    ].map((stat) => (
+                      <div key={stat.label}>
+                        <p className="font-orbitron text-2xl md:text-3xl font-bold text-cyan-400">
+                          {stat.value}
+                        </p>
+                        <p className="text-xs text-gray-400 mt-1 leading-snug">{stat.label}</p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </section>
+
         {/* 3. NODE FAMILY / ECOSYSTEM */}
         <section className="py-24 px-4 bg-[#080b1a]">
           <div className="max-w-5xl mx-auto text-center mb-12">
@@ -112,7 +210,7 @@ export default function HomePage() {
           </div>
 
           <div className="max-w-6xl mx-auto space-y-4">
-            {/* MASTER card — full width */}
+            {/* MASTER card, full width */}
             <div className="bg-gradient-to-r from-cyan-500/10 to-purple-500/10 border border-cyan-500/20 rounded-xl p-6 flex flex-col sm:flex-row items-center justify-center gap-6">
               <img src="/nexaro-master.svg" alt="Nexaro Platform" className="h-32 w-auto" />
               <div className="text-center sm:text-left">
@@ -122,7 +220,7 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/* Product grid — 2 cols mobile, 4 cols desktop */}
+            {/* Product grid: 2 cols mobile, 4 cols desktop */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
               {[
                 { code: "NX-001.L", name: "Nexaro Life", desc: "Personal AI OS", logo: "/nexaro-life.svg" },

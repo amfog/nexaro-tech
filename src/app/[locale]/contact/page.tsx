@@ -14,7 +14,7 @@ export default function ContactPage() {
             Let's Build <span className="text-cyan-400">Together</span>
           </h1>
           <p className="text-gray-300 text-lg max-w-2xl mx-auto">
-            Whether you need a full AI platform, a high-scale event system, or a stunning website—we are ready.
+            Whether you need a full AI platform, a high-scale event system, or a stunning website, we are ready.
           </p>
         </motion.div>
 

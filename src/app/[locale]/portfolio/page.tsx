@@ -14,6 +14,45 @@ function sc(code: string) {
 }
 
 const projects = [
+  // PYRAMIDS QUEUE IS FIRST DELIBERATELY.
+  //
+  // It is the only entry with a written case study, the only one with public
+  // numbers behind it, and the largest thing here by a distance. A portfolio
+  // is read from the top and mostly abandoned before the bottom, so the
+  // strongest piece of evidence goes where it will actually be seen.
+  {
+    id: 10,
+    title: sc("WS-003").name,
+    category: "Website",
+    tags: ["Esports", "Operations", "Multi-tenant"],
+    description: "Four production systems on one Postgres database that run a 500-player MENA Wild Rift circuit end to end: a Discord bot, the staff platform, and the public site.",
+    features: [
+      "536 players, 195+ matches, 7 circuits on one deployment",
+      "4 systems on one Postgres database: Discord bot, Teams OS, public site, database",
+      "147K live views, 4,394 hours watched",
+      "57 staff screens, 36 of them a dedicated esports module",
+      "86,000 lines across bot, staff platform, public site, and marketing site"
+    ],
+    tech: ["Next.js", "TypeScript", "discord.js", "Flutter", "Supabase", "Postgres"],
+    liveUrl: sc("WS-003").liveUrl ?? null,
+    // NO iframeUrl ON PURPOSE, AND IT IS NOT A MISTAKE TO "FIX" LATER.
+    //
+    // The card showed a grey box with a broken-image icon because the Pyramids
+    // Queue site sends `X-Frame-Options: DENY`. That header is deliberate: it
+    // is what stops somebody framing a live tournament site inside a fake one
+    // and collecting registrations. Weakening a production security header so a
+    // marketing card looks nicer is the wrong trade, so this card uses the
+    // screenshots instead.
+    caseStudyUrl: "/case-studies/pyramids-queue",
+    githubUrl: null,
+    logoSrc: sc("WS-003").icon,
+    screenshots: [
+      "/images/pyramids-queue-home.webp",
+      "/images/pyramids-queue-register.webp"
+    ],
+    color: sc("WS-003").color,
+    contactOnly: false,
+  },
   {
     id: 1,
     title: sc("NX-001.L").name,
@@ -168,32 +207,6 @@ const projects = [
     ],
     color: "from-purple-500 to-pink-600",
     contactOnly: true,
-  },
-  {
-    id: 10,
-    title: sc("WS-003").name,
-    category: "Website",
-    tags: ["Esports", "Operations", "Multi-tenant"],
-    description: "Four production systems on one Postgres database that run a 500-player MENA Wild Rift circuit end to end — a Discord bot, the staff platform, and the public site.",
-    features: [
-      "536 players, 195+ matches, 7 circuits on one deployment",
-      "4 systems on one Postgres database: Discord bot, Teams OS, public site, database",
-      "147K live views, 4,394 hours watched",
-      "57 staff screens, 36 of them a dedicated esports module",
-      "86,000 lines across bot, staff platform, public site, and marketing site"
-    ],
-    tech: ["Next.js", "TypeScript", "discord.js", "Flutter", "Supabase", "Postgres"],
-    liveUrl: sc("WS-003").liveUrl ?? null,
-    iframeUrl: sc("WS-003").liveUrl,
-    caseStudyUrl: "/case-studies/pyramids-queue",
-    githubUrl: null,
-    logoSrc: sc("WS-003").icon,
-    screenshots: [
-      "/images/pyramids-queue-home.webp",
-      "/images/pyramids-queue-register.webp"
-    ],
-    color: sc("WS-003").color,
-    contactOnly: false,
   },
   {
     id: 11,
