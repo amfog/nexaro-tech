@@ -1,6 +1,10 @@
 import Link from "next/link";
+import { useLocale, useTranslations } from "next-intl";
 
 export default function Footer() {
+  const locale = useLocale();
+  const t = useTranslations("footer");
+
   return (
     <footer className="border-t border-[rgba(255,255,255,0.05)] py-12 bg-[#080b1a]">
       <div className="max-w-7xl mx-auto px-4">
@@ -55,6 +59,10 @@ export default function Footer() {
         
         <div className="border-t border-[rgba(255,255,255,0.05)] pt-8 text-center text-sm text-gray-500">
           © {new Date().getFullYear()} Nexaro.tech. All rights reserved.
+          <span className="mx-2" aria-hidden="true">·</span>
+          <Link href={`/${locale}/legal`} className="hover:text-cyan-400 transition-colors">
+            {t("legal")}
+          </Link>
         </div>
       </div>
     </footer>

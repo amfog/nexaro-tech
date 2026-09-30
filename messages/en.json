@@ -64,5 +64,142 @@
     "about": "About",
     "contact": "Contact",
     "blog": "Blog"
+  },
+  "legal": {
+    "meta": {
+      "title": "Legal | Nexaro.tech",
+      "description": "Privacy policy and terms of use for nexaro.tech: what reaches us when you get in touch, what this site does and does not collect, and the terms for using it."
+    },
+    "title": "Legal",
+    "accent": "Notices",
+    "subtitle": "Privacy policy and terms of use. Last updated {date}.",
+    "date": "23 September 2026",
+    "updated": "Last updated {date}.",
+    "pending": "(pending)",
+    "nav": {
+      "label": "On this page",
+      "operators": "Who operates this",
+      "privacy": "Privacy",
+      "terms": "Terms of use",
+      "ip": "Intellectual property",
+      "contact": "Contact"
+    },
+    "operators": {
+      "title": "Who operates this",
+      "intro": "This site belongs to Nexaro Tech, a technology studio that designs and builds websites, apps and operations platforms. It is run from the Arab Republic of Egypt.",
+      "role": "<b>Nexaro Tech</b> operates this website and decides what happens to anything you send us through it. Questions about what we hold about you, or requests to correct or delete it, come to us at the address at the bottom of this page.",
+      "business": {
+        "h": "Business registration",
+        "p": "This section will carry the registered business details for Nexaro Tech once they are confirmed for publication. Until then, the role above is what applies: Nexaro Tech operates this site and answers for it."
+      }
+    },
+    "privacy": {
+      "title": "Privacy",
+      "intro": "This site is a shop window, not an app. You do not create an account, and most visitors send us nothing at all. What follows is everything that does reach us, described as it actually works today.",
+      "what": {
+        "h": "What we receive",
+        "items": {
+          "email": "<b>If you email us</b>: your name, your email address, and whatever you tell us about your project or your company. Our inbox is hosted by Google (Gmail), so your email is stored there.",
+          "cookie": "<b>One language cookie</b>: the site may store a small cookie named NEXT_LOCALE to remember whether you chose English or Arabic. It holds only the language code.",
+          "hosting": "<b>Standard request data</b>: like any website, the servers that deliver these pages receive your IP address, your browser type and the page you asked for. This site is hosted on Vercel, which processes that data to serve and protect the site."
+        }
+      },
+      "form": {
+        "h": "The contact form",
+        "p": "At the time of writing, the form on the contact page does not send what you type anywhere. Nothing entered in it reaches us, and nothing entered in it is stored. Please email us directly instead. If the form is connected in future, this page will be updated to say where its messages go."
+      },
+      "analytics": {
+        "h": "Analytics and advertising",
+        "p": "This site does not currently run analytics, and it does not use advertising cookies or third party advertising trackers. If we add analytics, this section will name the provider."
+      },
+      "previews": {
+        "h": "Live previews of other sites",
+        "p": "Some pages show live previews of websites we have built, loaded directly from those sites. When a preview loads, your browser connects to that website, and that site's own privacy policy and cookies apply to it, not this page. Links to our Facebook and LinkedIn pages work the same way."
+      },
+      "why": {
+        "h": "How we use it",
+        "p": "To reply to you, to understand what you need and, if we agree to work together, to prepare a proposal and deliver the project. We do not sell your details, and we do not use them for advertising."
+      },
+      "who": {
+        "h": "Who else sees it",
+        "items": {
+          "providers": "<b>Service providers</b> that run our tools on our behalf, including Google for email and Vercel for hosting.",
+          "team": "<b>People working on your project</b>, such as a designer or developer we bring in, where that is needed to deliver it. If you ask, we will tell you who is involved.",
+          "authorities": "<b>Authorities</b>, where the law requires it."
+        }
+      },
+      "keep": {
+        "h": "How long we keep it",
+        "p1": "There is no automatic deletion schedule, and we will not pretend there is one. Enquiry emails stay in our inbox while a conversation or a working relationship is active, and afterwards for as long as they are useful for following up or for our records.",
+        "p2": "If you become a client, the records of the project, such as agreements, invoices and correspondence, are kept for as long as we need them for accounting, for supporting the work we delivered, and to meet any legal obligation."
+      },
+      "rights": {
+        "h": "Correction and deletion",
+        "p1": "You can ask us what we hold about you, and ask us to correct it. We will.",
+        "p2": "You can ask us to delete your details. We will review the request and, where we are able to, act on it. We may need to keep some records, for example an invoice or a signed agreement, where we have a legal or accounting reason to, or where they are needed to resolve a dispute."
+      },
+      "security": {
+        "h": "Security",
+        "p": "Access to our inbox and internal tools is restricted to Nexaro Tech. No system is perfectly secure, and we do not claim otherwise. If you believe you have found a vulnerability in this site, tell us before disclosing it publicly."
+      },
+      "age": {
+        "h": "Children",
+        "p": "This site is meant for businesses and adults. It is not aimed at children, and we do not knowingly collect details from anyone under 18. If you believe a child has sent us personal information, contact us and we will delete it."
+      }
+    },
+    "terms": {
+      "title": "Terms of use",
+      "site": {
+        "h": "Using this website",
+        "p1": "You may read, link to and share anything on this site. Do not copy our designs, code or written content and present them as your own, do not scrape the site at a rate that degrades it for other people, and do not attempt to reach anything that is not public.",
+        "p2": "Project descriptions, figures and case studies on this site are accurate to the best of our knowledge when they were written. They describe past work, and they are not a promise that another project will produce the same results."
+      },
+      "enquiries": {
+        "h": "Enquiries and proposals",
+        "p": "Contacting us, and any estimate or proposal we send, does not create a contract. A project starts when both sides agree its scope, price and terms in writing. Where a written agreement exists, it governs that project and takes precedence over this page."
+      },
+      "delivered": {
+        "h": "Ownership of delivered work",
+        "p1": "Who owns the work we deliver, including code, designs and content, is set by the written agreement for each project. This page does not change what an agreement says.",
+        "p2": "We have not yet published standard terms for projects whose agreement does not address ownership. If you are a client and your agreement does not cover it, ask us and we will set it out in writing."
+      },
+      "warranty": {
+        "h": "No warranty",
+        "p": "This site is provided as it is. We do not guarantee it will always be available or free of errors, and we are not liable for losses arising from its use, except where that liability cannot be excluded by law. This does not affect anything a signed project agreement says."
+      },
+      "changes": {
+        "h": "Changes",
+        "p": "We may update this page. The date at the foot of it is when it last changed."
+      },
+      "law": {
+        "h": "Governing law",
+        "p1": "Nexaro Tech operates from <b>the Arab Republic of Egypt</b>. These terms, and anything arising out of this website, are governed by Egyptian law, and the courts of Egypt have jurisdiction.",
+        "p2": "If the consumer protection law of the country you live in gives you rights that cannot be signed away, this paragraph does not take them from you. Client projects are governed by their own agreements, which may say something different."
+      }
+    },
+    "ip": {
+      "title": "Intellectual property",
+      "ours": {
+        "h": "What belongs to us",
+        "p": "The Nexaro Tech name and logo, the Nexaro product names and branding, the design and code of this website, and the written content on it belong to Nexaro Tech."
+      },
+      "clients": {
+        "h": "Client work shown on this site",
+        "p1": "The portfolio and case studies show projects Nexaro Tech has worked on. Client names, logos, websites and screenshots belong to those clients. Showing them here describes our part in the work. It is not a statement by the client, and it does not mean the client endorses anything else on this site.",
+        "p2": "We are confirming that every client shown has agreed to appear here. If your organisation is shown and you want that changed or removed, email us and we will act on it promptly."
+      },
+      "tech": {
+        "h": "Technology names and logos",
+        "p": "Logos of the tools and platforms we build with, such as those in the Powered By section, belong to their owners. They are shown to say what we use. Showing them does not mean those companies endorse or partner with Nexaro Tech."
+      }
+    },
+    "contact": {
+      "title": "Contact",
+      "p1": "For anything about your details, a correction or a deletion request, email <email>nexarotch@gmail.com</email> with the subject line \"Data request\".",
+      "p2": "For a project enquiry, use the same address. It reaches us directly."
+    }
+  },
+  "footer": {
+    "legal": "Legal"
   }
 }
