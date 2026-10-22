@@ -112,6 +112,17 @@ export default function PyramidsQueueCaseStudy() {
           </div>
         </motion.div>
 
+        {/* 21 Oct 2026: the newest edition has its own, longer study. */}
+        <Link
+          href="/en/case-studies/pyramids-cup-8"
+          className="mt-10 flex items-center justify-between gap-4 rounded-2xl border border-cyan-500/30 bg-cyan-500/[0.05] p-5 hover:border-cyan-400/60 transition-colors"
+        >
+          <span className="text-sm text-gray-200">
+            This page covers the system up to Cup 7. <span className="text-cyan-400 font-semibold">Read the Pyramids Cup 8 case study</span>
+          </span>
+          <ArrowLeft className="w-4 h-4 text-cyan-400 rotate-180 shrink-0" />
+        </Link>
+
         {/* The problem */}
         <motion.section {...reveal} className="mt-16">
           <div className="flex items-center gap-3 mb-6">

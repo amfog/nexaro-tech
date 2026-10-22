@@ -25,11 +25,11 @@ const projects = [
     title: sc("WS-003").name,
     category: "Website",
     tags: ["Esports", "Operations", "Multi-tenant"],
-    description: "Four production systems on one Postgres database that run a 500-player MENA Wild Rift circuit end to end: a Discord bot, the staff platform, and the public site.",
+    description: "The system behind Pyramids Cup 8, the MENA Wild Rift circuit: a tournament bot, the Teams OS back office and the public site on one Postgres database. Earlier editions ran on it too.",
     features: [
-      "536 players, 195+ matches, 7 circuits on one deployment",
+      "Pyramids Cup 8: 331 matches, 364 players, 24 countries",
       "4 systems on one Postgres database: Discord bot, Teams OS, public site, database",
-      "147K live views, 4,394 hours watched",
+      "Cup 7: 536 players, 195+ matches, 147K live views",
       "57 staff screens, 36 of them a dedicated esports module",
       "86,000 lines across bot, staff platform, public site, and marketing site"
     ],
@@ -41,7 +41,7 @@ const projects = [
     // naming this one instead, so the frame renders and every other origin is
     // still refused. Nothing to change here; it just works again.
     iframeUrl: sc("WS-003").liveUrl,
-    caseStudyUrl: "/case-studies/pyramids-queue",
+    caseStudyUrl: "/case-studies/pyramids-cup-8",
     githubUrl: null,
     logoSrc: sc("WS-003").icon,
     screenshots: [
@@ -440,10 +440,10 @@ export default function PortfolioPage() {
 
                     <div className="flex gap-4">
                       {project.contactOnly ? (
-                        <a href="/en/contact" className="relative font-semibold rounded-xl transition-all duration-300 overflow-hidden cursor-pointer bg-gradient-to-r from-neon-cyan to-neon-purple text-space hover:opacity-90 px-4 py-2 text-sm shadow-[0_0_15px_rgba(0,245,255,0.5)] hover:shadow-[0_0_25px_rgba(0,245,255,0.7)] inline-flex items-center gap-2">
+                        <Link href="/en/contact" className="relative font-semibold rounded-xl transition-all duration-300 overflow-hidden cursor-pointer bg-gradient-to-r from-neon-cyan to-neon-purple text-space hover:opacity-90 px-4 py-2 text-sm shadow-[0_0_15px_rgba(0,245,255,0.5)] hover:shadow-[0_0_25px_rgba(0,245,255,0.7)] inline-flex items-center gap-2">
                           <Mail className="w-4 h-4" />
                           <span>Reach Out to Learn More</span>
-                        </a>
+                        </Link>
                       ) : (
                         <NeonButton size="sm" href={project.liveUrl ?? undefined}>
                           <ExternalLink className="w-4 h-4" /> View Live

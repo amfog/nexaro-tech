@@ -24,7 +24,7 @@ export default function HomePage() {
       <div className="relative z-10">
         
         {/* 1. HERO */}
-        <section className="flex flex-col items-center justify-center pt-[5px] pb-32 px-4">
+        <section className="flex flex-col items-center justify-center pt-16 md:pt-24 pb-16 px-4">
           <div className="max-w-4xl mx-auto text-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -45,13 +45,11 @@ export default function HomePage() {
               <span className="text-cyan-400">That Matter</span>
             </motion.h1>
 
-            <MirrorHallCarousel />
-
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4 }}
-              className="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto mb-6"
+              className="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto mb-8"
             >
               From concept to launch, websites, apps, and platforms that scale with cutting-edge technology and stunning design.
             </motion.p>
@@ -73,6 +71,98 @@ export default function HomePage() {
                 </NeonButton>
               </Link>
             </motion.div>
+          </div>
+        </section>
+
+        {/* 2. FEATURED CASE STUDY, RIGHT AFTER THE HERO (21 Oct 2026)
+            The proof comes before the list of services: Pyramids Cup 8, then
+            the off-season side project as its own, smaller case study. Cup
+            numbers only; the side project's numbers are never added to them. */}
+        <section className="pb-24 px-4">
+          <div className="max-w-6xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-80px" }}
+              transition={{ duration: 0.5 }}
+              className="rounded-3xl border border-cyan-500/20 bg-gradient-to-br from-cyan-500/[0.07] via-[rgba(255,255,255,0.02)] to-yellow-500/[0.06] p-6 md:p-12"
+            >
+              <p className="font-orbitron text-xs tracking-[0.3em] uppercase text-cyan-400 mb-4">
+                Featured case study · Pyramids Cup 8
+              </p>
+
+              <div className="grid lg:grid-cols-2 gap-10 items-center">
+                <div>
+                  <h2 className="font-orbitron text-2xl md:text-4xl font-bold leading-tight mb-5">
+                    Six weeks, four stages, 331 matches.
+                    <br />
+                    <span className="text-cyan-400">One system ran all of it.</span>
+                  </h2>
+
+                  <p className="text-gray-300 leading-relaxed mb-6">
+                    The MENA Wild Rift circuit inside the Rift Legends ecosystem. We built and operated the tournament
+                    bot, the operations app, the public website and the database behind it: every result entered once,
+                    checked by a person, and published in Arabic and English within minutes.
+                  </p>
+
+                  <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-8">
+                    {[
+                      { value: "331", label: "Matches" },
+                      { value: "364", label: "Players" },
+                      { value: "24", label: "Countries" },
+                      { value: "3,660", label: "Discord members" },
+                    ].map((stat) => (
+                      <div key={stat.label}>
+                        <p className="font-orbitron text-2xl md:text-3xl font-bold text-cyan-400">{stat.value}</p>
+                        <p className="text-xs text-gray-400 mt-1 leading-snug">{stat.label}</p>
+                      </div>
+                    ))}
+                  </div>
+
+                  <div className="flex flex-wrap gap-3">
+                    <Link href="/en/case-studies/pyramids-cup-8">
+                      <NeonButton>Read the case study</NeonButton>
+                    </Link>
+                    <a
+                      href="https://pyramidsqueue.com"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-[rgba(255,255,255,0.15)] text-sm text-gray-200 hover:border-cyan-400/50 hover:text-white transition-colors"
+                    >
+                      View it live <ArrowRight className="w-4 h-4" />
+                    </a>
+                  </div>
+                </div>
+
+                <div className="space-y-4">
+                  <div className="rounded-2xl bg-gradient-to-br from-yellow-500/20 to-orange-500/20 p-1.5">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      src="/case-studies/pc8/league.webp"
+                      alt="Pyramids Cup 8 League Stage final standings"
+                      className="w-full rounded-xl border border-[rgba(255,255,255,0.08)]"
+                    />
+                  </div>
+                  <p className="text-xs text-gray-500">
+                    Pyramids Queue and The Vicious Esports, powered by Nexaro. Supported by the Rift Legends Program by The Purge.
+                  </p>
+                </div>
+              </div>
+            </motion.div>
+
+            <Link
+              href="/en/case-studies/pyramids-q-player-platform"
+              className="mt-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4 rounded-2xl border border-orange-500/25 bg-orange-500/[0.04] p-6 hover:border-orange-400/60 transition-colors"
+            >
+              <div>
+                <p className="font-orbitron text-[11px] tracking-[0.3em] uppercase text-orange-400 mb-2">Side project case study</p>
+                <p className="font-semibold text-white">Pyramids Q Player Platform: profiles, inhouses and fantasy</p>
+                <p className="text-sm text-gray-400 mt-1">Built for the off-season, to grow the player base and help new teams form between cups.</p>
+              </div>
+              <span className="inline-flex items-center gap-2 text-sm text-orange-300 shrink-0">
+                Read it <ArrowRight className="w-4 h-4" />
+              </span>
+            </Link>
           </div>
         </section>
 
@@ -104,119 +194,21 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* 2b. FEATURED CASE STUDY */}
-        {/*
-          BETWEEN WHAT WE DO AND THE PRODUCT FAMILY, ON PURPOSE.
-
-          "What We Do" is a list of claims. The node family is a list of things
-          we own. Neither is evidence. This sits between them and answers the
-          question a prospect is actually holding: has any of this been run in
-          anger by somebody who is not you. Numbers first, prose second, because
-          536 players is a fact and "scalable platform" is an adjective.
-        */}
+        {/* 3. OUR WORK: the carousel, moved down from the hero (21 Oct 2026) */}
         <section className="py-24 px-4">
-          <div className="max-w-6xl mx-auto">
-            <motion.div
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-80px" }}
-              transition={{ duration: 0.5 }}
-              className="rounded-3xl border border-cyan-500/20 bg-gradient-to-br from-cyan-500/[0.07] via-[rgba(255,255,255,0.02)] to-purple-500/[0.07] p-8 md:p-12"
-            >
-              <p className="font-orbitron text-xs tracking-[0.3em] uppercase text-cyan-400 mb-4">
-                Featured case study
-              </p>
-
-              <div className="grid lg:grid-cols-2 gap-10 items-center">
-                <div>
-                  <h2 className="font-orbitron text-2xl md:text-4xl font-bold leading-tight mb-5">
-                    A 500-player esports circuit ran on a spreadsheet.
-                    <br />
-                    <span className="text-cyan-400">We replaced it with four systems on one database.</span>
-                  </h2>
-
-                  <p className="text-gray-300 leading-relaxed mb-6">
-                    A Discord bot that registers teams from a pasted roster and runs match night,
-                    a staff platform where every result is verified by a human before it is
-                    published, and a public site where standings, player statistics and champion
-                    picks update within a minute of a referee confirming a score.
-                  </p>
-
-                  <div className="flex flex-wrap gap-2 mb-8">
-                    {["Next.js", "TypeScript", "discord.js", "Flutter", "Supabase", "Postgres"].map((t) => (
-                      <span
-                        key={t}
-                        className="px-3 py-1 rounded-full text-xs bg-[rgba(255,255,255,0.05)] border border-[rgba(255,255,255,0.1)] text-gray-300"
-                      >
-                        {t}
-                      </span>
-                    ))}
-                  </div>
-
-                  <div className="flex flex-wrap gap-3">
-                    <Link href="/en/case-studies/pyramids-queue">
-                      <NeonButton>Read the case study</NeonButton>
-                    </Link>
-                    <a
-                      href="https://project-c3kqs.vercel.app/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-[rgba(255,255,255,0.15)] text-sm text-gray-200 hover:border-cyan-400/50 hover:text-white transition-colors"
-                    >
-                      View it live <ArrowRight className="w-4 h-4" />
-                    </a>
-                  </div>
-                </div>
-
-                <div>
-                  {/* THE LIVE SITE, NOT A SCREENSHOT.
-
-                      Same treatment as the hero carousel and the portfolio
-                      cards: a scaled iframe, pointer events off so it reads as
-                      an image and never steals a scroll. A screenshot goes
-                      stale the first time the site changes and nobody
-                      remembers to retake it; this cannot. */}
-                  <div className="rounded-2xl bg-gradient-to-br from-yellow-500/20 to-orange-500/20 p-2 mb-6">
-                    <div className="relative overflow-hidden rounded-xl border border-[rgba(255,255,255,0.08)] bg-[#0A0E27] aspect-[16/10]">
-                      <iframe
-                        src="https://project-c3kqs.vercel.app/"
-                        title="The Pyramids Queue public site"
-                        loading="lazy"
-                        sandbox="allow-scripts allow-same-origin"
-                        style={{
-                          width: "200%",
-                          height: "200%",
-                          border: "none",
-                          transform: "scale(0.5)",
-                          transformOrigin: "top left",
-                          pointerEvents: "none",
-                        }}
-                      />
-                    </div>
-                  </div>
-
-                  <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
-                    {[
-                      { value: "536", label: "Players in one cup" },
-                      { value: "195+", label: "Matches operated" },
-                      { value: "147K", label: "Live views" },
-                      { value: "86K", label: "Lines of code" },
-                    ].map((stat) => (
-                      <div key={stat.label}>
-                        <p className="font-orbitron text-2xl md:text-3xl font-bold text-cyan-400">
-                          {stat.value}
-                        </p>
-                        <p className="text-xs text-gray-400 mt-1 leading-snug">{stat.label}</p>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </motion.div>
+          <div className="max-w-6xl mx-auto text-center">
+            <h2 className="font-orbitron text-3xl md:text-4xl font-bold mb-3">
+              Our <span className="text-cyan-400">Work</span>
+            </h2>
+            <p className="text-gray-400 mb-4">Websites, platforms and products we have shipped.</p>
+            <MirrorHallCarousel />
+            <Link href="/en/portfolio" className="inline-flex items-center gap-2 mt-6 text-sm text-cyan-300 hover:text-white transition-colors">
+              See every project <ArrowRight className="w-4 h-4" />
+            </Link>
           </div>
         </section>
 
-        {/* 3. NODE FAMILY / ECOSYSTEM */}
+        {/* 4. NODE FAMILY / ECOSYSTEM */}
         <section className="py-24 px-4 bg-[#080b1a]">
           <div className="max-w-5xl mx-auto text-center mb-12">
             <h2 className="font-orbitron text-3xl font-bold mb-4 text-white">The Nexaro <span className="text-cyan-400">Node Family</span></h2>
@@ -295,7 +287,7 @@ export default function HomePage() {
         <section className="py-24 px-4">
           <div className="max-w-4xl mx-auto text-center bg-[rgba(255,255,255,0.02)] p-12 rounded-3xl">
             <h2 className="font-orbitron text-3xl md:text-4xl font-bold mb-4">Ready to Build Something Amazing?</h2>
-            <p className="text-gray-300 mb-8">Let's discuss how we can bring your digital vision to life.</p>
+            <p className="text-gray-300 mb-8">Let&apos;s discuss how we can bring your digital vision to life.</p>
             <Link href="/en/contact">
               <NeonButton size="lg">Start Your Project</NeonButton>
             </Link>
