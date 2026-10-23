@@ -98,9 +98,21 @@ export default function PlayerPlatformCaseStudy() {
               <span key={t} className="px-3 py-1 rounded-full text-xs bg-white/5 border border-white/10 text-gray-300">{t}</span>
             ))}
           </div>
-          <div className="mt-8">
-            <Shot src="/case-studies/pc8/profiles_top5.webp" alt="Player profiles on pyramidsqueue.com" caption="Player profiles on pyramidsqueue.com: top five, best per role, team cards" />
+          <div className="mt-8 rounded-2xl bg-gradient-to-br from-orange-500/20 to-purple-500/10 p-1.5">
+            <div className="relative overflow-hidden rounded-xl border border-white/10 bg-[#0A0E27] aspect-[16/9]">
+              <span className="absolute left-3 top-3 z-10 inline-flex items-center gap-1.5 rounded-full bg-black/70 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wider text-emerald-300">
+                <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse" /> Live
+              </span>
+              <iframe
+                src="https://pyramidsqueue.com/profiles"
+                title="Player profiles on pyramidsqueue.com, live"
+                loading="lazy"
+                sandbox="allow-scripts allow-same-origin"
+                style={{ width: "200%", height: "200%", border: "none", transform: "scale(0.5)", transformOrigin: "top left", pointerEvents: "none" }}
+              />
+            </div>
           </div>
+          <p className="text-xs text-gray-500 mt-2 text-center">pyramidsqueue.com/profiles, live: top five, best per role, team cards</p>
         </motion.div>
 
         <motion.section {...reveal} className="mt-20">

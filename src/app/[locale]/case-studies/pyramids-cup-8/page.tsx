@@ -47,7 +47,7 @@ const reveal = {
 
 const headline = [
   { value: "331", label: "Matches", note: "Q1 130, Q2 167, League 30, Playoffs 4" },
-  { value: "692", label: "Games before the Playoffs", note: "Bo3 Swiss and League" },
+  { value: "706", label: "Games", note: "all four stages, 14 in the Playoffs" },
   { value: "364", label: "Players", note: "436 player entries" },
   { value: "54", label: "Teams", note: "60 team entries" },
   { value: "24", label: "Countries", note: "14 of the 15 MENA countries" },
@@ -73,8 +73,8 @@ const stages = [
   { name: "Qualifier 1", when: "8 to 18 Sep", body: "29 entries, 27 played. 10 Swiss rounds, 130 matches, 283 games. SBO3A went 10-0, the only unbeaten team in either qualifier." },
   { name: "Qualifier 2", when: "22 Sep to 2 Oct", body: "33 entries, all played. 10 Swiss rounds, 167 matches, 344 games. Bigger than the first, with no new campaign in between." },
   { name: "League Stage", when: "7 to 16 Oct", body: "Top six from each qualifier. Two groups of six, Bo3 Fearless, 30 series and 65 games. SBO3A and JSK Esports won their groups 5-0." },
-  { name: "Playoffs", when: "22 and 23 Oct", body: "Top four. The teams asked for Bo5 semi-finals; the rule needed all four to agree in writing, and 4 of 4 did." },
-  { name: "Rift Legends", when: "After the final", body: "1st and 2nd go to the Rift Legends Regional Groups. 3rd and 4th go to the Last Chance Qualifier." },
+  { name: "Playoffs", when: "22 and 23 Oct", body: "Top four. The teams asked for Bo5 semi-finals; the rule needed all four to agree in writing, and 4 of 4 did. JSK Esports won the Grand Final 3-2." },
+  { name: "Rift Legends", when: "Next", body: "JSK Esports and SBO3A go to the Rift Legends Regional Groups. coming for you and 4Cats1Dog go to the Last Chance Qualifier." },
 ];
 
 const challenge = [
@@ -127,6 +127,13 @@ const incidents = [
   { title: "A bye with no channel", when: "Qualifier 1", problem: "A team with no opponent got its point recorded but no channel and no message, so it had no confirmation it had not been forgotten.", change: "A bye now gets a channel and a bilingual brief, and still records and announces when there is no room, so a courtesy channel never takes a real match's slot." },
 ];
 
+const playoffs = [
+  { label: "Semi-final 1", when: "22 Oct, 19:00", a: "SBO3A", sa: 3, b: "4Cats1Dog", sb: 0, final: false },
+  { label: "Semi-final 2", when: "22 Oct, 22:00", a: "JSK Esports", sa: 3, b: "coming for you", sb: 1, final: false },
+  { label: "Third place", when: "23 Oct, 20:00", a: "coming for you", sa: 2, b: "4Cats1Dog", sb: 0, final: false },
+  { label: "Grand Final", when: "23 Oct, 22:00", a: "JSK Esports", sa: 3, b: "SBO3A", sb: 2, final: true },
+];
+
 const countries = [
   ["Egypt", 249], ["Tunisia", 50], ["Iraq", 25], ["Jordan", 21], ["Saudi Arabia", 18], ["Morocco", 17], ["Algeria", 8], ["Libya", 5],
 ] as const;
@@ -137,7 +144,7 @@ const creators = [
 
 const proved = [
   ["A second qualifier can grow inside a live event", "33 team entries against 29, four weeks in, with no new campaign between them."],
-  ["A volunteer staff of twenty can run a 331 match tournament", "Because the seventeen steps behind every match are handled by a system rather than by somebody remembering."],
+  ["A staff of five can run a 331 match tournament", "Because the seventeen steps behind every match are handled by a system rather than by somebody remembering."],
   ["Partial data can be published honestly", "96.4% of 3,044 player statistic rows attach to a named player automatically. The other 111 wait for a person, and the site says so."],
   ["A rulebook survives being applied", "Five teams tied on twelve points for three seats. The published tiebreak order resolved it, with the full working written down."],
   ["The region is wider than Egypt", "24 declared countries, and Tunisia alone sent 50 player entries."],
@@ -212,7 +219,7 @@ export default function PyramidsCup8CaseStudy() {
           <p className="mt-6 text-lg text-gray-300 leading-relaxed max-w-3xl">
             Pyramids Cup 8 is the MENA local circuit inside the Wild Rift Rift Legends ecosystem. Nexaro built and
             operated the system behind it: a tournament bot, an operations app, a public website and one shared
-            database, run by a staff of twenty, most of them volunteers.
+            database. The whole season was run by a staff of five: Fog, mer, evil, itach and ananas.
           </p>
           <div className="mt-6 flex flex-wrap gap-2">
             {["Esports operations", "Discord bot", "Flutter web", "Next.js", "Supabase Postgres", "Arabic and English"].map((t) => (
@@ -294,10 +301,74 @@ export default function PyramidsCup8CaseStudy() {
           </div>
         </Section>
 
+        {/* Playoffs */}
+        <Section icon={Trophy} title="JSK Esports are the champions" kicker="The Playoffs, 22 and 23 October">
+          <div className="grid lg:grid-cols-3 gap-6 items-start">
+            <div className="lg:col-span-2 grid sm:grid-cols-2 gap-4">
+              {playoffs.map((m) => (
+                <div key={m.label} className={`rounded-xl border p-5 ${m.final ? "border-yellow-500/50 bg-yellow-500/[0.05]" : "border-white/[0.06] bg-[#0d122d]"}`}>
+                  <div className="flex items-center justify-between mb-3">
+                    <p className={`font-orbitron text-xs font-bold uppercase tracking-wider ${m.final ? "text-yellow-400" : "text-cyan-400"}`}>{m.label}</p>
+                    <p className="text-[11px] text-gray-500">{m.when}</p>
+                  </div>
+                  {[[m.a, m.sa], [m.b, m.sb]].map(([t, sc]) => {
+                    const won = sc === Math.max(m.sa, m.sb);
+                    return (
+                      <div key={String(t)} className="flex items-center justify-between py-1">
+                        <span className={won ? "font-semibold text-white" : "text-gray-500"}>{t}</span>
+                        <span className={`font-orbitron text-lg font-bold ${won ? "text-yellow-400" : "text-gray-600"}`}>{sc}</span>
+                      </div>
+                    );
+                  })}
+                </div>
+              ))}
+            </div>
+            <div className="rounded-xl border border-yellow-500/40 p-5">
+              <p className="font-orbitron text-xs font-bold uppercase tracking-wider text-yellow-400 mb-4">Final placings</p>
+              {[
+                ["1", "JSK Esports", "Rift Legends Regional Groups"],
+                ["2", "SBO3A", "Rift Legends Regional Groups"],
+                ["3", "coming for you", "Last Chance Qualifier"],
+                ["4", "4Cats1Dog", "Last Chance Qualifier"],
+              ].map(([n, t, w]) => (
+                <div key={t} className="flex gap-3 py-2">
+                  <span className="font-orbitron text-xl font-bold text-yellow-400 w-5">{n}</span>
+                  <div>
+                    <p className="font-semibold text-white">{t}</p>
+                    <p className="text-xs text-gray-500">{w}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+          <p className="mt-6 text-gray-300 max-w-3xl leading-relaxed">
+            SBO3A won sixteen series in a row from 8 September: 10-0 in Qualifier 1, 5-0 in the League Stage and 3-0 in
+            the semi-final. It took JSK Esports all five games of the Grand Final to stop them.
+          </p>
+        </Section>
+
+        {/* Live */}
+        <Section icon={Radio} title="The public record, live" kicker="pyramidsqueue.com">
+          <div className="rounded-2xl bg-gradient-to-br from-yellow-500/20 to-cyan-500/10 p-1.5">
+            <div className="relative overflow-hidden rounded-xl border border-white/10 bg-[#0A0E27] aspect-[16/9]">
+              <iframe
+                src="https://pyramidsqueue.com/season"
+                title="pyramidsqueue.com season page, live"
+                loading="lazy"
+                sandbox="allow-scripts allow-same-origin"
+                style={{ width: "200%", height: "200%", border: "none", transform: "scale(0.5)", transformOrigin: "top left", pointerEvents: "none" }}
+              />
+            </div>
+          </div>
+          <a href="https://pyramidsqueue.com/season" target="_blank" rel="noopener noreferrer" className="mt-4 inline-flex items-center gap-2 text-sm text-cyan-300 hover:text-white">
+            Open the live season page <ExternalLink className="w-4 h-4" />
+          </a>
+        </Section>
+
         {/* Challenge */}
         <Section icon={Radio} title="What a match night actually is" kicker="The challenge">
           <p className="text-gray-300 leading-relaxed max-w-3xl mb-8">
-            Thirteen matches per round, two rounds a night, run by a volunteer staff in two languages, for players
+            Thirteen matches per round, two rounds a night, run by a staff of five in two languages, for players
             across nine time zones, on a platform with hard limits.
           </p>
           <div className="grid md:grid-cols-2 gap-4">
@@ -483,7 +554,7 @@ export default function PyramidsCup8CaseStudy() {
             <Shot src="/case-studies/pc8/dc_members.webp" alt="Discord members chart" caption="Discord Server Insights: members, about 3,400 to 3,660 between August and October" />
             <div>
               <p className="text-gray-300 leading-relaxed mb-5">
-                There was no official broadcast. Eight stream creators and four clip creators covered the cup in Arabic,
+                There was no official broadcast. Eight stream creators and four clip creators covered the cup in Arabic, with 70 clips and 23 VODs,
                 for up to 200K stream views and 800K clip views across the season (owner reported).
               </p>
               <Bars rows={creators} max={160} color="bg-gradient-to-r from-yellow-400 to-orange-500" />

@@ -100,9 +100,9 @@ export default function HomePage() {
                   </h2>
 
                   <p className="text-gray-300 leading-relaxed mb-6">
-                    The MENA Wild Rift circuit inside the Rift Legends ecosystem. We built and operated the tournament
-                    bot, the operations app, the public website and the database behind it: every result entered once,
-                    checked by a person, and published in Arabic and English within minutes.
+                    The MENA Wild Rift circuit inside the Rift Legends ecosystem, run by a staff of five. We built the
+                    tournament bot, the operations app, the public website and the database behind it. JSK Esports won
+                    the Grand Final 3-2 against SBO3A; both go on to the Rift Legends Regional Groups.
                   </p>
 
                   <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-8">
@@ -135,13 +135,30 @@ export default function HomePage() {
                 </div>
 
                 <div className="space-y-4">
+                  {/* THE LIVE SITE, NOT A SCREENSHOT (24 Oct): a scaled iframe of
+                      pyramidsqueue.com, pointer events off so it never steals a
+                      scroll. Allowed by the frame-ancestors list in the
+                      pyramids-queue next.config.ts. */}
                   <div className="rounded-2xl bg-gradient-to-br from-yellow-500/20 to-orange-500/20 p-1.5">
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img
-                      src="/case-studies/pc8/league.webp"
-                      alt="Pyramids Cup 8 League Stage final standings"
-                      className="w-full rounded-xl border border-[rgba(255,255,255,0.08)]"
-                    />
+                    <div className="relative overflow-hidden rounded-xl border border-[rgba(255,255,255,0.08)] bg-[#0A0E27] aspect-[16/10]">
+                      <span className="absolute left-3 top-3 z-10 inline-flex items-center gap-1.5 rounded-full bg-black/70 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wider text-emerald-300">
+                        <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse" /> Live
+                      </span>
+                      <iframe
+                        src="https://pyramidsqueue.com/"
+                        title="pyramidsqueue.com, live"
+                        loading="lazy"
+                        sandbox="allow-scripts allow-same-origin"
+                        style={{
+                          width: "200%",
+                          height: "200%",
+                          border: "none",
+                          transform: "scale(0.5)",
+                          transformOrigin: "top left",
+                          pointerEvents: "none",
+                        }}
+                      />
+                    </div>
                   </div>
                   <p className="text-xs text-gray-500">
                     Pyramids Queue and The Vicious Esports, powered by Nexaro. Supported by the Rift Legends Program by The Purge.
@@ -152,16 +169,32 @@ export default function HomePage() {
 
             <Link
               href="/en/case-studies/pyramids-q-player-platform"
-              className="mt-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4 rounded-2xl border border-orange-500/25 bg-orange-500/[0.04] p-6 hover:border-orange-400/60 transition-colors"
+              className="mt-6 grid gap-6 rounded-2xl border border-orange-500/25 bg-orange-500/[0.04] p-6 md:p-8 hover:border-orange-400/60 transition-colors lg:grid-cols-5 items-center"
             >
-              <div>
+              <div className="lg:col-span-2">
                 <p className="font-orbitron text-[11px] tracking-[0.3em] uppercase text-orange-400 mb-2">Side project case study</p>
-                <p className="font-semibold text-white">Pyramids Q Player Platform: profiles, inhouses and fantasy</p>
-                <p className="text-sm text-gray-400 mt-1">Built for the off-season, to grow the player base and help new teams form between cups.</p>
+                <p className="font-orbitron text-xl font-bold text-white">Pyramids Q Player Platform</p>
+                <p className="text-sm text-gray-300 mt-2 leading-relaxed">
+                  Player profiles, Pyramids Q Inhouses and Fantasy: built for the off-season, to grow the player base and
+                  help new teams form between cups.
+                </p>
+                <div className="mt-4 flex flex-wrap gap-2 text-xs">
+                  <span className="rounded-full border border-cyan-400/30 px-3 py-1 text-cyan-300">72 player profiles</span>
+                  <span className="rounded-full border border-orange-400/30 px-3 py-1 text-orange-300">Inhouses Season 1</span>
+                  <span className="rounded-full border border-purple-400/30 px-3 py-1 text-purple-300">Fantasy in development</span>
+                </div>
+                <span className="mt-5 inline-flex items-center gap-2 text-sm text-orange-300">
+                  Read it <ArrowRight className="w-4 h-4" />
+                </span>
               </div>
-              <span className="inline-flex items-center gap-2 text-sm text-orange-300 shrink-0">
-                Read it <ArrowRight className="w-4 h-4" />
-              </span>
+              <div className="lg:col-span-3 grid grid-cols-5 gap-3">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src="/case-studies/pc8/profiles_top5.webp" alt="Player profiles on pyramidsqueue.com" className="col-span-5 w-full rounded-xl border border-white/10" />
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src="/case-studies/pc8/inhouse_open.webp" alt="Pyramids Q Inhouses session open" className="col-span-3 w-full rounded-xl border border-white/10" />
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src="/case-studies/pc8/card_basil.webp" alt="A player card" className="col-span-2 w-full h-full max-h-40 object-cover object-top rounded-xl border border-white/10" />
+              </div>
             </Link>
           </div>
         </section>
@@ -247,38 +280,44 @@ export default function HomePage() {
         <section className="py-24 px-4">
           <div className="max-w-5xl mx-auto text-center">
             <h2 className="font-orbitron text-3xl font-bold mb-12 text-purple-400">Client Love</h2>
-            <div className="grid md:grid-cols-2 gap-6">
-              {[
-                {
-                  quote: "Nexaro transformed our vision into a scalable platform that exceeded expectations.",
-                  name: "Ahmed Alhassan",
-                  title: "CEO, Vicious Esports",
-                  project: "Alahsa Festival Platform",
-                },
-                {
-                  quote: "The most comprehensive esports operations system we've seen. It eliminated 80% of our manual work and unified our entire team.",
-                  name: "Ahmed Alhassan",
-                  title: "Founder & CEO, Vicious Esports",
-                  project: "Vicious OS",
-                },
-              ].map((t, i) => (
-                <GlassCard key={i} className="text-center flex flex-col">
-                  <div className="flex justify-center gap-1 mb-4 text-yellow-400">
-                    {[...Array(5)].map((_, j) => <Star key={j} className="w-5 h-5 fill-current" />)}
-                  </div>
-                  <blockquote className="text-lg text-gray-300 mb-6 italic flex-1">
-                    &ldquo;{t.quote}&rdquo;
+            {/* 24 Oct: both quotes come from the same client, so they sit under one
+                name instead of looking like two different people. The card next
+                to it is a result, not a quote. */}
+            <div className="grid md:grid-cols-2 gap-6 text-left">
+              <GlassCard className="flex flex-col">
+                <div className="flex gap-1 mb-4 text-yellow-400">
+                  {[...Array(5)].map((_, j) => <Star key={j} className="w-5 h-5 fill-current" />)}
+                </div>
+                {[
+                  { quote: "The most comprehensive esports operations system we've seen. It eliminated 80% of our manual work and unified our entire team.", project: "Vicious OS" },
+                  { quote: "Nexaro transformed our vision into a scalable platform that exceeded expectations.", project: "Alahsa Festival Platform" },
+                ].map((t) => (
+                  <blockquote key={t.project} className="mb-5">
+                    <p className="text-lg text-gray-300 italic">&ldquo;{t.quote}&rdquo;</p>
+                    <p className="text-xs text-cyan-400/70 mt-2">{t.project}</p>
                   </blockquote>
-                  <div className="flex items-center justify-center gap-3">
-                    <div className="w-10 h-10 rounded-full bg-gradient-to-br from-cyan-400 to-purple-500 flex-shrink-0" />
-                    <div className="text-left">
-                      <p className="font-semibold text-sm">{t.name}</p>
-                      <p className="text-xs text-gray-500">{t.title}</p>
-                      <p className="text-xs text-cyan-400/70 mt-0.5">{t.project}</p>
-                    </div>
+                ))}
+                <div className="mt-auto flex items-center gap-3 pt-4 border-t border-white/10">
+                  <div className="w-10 h-10 rounded-full bg-gradient-to-br from-cyan-400 to-purple-500 flex-shrink-0" />
+                  <div>
+                    <p className="font-semibold text-sm">Ahmed Alhassan</p>
+                    <p className="text-xs text-gray-500">Founder and CEO, The Vicious Esports</p>
                   </div>
-                </GlassCard>
-              ))}
+                </div>
+              </GlassCard>
+              <GlassCard className="flex flex-col">
+                <p className="font-orbitron text-[11px] tracking-[0.3em] uppercase text-cyan-400 mb-4">In production</p>
+                <p className="font-orbitron text-2xl font-bold text-white leading-snug">
+                  Pyramids Cup 8: 331 matches across four stages, run by a staff of five.
+                </p>
+                <p className="text-gray-400 mt-4 leading-relaxed">
+                  Our tournament bot, back office and public site carried the whole season, from open qualifiers to a
+                  five-game Grand Final, with every result checked by a person before it was published.
+                </p>
+                <Link href="/en/case-studies/pyramids-cup-8" className="mt-auto pt-6 inline-flex items-center gap-2 text-sm text-cyan-300 hover:text-white transition-colors">
+                  Read the case study <ArrowRight className="w-4 h-4" />
+                </Link>
+              </GlassCard>
             </div>
           </div>
         </section>
