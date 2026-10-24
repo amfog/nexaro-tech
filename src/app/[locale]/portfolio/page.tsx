@@ -27,7 +27,7 @@ const projects = [
     tags: ["Esports", "Operations", "Multi-tenant"],
     description: "The system behind Pyramids Cup 8, the MENA Wild Rift circuit: a tournament bot, the Teams OS back office and the public site on one Postgres database. Earlier editions ran on it too.",
     features: [
-      "Pyramids Cup 8: 331 matches, 364 players, 24 countries",
+      "Pyramids Cup 8: 335 matches, 364 players, 24 countries",
       "4 systems on one Postgres database: Discord bot, Teams OS, public site, database",
       "Cup 7: 536 players, 195+ matches, 147K live views",
       "57 staff screens, 36 of them a dedicated esports module",

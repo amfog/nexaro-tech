@@ -195,7 +195,7 @@ export default function PlayerPlatformCaseStudy() {
           >
             <div>
               <p className="font-orbitron text-[11px] tracking-[0.3em] uppercase text-cyan-400 mb-2">Main case study</p>
-              <p className="font-semibold text-white">Pyramids Cup 8: six weeks, four stages, 331 matches</p>
+              <p className="font-semibold text-white">Pyramids Cup 8: six weeks, four stages, 335 matches</p>
             </div>
             <ArrowRight className="w-5 h-5 text-cyan-400 shrink-0" />
           </Link>

@@ -94,7 +94,7 @@ export default function HomePage() {
               <div className="grid lg:grid-cols-2 gap-10 items-center">
                 <div>
                   <h2 className="font-orbitron text-2xl md:text-4xl font-bold leading-tight mb-5">
-                    Six weeks, four stages, 331 matches.
+                    Six weeks, four stages, 335 matches.
                     <br />
                     <span className="text-cyan-400">One system ran all of it.</span>
                   </h2>
@@ -107,7 +107,7 @@ export default function HomePage() {
 
                   <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-8">
                     {[
-                      { value: "331", label: "Matches" },
+                      { value: "335", label: "Matches" },
                       { value: "364", label: "Players" },
                       { value: "24", label: "Countries" },
                       { value: "3,660", label: "Discord members" },
@@ -308,7 +308,7 @@ export default function HomePage() {
               <GlassCard className="flex flex-col">
                 <p className="font-orbitron text-[11px] tracking-[0.3em] uppercase text-cyan-400 mb-4">In production</p>
                 <p className="font-orbitron text-2xl font-bold text-white leading-snug">
-                  Pyramids Cup 8: 331 matches across four stages, run by a staff of five.
+                  Pyramids Cup 8: 335 matches across four stages, run by a staff of five.
                 </p>
                 <p className="text-gray-400 mt-4 leading-relaxed">
                   Our tournament bot, back office and public site carried the whole season, from open qualifiers to a

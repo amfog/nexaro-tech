@@ -46,7 +46,7 @@ const reveal = {
 };
 
 const headline = [
-  { value: "331", label: "Matches", note: "Q1 130, Q2 167, League 30, Playoffs 4" },
+  { value: "335", label: "Matches", note: "Q1 134, Q2 167, League 30, Playoffs 4" },
   { value: "706", label: "Games", note: "all four stages, 14 in the Playoffs" },
   { value: "364", label: "Players", note: "436 player entries" },
   { value: "54", label: "Teams", note: "60 team entries" },
@@ -70,7 +70,7 @@ const facts = [
 ];
 
 const stages = [
-  { name: "Qualifier 1", when: "8 to 18 Sep", body: "29 entries, 27 played. 10 Swiss rounds, 130 matches, 283 games. SBO3A went 10-0, the only unbeaten team in either qualifier." },
+  { name: "Qualifier 1", when: "8 to 18 Sep", body: "29 entries, 27 played. 10 Swiss rounds, 134 matches, 283 games. SBO3A went 10-0, the only unbeaten team in either qualifier." },
   { name: "Qualifier 2", when: "22 Sep to 2 Oct", body: "33 entries, all played. 10 Swiss rounds, 167 matches, 344 games. Bigger than the first, with no new campaign in between." },
   { name: "League Stage", when: "7 to 16 Oct", body: "Top six from each qualifier. Two groups of six, Bo3 Fearless, 30 series and 65 games. SBO3A and JSK Esports won their groups 5-0." },
   { name: "Playoffs", when: "22 and 23 Oct", body: "Top four. The teams asked for Bo5 semi-finals; the rule needed all four to agree in writing, and 4 of 4 did. JSK Esports won the Grand Final 3-2." },
@@ -144,7 +144,7 @@ const creators = [
 
 const proved = [
   ["A second qualifier can grow inside a live event", "33 team entries against 29, four weeks in, with no new campaign between them."],
-  ["A staff of five can run a 331 match tournament", "Because the seventeen steps behind every match are handled by a system rather than by somebody remembering."],
+  ["A staff of five can run a 335 match tournament", "Because the seventeen steps behind every match are handled by a system rather than by somebody remembering."],
   ["Partial data can be published honestly", "96.4% of 3,044 player statistic rows attach to a named player automatically. The other 111 wait for a person, and the site says so."],
   ["A rulebook survives being applied", "Five teams tied on twelve points for three seats. The published tiebreak order resolved it, with the full working written down."],
   ["The region is wider than Egypt", "24 declared countries, and Tunisia alone sent 50 player entries."],
@@ -213,7 +213,7 @@ export default function PyramidsCup8CaseStudy() {
             Case study · Pyramids Cup 8 · Wild Rift MENA
           </p>
           <h1 className="font-orbitron text-3xl md:text-5xl font-bold leading-tight max-w-4xl">
-            Six weeks, four stages, 331 matches.{" "}
+            Six weeks, four stages, 335 matches.{" "}
             <span className="text-cyan-400">One system ran all of it.</span>
           </h1>
           <p className="mt-6 text-lg text-gray-300 leading-relaxed max-w-3xl">
@@ -554,7 +554,7 @@ export default function PyramidsCup8CaseStudy() {
             <Shot src="/case-studies/pc8/dc_members.webp" alt="Discord members chart" caption="Discord Server Insights: members, about 3,400 to 3,660 between August and October" />
             <div>
               <p className="text-gray-300 leading-relaxed mb-5">
-                There was no official broadcast. Eight stream creators and four clip creators covered the cup in Arabic, with 70 clips and 23 VODs,
+                There was no official broadcast. Eight stream creators and four clip creators covered the cup in Arabic, with 70 clips and 27 VODs,
                 for up to 200K stream views and 800K clip views across the season (owner reported). The Grand Final alone peaked at 580 viewers across three live streams: Fog 146, Eazzy 144, boosted 290.
               </p>
               <Bars rows={creators} max={160} color="bg-gradient-to-r from-yellow-400 to-orange-500" />
