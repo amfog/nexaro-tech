@@ -232,7 +232,7 @@ export default function PyramidsCup8CaseStudy() {
             Pyramids Queue and The Vicious Esports, powered by Nexaro. Supported by the Rift Legends Program by The Purge.
           </p>
           <div className="mt-8">
-            <Shot src="/case-studies/pc8/league.webp" alt="Pyramids Cup 8 League Stage final standings" caption="League Stage final standings, as published on match night" />
+            <Shot src="/case-studies/pc8/final-results.webp" alt="Pyramids Cup 8 final results: JSK Esports champions" caption="Final results: JSK Esports won the Grand Final 3-2 against SBO3A" />
           </div>
         </motion.div>
 
@@ -296,7 +296,7 @@ export default function PyramidsCup8CaseStudy() {
             ))}
           </div>
           <div className="grid md:grid-cols-2 gap-6 mt-10">
-            <Shot src="/case-studies/pc8/playoffs.webp" alt="Pyramids Cup 8 Playoffs bracket" caption="The Playoffs bracket on pyramidsqueue.com. Scores fill in from the results as each series ends" />
+            <Shot src="/case-studies/pc8/finals-boosted.webp" alt="The Grand Final on a creator stream" caption="The Grand Final live on a creator stream, with the Pyramids Cup partner bar on screen" />
             <Shot src="/case-studies/pc8/home.webp" alt="pyramidsqueue.com home page" caption="pyramidsqueue.com during the Playoffs" />
           </div>
         </Section>
@@ -555,7 +555,7 @@ export default function PyramidsCup8CaseStudy() {
             <div>
               <p className="text-gray-300 leading-relaxed mb-5">
                 There was no official broadcast. Eight stream creators and four clip creators covered the cup in Arabic, with 70 clips and 23 VODs,
-                for up to 200K stream views and 800K clip views across the season (owner reported).
+                for up to 200K stream views and 800K clip views across the season (owner reported). The Grand Final alone peaked at 580 viewers across three live streams: Fog 146, Eazzy 144, boosted 290.
               </p>
               <Bars rows={creators} max={160} color="bg-gradient-to-r from-yellow-400 to-orange-500" />
               <p className="text-xs text-gray-500 mt-3">Peak live viewers per creator, creator reported</p>
