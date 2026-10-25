@@ -219,7 +219,7 @@ export default function PyramidsCup8CaseStudy() {
           <p className="mt-6 text-lg text-gray-300 leading-relaxed max-w-3xl">
             Pyramids Cup 8 is the MENA local circuit inside the Wild Rift Rift Legends ecosystem. Nexaro built and
             operated the system behind it: a tournament bot, an operations app, a public website and one shared
-            database. The whole season was run by a staff of five: Fog, mer, evil, itach and ananas.
+            database. The whole season was run by a staff of five: Fog, mer, evil, Itachi and ananas.
           </p>
           <div className="mt-6 flex flex-wrap gap-2">
             {["Esports operations", "Discord bot", "Flutter web", "Next.js", "Supabase Postgres", "Arabic and English"].map((t) => (
