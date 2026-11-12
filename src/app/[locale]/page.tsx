@@ -1,20 +1,16 @@
 "use client";
 
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion } from "framer-motion";
 import NeonButton from "@/components/ui/neon-button";
 import GlassCard from "@/components/ui/glass-card";
 import ParticlesBg from "@/components/ui/particles-bg";
 import TechMarquee from "@/components/ui/tech-marquee";
 import MirrorHallCarousel from "@/components/hero/mirror-hall-carousel";
 import ProductNodeCard from "@/components/products/product-node-card";
-import { ArrowRight, Code, Smartphone, Rocket, Users, Bot, Star } from "lucide-react";
+import { ArrowRight, Building2, Globe, Trophy, Bot, Star, Code2, Factory, Scale, ShoppingBag, GraduationCap, Gamepad2 } from "lucide-react";
 import Link from "next/link";
 
 export default function HomePage() {
-  const { scrollY } = useScroll();
-  const y = useTransform(scrollY, [0, 500], [0, 150]);
-  const opacity = useTransform(scrollY, [0, 300], [1, 0]);
-
   return (
     <main className="relative min-h-screen bg-[#0A0E27] text-white overflow-x-hidden">
       {/* Background */}
@@ -32,7 +28,7 @@ export default function HomePage() {
               className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[rgba(255,255,255,0.03)] mb-5 text-sm text-cyan-400"
             >
               <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse" />
-              Now accepting Q4 2026 projects
+              Now booking new projects
             </motion.div>
 
             <motion.h1
@@ -41,8 +37,8 @@ export default function HomePage() {
               transition={{ delay: 0.2 }}
               className="font-orbitron text-4xl md:text-6xl lg:text-7xl font-bold mb-5 leading-tight"
             >
-              We Build Digital Products<br />
-              <span className="text-cyan-400">That Matter</span>
+              Systems Your Business<br />
+              <span className="text-cyan-400">Runs On</span>
             </motion.h1>
 
             <motion.p
@@ -51,7 +47,7 @@ export default function HomePage() {
               transition={{ delay: 0.4 }}
               className="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto mb-8"
             >
-              From concept to launch, websites, apps, and platforms that scale with cutting-edge technology and stunning design.
+              Business systems (ERP), bilingual websites and esports platforms, in Arabic and English. One build price, no price per user, and a team that keeps it running after launch.
             </motion.p>
 
             <motion.div
@@ -204,16 +200,15 @@ export default function HomePage() {
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
               <h2 className="font-orbitron text-3xl md:text-4xl font-bold mb-4 text-cyan-400">What We Do</h2>
-              <p className="text-gray-300">End-to-end digital solutions powered by modern technology</p>
+              <p className="text-gray-300">Four things we build, each one priced once after a short discovery call</p>
             </div>
             
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
               {[
-                { icon: Code, title: "Web Development", desc: "Custom websites, e-commerce, and web applications." },
-                { icon: Smartphone, title: "Mobile Apps", desc: "Native & cross-platform iOS/Android apps." },
-                { icon: Rocket, title: "Event Tech", desc: "Festival platforms, ticketing, and live apps." },
-                { icon: Bot, title: "AI & Automation", desc: "Intelligent workflows, AI assistants, and process automation." },
-                { icon: Users, title: "Digital Strategy", desc: "UX/UI design, brand identity, and consulting." },
+                { icon: Building2, title: "Business Systems (ERP)", desc: "People, projects, clients, invoices, stock and reports in one system. Switch on only the modules you need." },
+                { icon: Globe, title: "Websites", desc: "Fast company websites in Arabic and English, built for phones, found on Google, with leads sent to your inbox." },
+                { icon: Trophy, title: "Esports Systems", desc: "Discord bots, tournament seasons, community websites and a staff app, the stack behind Pyramids Cup 8." },
+                { icon: Bot, title: "Apps, Automation and AI", desc: "Shop and delivery operations, dashboards, approvals, reminders, imports from Excel and AI assistants." },
               ].map((service, i) => (
                 <GlassCard key={i}>
                   <div className="w-12 h-12 rounded-xl bg-[rgba(0,245,255,0.1)] flex items-center justify-center mb-4">
@@ -224,6 +219,52 @@ export default function HomePage() {
                 </GlassCard>
               ))}
             </div>
+          </div>
+        </section>
+
+        {/* 2b. WHO WE WORK WITH and HOW WE WORK (12 Nov 2026, same story as the partner deck) */}
+        <section className="py-24 px-4">
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="font-orbitron text-3xl md:text-4xl font-bold mb-4">Who We <span className="text-cyan-400">Work With</span></h2>
+              <p className="text-gray-300">Companies of about 10 to 80 people: big enough to feel the mess, small enough to move fast.</p>
+            </div>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+              {[
+                { icon: Code2, title: "IT and software firms", desc: "Projects, timesheets, clients, invoices, devices and licences in one place." },
+                { icon: Factory, title: "Furniture and small factories", desc: "Quotes, orders, stock levels, delivery dates and workshop tasks." },
+                { icon: Scale, title: "Law firms and clinics", desc: "A bilingual website plus a client file system with documents and deadlines." },
+                { icon: ShoppingBag, title: "Online shops and delivery", desc: "Orders, couriers, cash collection and daily reports with Mandoob OS." },
+                { icon: GraduationCap, title: "Training centres", desc: "Booking, student records, attendance, payments and certificates." },
+                { icon: Gamepad2, title: "Gaming communities", desc: "Inhouse bots, tournament seasons, player profiles and community sites." },
+              ].map((item) => (
+                <div key={item.title} className="rounded-2xl border border-[rgba(255,255,255,0.06)] bg-[rgba(255,255,255,0.02)] p-6">
+                  <item.icon className="w-6 h-6 text-cyan-400 mb-3" />
+                  <h3 className="font-rajdhani text-lg font-semibold text-white">{item.title}</h3>
+                  <p className="text-sm text-gray-400 mt-1 leading-relaxed">{item.desc}</p>
+                </div>
+              ))}
+            </div>
+
+            <div className="text-center mt-24 mb-12">
+              <h2 className="font-orbitron text-3xl md:text-4xl font-bold mb-4">How We <span className="text-cyan-400">Work</span></h2>
+              <p className="text-gray-300">Every payment is tied to something you can see.</p>
+            </div>
+            <ol className="grid md:grid-cols-5 gap-4">
+              {[
+                { title: "Discovery call", desc: "30 minutes on how you work today and what slows you down." },
+                { title: "Written scope", desc: "What we build, in which phases, and one fixed price before we start." },
+                { title: "Build in phases", desc: "You see the real system on a preview link and approve each phase." },
+                { title: "Launch and training", desc: "Your data moved in, your team trained, a short written guide." },
+                { title: "Monitoring", desc: "Uptime, backups and fixes every month. New features are priced first." },
+              ].map((step, i) => (
+                <li key={step.title} className="rounded-2xl border border-cyan-500/15 bg-cyan-500/[0.03] p-5">
+                  <span className="font-orbitron text-2xl font-bold text-cyan-400">{i + 1}</span>
+                  <h3 className="font-rajdhani text-lg font-semibold text-white mt-2">{step.title}</h3>
+                  <p className="text-sm text-gray-400 mt-1 leading-relaxed">{step.desc}</p>
+                </li>
+              ))}
+            </ol>
           </div>
         </section>
 
@@ -245,7 +286,7 @@ export default function HomePage() {
         <section className="py-24 px-4 bg-[#080b1a]">
           <div className="max-w-5xl mx-auto text-center mb-12">
             <h2 className="font-orbitron text-3xl font-bold mb-4 text-white">The Nexaro <span className="text-cyan-400">Node Family</span></h2>
-            <p className="text-gray-400">Our unified ecosystem of digital products.</p>
+            <p className="text-gray-400">The products we build on and reuse, so every client project starts further ahead.</p>
           </div>
 
           <div className="max-w-6xl mx-auto space-y-4">
@@ -260,15 +301,14 @@ export default function HomePage() {
             </div>
 
             {/* Product grid: 2 cols mobile, 4 cols desktop */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
               {[
-                { code: "NX-001.L", name: "Nexaro Life", desc: "Personal AI OS", logo: "/nexaro-life.svg" },
-                { code: "NX-002.O", name: "Vicious OS", desc: "Esports Operations", logo: "/vicious-os.svg" },
-                { code: "NX-003.C", name: "Nexaro CRM", desc: "Smart Business CRM", logo: "/nexaro-crm.svg" },
-                { code: "NX-004.R", name: "Rent OS", desc: "Property & Rent Management", logo: "/rent-os.svg" },
-                { code: "NX-005.H", name: "Nexaro HR", desc: "HR & Payroll Management", logo: "/nexaro-hr.svg" },
-                { code: "NX-002.T", name: "Teams OS", desc: "Core Operations Platform", logo: "/teams-os.svg" },
-                { code: "NX-008.M", name: "Nexaro Command Center", desc: "Master Control Dashboard", logo: "/nexaro-master-control.svg", accent: "#FFD700" },
+                { code: "NX-007.E", name: "Nexaro ERP", desc: "HR, projects, CRM, finance and stock", logo: "/nexaro-hr.svg" },
+                { code: "NX-002.T", name: "Teams OS", desc: "Staff app for esports organisations", logo: "/teams-os.svg" },
+                { code: "NX-008.MD", name: "Mandoob OS", desc: "Orders and couriers for online shops", logo: "/nexaro-crm.svg" },
+                { code: "NX-002.O", name: "Vicious OS", desc: "Esports operations", logo: "/vicious-os.svg" },
+                { code: "NX-008.M", name: "Master Control", desc: "Projects, pipeline and daily routine", logo: "/nexaro-master-control.svg", accent: "#FFD700" },
+                { code: "NX-001.L", name: "Nexaro Life", desc: "Personal AI operating system", logo: "/nexaro-life.svg" },
               ].map((node, i) => (
                 <ProductNodeCard key={i} code={node.code} name={node.name} desc={node.desc} logo={node.logo} accent={node.accent} />
               ))}
@@ -325,10 +365,10 @@ export default function HomePage() {
         {/* 6. CTA */}
         <section className="py-24 px-4">
           <div className="max-w-4xl mx-auto text-center bg-[rgba(255,255,255,0.02)] p-12 rounded-3xl">
-            <h2 className="font-orbitron text-3xl md:text-4xl font-bold mb-4">Ready to Build Something Amazing?</h2>
-            <p className="text-gray-300 mb-8">Let&apos;s discuss how we can bring your digital vision to life.</p>
+            <h2 className="font-orbitron text-3xl md:text-4xl font-bold mb-4">Running on Excel and WhatsApp?</h2>
+            <p className="text-gray-300 mb-8">Tell us how your team works today. We reply with the questions that matter and, after a short call, a written scope and price.</p>
             <Link href="/en/contact">
-              <NeonButton size="lg">Start Your Project</NeonButton>
+              <NeonButton size="lg">Book a discovery call</NeonButton>
             </Link>
           </div>
         </section>

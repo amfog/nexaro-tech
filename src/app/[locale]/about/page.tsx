@@ -14,7 +14,7 @@ export default function AboutPage() {
             About <span className="text-cyan-400">Nexaro</span>
           </h1>
           <p className="text-gray-300 text-lg max-w-2xl mx-auto">
-            We build systems that help teams scale faster.
+            A software studio in Egypt building the systems small and mid-size companies run on: business systems, websites and esports platforms, in Arabic and English.
           </p>
         </motion.div>
 

@@ -1,13 +1,13 @@
 {
   "metadata": {
     "home": {
-      "title": "Nexaro.tech | Building Tomorrow's Digital Experiences",
-      "description": "From concept to launch: websites, apps, and platforms that scale."
+      "title": "Nexaro Tech | Business systems, websites and esports platforms",
+      "description": "Nexaro Tech builds ERP systems, bilingual websites and esports platforms for companies in Egypt and the Gulf. Arabic and English, one build price, no price per user."
     }
   },
   "home": {
     "hero": {
-      "badge": "🚀 Now accepting Q4 2026 projects",
+      "badge": "Now booking new projects",
       "title": {
         "line1": "We Build Digital Products",
         "line2": "That Matter"
@@ -44,7 +44,13 @@
     "portfolio": {
       "title": "Featured Work",
       "subtitle": "Explore our latest projects and case studies",
-      "filters": ["All", "Web Apps", "Mobile", "Events", "Enterprise"],
+      "filters": [
+        "All",
+        "Web Apps",
+        "Mobile",
+        "Events",
+        "Enterprise"
+      ],
       "viewCase": "View Case Study"
     },
     "testimonials": {
@@ -73,7 +79,7 @@
     "title": "Legal",
     "accent": "Notices",
     "subtitle": "Privacy policy and terms of use. Last updated {date}.",
-    "date": "23 September 2026",
+    "date": "12 November 2026",
     "updated": "Last updated {date}.",
     "pending": "(pending)",
     "nav": {
@@ -106,7 +112,7 @@
       },
       "form": {
         "h": "The contact form",
-        "p": "At the time of writing, the form on the contact page does not send what you type anywhere. Nothing entered in it reaches us, and nothing entered in it is stored. Please email us directly instead. If the form is connected in future, this page will be updated to say where its messages go."
+        "p": "The form on the contact page does not send or store anything by itself. When you press Send, it opens your own email app with your message filled in, addressed to us. Nothing reaches us until you send that email, and then it is handled as described under \"If you email us\"."
       },
       "analytics": {
         "h": "Analytics and advertising",

@@ -3,8 +3,8 @@
 import { motion } from "framer-motion";
 
 const technologies = [
-  "Next.js", "React", "TypeScript", "Tailwind CSS", "Supabase", 
-  "Framer Motion", "Node.js", "Vercel", "PostgreSQL", "Redis"
+  "Next.js", "React", "TypeScript", "Tailwind CSS", "Supabase",
+  "PostgreSQL", "Flutter", "Node.js", "discord.js", "Vercel"
 ];
 
 export default function TechMarquee() {

@@ -2,62 +2,77 @@
 
 import { motion } from "framer-motion";
 import GlassCard from "@/components/ui/glass-card";
-import { ArrowRight, CheckCircle, Bot, Workflow, Database, Shield, Zap, Cpu } from "lucide-react";
+import { ArrowRight, CheckCircle, Bot, Building2, Globe, Shield, Trophy } from "lucide-react";
 import Link from "next/link";
 
+// 12 Nov 2026 audit: the four services we sell (same as the partner deck), plus consulting.
+// Highlights are facts we can show; no figures we cannot back up.
 const services = [
   {
+    icon: Building2,
+    title: "Business Systems (ERP)",
+    desc: "One system for people, projects, clients, money and stock, built around how your company already works.",
+    features: [
+      "HR: people, departments, leave, timesheets",
+      "Projects and tasks with hours per person",
+      "Clients, quotes, invoices with VAT, payments",
+      "Stock and orders, reports, Arabic and English",
+    ],
+    highlight: "Modular: switch on only what you need, three looks to choose from",
+    color: "from-cyan-400 to-blue-500",
+  },
+  {
+    icon: Globe,
+    title: "Websites",
+    desc: "Company websites in Arabic and English that load fast on phones and send every enquiry to your inbox.",
+    features: [
+      "Six steps, you approve each one",
+      "Two rounds of changes on the design and two on the build",
+      "Google basics, legal page, contact form",
+      "30 days of fixes after launch, optional monthly care",
+    ],
+    highlight: "Domain, hosting account and content in your name",
+    color: "from-purple-400 to-pink-500",
+  },
+  {
+    icon: Trophy,
+    title: "Esports Systems",
+    desc: "The tournament and community stack that ran Pyramids Cup 8, for organisers and gaming communities.",
+    features: [
+      "Tournament bot: registration, check-in, brackets, results",
+      "Inhouse bot with ratings, ladder and weekly posts",
+      "Community website with player profiles",
+      "Teams OS staff app: tasks, roles, incidents",
+    ],
+    highlight: "Pyramids Cup 8: 335 matches, 364 players, run by a staff of five",
+    color: "from-yellow-400 to-orange-500",
+  },
+  {
     icon: Bot,
-    title: "AI-Powered Automation",
-    desc: "Eliminate repetitive tasks with intelligent workflows powered by N8N, AI APIs, and custom integrations.",
+    title: "Apps, Automation and AI",
+    desc: "Remove the manual steps between your tools, and put an assistant inside the systems your team uses.",
     features: [
-      "Discord → Google Sheets sync",
-      "AI support bots (Qwen, Claude)",
-      "Auto-reporting dashboards",
-      "Rule-based decision engines"
+      "Shop and delivery operations (Mandoob OS)",
+      "Approvals, reminders and scheduled reports",
+      "Imports from Excel and Google Sheets",
+      "AI assistants that prepare tasks, replies and reports",
     ],
-    highlight: "PC7 Automation Stack: Saves 3-5 hrs per tournament day",
-    color: "from-cyan-400 to-blue-500"
-  },
-  {
-    icon: Workflow,
-    title: "Operations Platforms",
-    desc: "Build internal tools that unify your team's workflows, data, and communication in one place.",
-    features: [
-      "Multi-tenant player management",
-      "KPI dashboards & OKR tracking",
-      "Task ownership & access control",
-      "Cross-department coordination"
-    ],
-    highlight: "Vicious OS: 170+ players, 4 departments, ~80% manual work eliminated",
-    color: "from-purple-400 to-pink-500"
-  },
-  {
-    icon: Database,
-    title: "Esports Infrastructure",
-    desc: "End-to-end tournament systems: registration, scheduling, broadcasting, and community management.",
-    features: [
-      "Scalable registration pipelines",
-      "Live bracket management",
-      "Broadcast tool integrations",
-      "Community engagement systems"
-    ],
-    highlight: "Pyramids Cup: 5 editions, 3,500+ participants, zero playbook",
-    color: "from-yellow-400 to-orange-500"
+    highlight: "Built on the same stack as our own daily tools",
+    color: "from-emerald-400 to-teal-500",
   },
   {
     icon: Shield,
     title: "Systems Consulting",
-    desc: "Strategic guidance to design, document, and scale your operational infrastructure.",
+    desc: "A clear map of how your operations run today and what to automate first, before you spend on software.",
     features: [
-      "Workflow audits & optimization",
+      "Workflow audits",
       "Tool stack recommendations",
       "Team onboarding playbooks",
-      "KPI framework design"
+      "KPI framework design",
     ],
     highlight: "Google PM Certified · CAPM in progress",
-    color: "from-emerald-400 to-teal-500"
-  }
+    color: "from-sky-400 to-indigo-500",
+  },
 ];
 
 export default function ServicesPage() {
@@ -71,7 +86,7 @@ export default function ServicesPage() {
             Our <span className="text-cyan-400">Services</span>
           </h1>
           <p className="text-gray-300 text-lg max-w-2xl mx-auto">
-            We don't just build tools, we build systems that eliminate operational chaos and accelerate growth.
+            Four things we build, each priced once after a short discovery call. The monthly fee covers monitoring; new features are always priced first.
           </p>
         </motion.div>
 
@@ -115,8 +130,8 @@ export default function ServicesPage() {
 
         {/* Bottom CTA */}
         <div className="text-center py-12 border-t border-[rgba(255,255,255,0.05)]">
-          <h2 className="text-2xl font-bold mb-4">Need a custom system?</h2>
-          <p className="text-gray-400 mb-8">Let's design an automation strategy that scales with your team.</p>
+          <h2 className="text-2xl font-bold mb-4">Not sure which one you need?</h2>
+          <p className="text-gray-400 mb-8">Tell us what slows your team down. We will say what we would build first, and what it would cost.</p>
           <Link href="/en/contact" className="inline-block px-8 py-3 bg-cyan-400 text-black font-bold rounded-lg hover:bg-cyan-300 transition-colors">
             Get in touch
           </Link>

@@ -16,12 +16,18 @@ const tajawal = Tajawal({ subsets: ["arabic"], variable: "--font-tajawal", weigh
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "metadata.home" });
-  return { title: t("title"), description: t("description") };
+  return {
+    metadataBase: new URL("https://project-jelc4.vercel.app"),
+    title: t("title"),
+    description: t("description"),
+    openGraph: { title: t("title"), description: t("description"), siteName: "Nexaro Tech", type: "website", locale: locale === "ar" ? "ar_EG" : "en_US" },
+    twitter: { card: "summary", title: t("title"), description: t("description") },
+  };
 }
 
 export default async function RootLayout({ children, params }: { children: React.ReactNode; params: Promise<{ locale: string }> }) {
   const { locale } = await params;
-  if (!routing.locales.includes(locale as any)) notFound();
+  if (!routing.locales.includes(locale as (typeof routing.locales)[number])) notFound();
   
   const messages = await getMessages();
   const direction = locale === "ar" ? "rtl" : "ltr";
@@ -31,7 +37,7 @@ export default async function RootLayout({ children, params }: { children: React
       <body className="bg-space text-white min-h-screen flex flex-col">
         <NextIntlClientProvider messages={messages}>
           <Navbar />
-          <main className="flex-grow pt-20">{children}</main>
+          <div className="flex-grow pt-20">{children}</div>
           <Footer />
         </NextIntlClientProvider>
       </body>

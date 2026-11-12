@@ -20,16 +20,17 @@ export default function Footer() {
                 </span>
               </div>
             </Link>
-            <p className="text-gray-400 text-sm">Building Tomorrow&apos;s Digital Experiences Today</p>
+            <p className="text-gray-400 text-sm">Business systems, websites and esports platforms, in Arabic and English.</p>
           </div>
           
           {/* Services */}
           <div>
             <h4 className="font-rajdhani font-semibold mb-4 text-white">Services</h4>
             <ul className="space-y-2 text-sm text-gray-400">
-              <li><Link href="/en/services" className="hover:text-cyan-400 transition-colors">Workflow Automation</Link></li>
-              <li><Link href="/en/services" className="hover:text-cyan-400 transition-colors">AI Integration</Link></li>
-              <li><Link href="/en/services" className="hover:text-cyan-400 transition-colors">Esports Platforms</Link></li>
+              <li><Link href="/en/services" className="hover:text-cyan-400 transition-colors">Business Systems (ERP)</Link></li>
+              <li><Link href="/en/services" className="hover:text-cyan-400 transition-colors">Websites</Link></li>
+              <li><Link href="/en/services" className="hover:text-cyan-400 transition-colors">Esports Systems</Link></li>
+              <li><Link href="/en/services" className="hover:text-cyan-400 transition-colors">Apps, Automation and AI</Link></li>
             </ul>
           </div>
 
@@ -47,11 +48,11 @@ export default function Footer() {
           <div>
             <h4 className="font-rajdhani font-semibold mb-4 text-white">Connect</h4>
             <ul className="space-y-2 text-sm text-gray-400">
-              <li>nexarotch@gmail.com</li>
+              <li><a href="mailto:nexarotch@gmail.com" className="hover:text-cyan-400 transition-colors">nexarotch@gmail.com</a></li>
               <li>Egypt (Global Remote)</li>
               <li className="flex gap-4 mt-4">
                 <a href="https://www.facebook.com/Nexarotch" target="_blank" rel="noopener noreferrer" className="hover:text-cyan-400 transition-colors">Facebook</a>
-                <a href="https://www.linkedin.com/company/nexarotch/about/?viewAsMember=true" target="_blank" rel="noopener noreferrer" className="hover:text-cyan-400 transition-colors">LinkedIn</a>
+                <a href="https://www.linkedin.com/company/nexarotch/" target="_blank" rel="noopener noreferrer" className="hover:text-cyan-400 transition-colors">LinkedIn</a>
               </li>
             </ul>
           </div>
