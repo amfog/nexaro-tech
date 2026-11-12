@@ -149,7 +149,7 @@ const projects = [
     githubUrl: null,
     logoSrc: sc("WS-001").icon,
     screenshots: [
-      "/images/Abdelrahman-Mohamed-Portfolio.webp"
+      "/images/Abdulrahman-Mohamed-Portfolio.webp"
     ],
     color: sc("WS-001").color,
     contactOnly: false,
