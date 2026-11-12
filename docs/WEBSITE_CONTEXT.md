@@ -1,6 +1,6 @@
 # 🌐 Nexaro.tech Website - Development Context
 
-**Founder:** Abdelrahman Mohamed  
+**Founder:** Abdulrahman Mohamed  
 **Location:** Egypt  
 **Current Status:** Live - Portfolio Active  
 **Last Updated:** May 14, 2026
@@ -10,7 +10,7 @@
 ## 📁 Current File Structurecat > docs/WEBSITE_CONTEXT.md << 'EOF'
 # 🌐 Nexaro.tech Website - Development Context
 
-**Founder:** Abdelrahman Mohamed  
+**Founder:** Abdulrahman Mohamed  
 **Location:** Egypt  
 **Current Status:** Live - Portfolio Active  
 **Last Updated:** May 14, 2026

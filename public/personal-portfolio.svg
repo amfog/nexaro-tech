@@ -24,7 +24,7 @@
   <!-- Product code -->
   <text x="120" y="22" text-anchor="middle" fill="#6B7280" font-size="9" font-family="monospace" letter-spacing="1.5">PORTFOLIO</text>
   <!-- Name -->
-  <text x="120" y="42" text-anchor="middle" fill="white" font-size="14" font-weight="bold" font-family="system-ui, sans-serif">Abdelrahman</text>
+  <text x="120" y="42" text-anchor="middle" fill="white" font-size="14" font-weight="bold" font-family="system-ui, sans-serif">Abdulrahman</text>
 
   <!-- Avatar / person icon -->
   <!-- Outer glow ring -->

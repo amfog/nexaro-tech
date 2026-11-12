@@ -20,7 +20,7 @@ export const showcaseItems: ShowcaseItem[] = [
   { code: "NX-008.M", name: "Nexaro Master Control", subtitle: "Master Control Dashboard", type: "product", color: "from-violet-500 to-purple-600", icon: "/nexaro-master-control.svg" },
 
   // Websites (live-preview iframe cards, has liveUrl)
-  { code: "WS-001", name: "Abdelrahman Mohamed Portfolio", subtitle: "Personal Developer Portfolio", type: "website", color: "from-blue-500 to-cyan-500", icon: "/personal-portfolio.svg", liveUrl: "https://project-8qxfy.vercel.app/" },
+  { code: "WS-001", name: "Abdulrahman Mohamed Portfolio", subtitle: "Personal Developer Portfolio", type: "website", color: "from-blue-500 to-cyan-500", icon: "/personal-portfolio.svg", liveUrl: "https://project-8qxfy.vercel.app/" },
   { code: "WS-002", name: "Alahsa Festival Platform", subtitle: "Festival Ticketing Platform", type: "website", color: "from-emerald-600 to-green-600", icon: "/alahsa-festival.svg", liveUrl: "https://project-i9fer.vercel.app/ar" },
   { code: "WS-003", name: "Pyramids Queue", subtitle: "Event Queue & Registration", type: "website", color: "from-yellow-500 to-orange-500", icon: "/pyramids-queue.png", liveUrl: "https://project-c3kqs.vercel.app/" },
   { code: "WS-004", name: "Vicious Esports Website", subtitle: "Esports Organization Website", type: "website", color: "from-purple-600 to-pink-600", icon: "/vicious-website.png", liveUrl: "https://vicioussa.vercel.app/en" },

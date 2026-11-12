@@ -1,6 +1,6 @@
 # 🚀 Nexaro.tech Development Sprints
 
-**Founder:** Abdelrahman Mohamed  
+**Founder:** Abdulrahman Mohamed  
 **Location:** Egypt  
 **Started:** April 23, 2026
 
@@ -76,7 +76,7 @@
 **Planned:** After Portfolio
 
 - [ ] Company story
-- [ ] Team section (Abdelrahman + friends)
+- [ ] Team section (Abdulrahman + friends)
 - [ ] Mission & vision
 - [ ] Stats (projects, clients, etc.)
 - [ ] Location: Egypt
