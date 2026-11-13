@@ -369,7 +369,7 @@ const projects = [
 
 export default function PortfolioPage() {
   return (
-    <main className="min-h-screen bg-[#0A0E27] text-white pt-24 pb-20 px-4">
+    <main className="min-h-screen bg-[#07080C] text-white pt-24 pb-20 px-4">
       <div className="max-w-7xl mx-auto">
 
         {/* Header */}
@@ -378,7 +378,7 @@ export default function PortfolioPage() {
           animate={{ opacity: 1, y: 0 }}
           className="mb-12"
         >
-          <Link href="/" className="inline-flex items-center gap-2 text-gray-400 hover:text-cyan-400 mb-6 transition-colors">
+          <Link href="/en" className="inline-flex items-center gap-2 text-gray-400 hover:text-cyan-400 mb-6 transition-colors">
             <ArrowLeft className="w-4 h-4" /> Back to Home
           </Link>
           <h1 className="font-orbitron text-4xl md:text-6xl font-bold mb-4">
@@ -440,7 +440,7 @@ export default function PortfolioPage() {
 
                     <div className="flex gap-4">
                       {project.contactOnly ? (
-                        <Link href="/en/contact" className="relative font-semibold rounded-xl transition-all duration-300 overflow-hidden cursor-pointer bg-gradient-to-r from-neon-cyan to-neon-purple text-space hover:opacity-90 px-4 py-2 text-sm shadow-[0_0_15px_rgba(0,245,255,0.5)] hover:shadow-[0_0_25px_rgba(0,245,255,0.7)] inline-flex items-center gap-2">
+                        <Link href="/en/contact" className="inline-flex h-9 items-center gap-2 rounded-full bg-white px-4 text-sm font-medium text-black transition-colors hover:bg-white/85">
                           <Mail className="w-4 h-4" />
                           <span>Reach Out to Learn More</span>
                         </Link>
@@ -464,7 +464,7 @@ export default function PortfolioPage() {
 
                   {/* Right: Visual Display */}
                   <div className={`rounded-xl bg-gradient-to-br ${project.color} p-2 flex items-center justify-center min-h-[250px]`}>
-                    <div className="w-full h-full bg-[#0A0E27] rounded-lg overflow-hidden relative" style={{minHeight: '220px'}}>
+                    <div className="w-full h-full bg-[#07080C] rounded-lg overflow-hidden relative" style={{minHeight: '220px'}}>
                       
                       {/* Iframe Preview (for live sites) */}
                       {project.iframeUrl ? (
@@ -525,7 +525,7 @@ export default function PortfolioPage() {
         >
           <h3 className="font-orbitron text-2xl font-bold mb-4">Have a project in mind?</h3>
           <p className="text-gray-300 mb-6">Let&apos;s build something amazing together.</p>
-          <NeonButton size="lg" href="/contact">
+          <NeonButton size="lg" href="/en/contact">
             Start Your Project
           </NeonButton>
         </motion.div>

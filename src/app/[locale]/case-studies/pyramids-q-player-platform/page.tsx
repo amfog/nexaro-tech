@@ -75,7 +75,7 @@ function List({ items, color }: { items: string[]; color: string }) {
 
 export default function PlayerPlatformCaseStudy() {
   return (
-    <main className="min-h-screen bg-[#0A0E27] text-white pt-24 pb-24 px-4">
+    <main className="min-h-screen bg-[#07080C] text-white pt-24 pb-24 px-4">
       <div className="max-w-5xl mx-auto">
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
           <Link href="/en/case-studies/pyramids-cup-8" className="inline-flex items-center gap-2 text-gray-400 hover:text-orange-400 mb-8 transition-colors">
@@ -99,7 +99,7 @@ export default function PlayerPlatformCaseStudy() {
             ))}
           </div>
           <div className="mt-8 rounded-2xl bg-gradient-to-br from-orange-500/20 to-purple-500/10 p-1.5">
-            <div className="relative overflow-hidden rounded-xl border border-white/10 bg-[#0A0E27] aspect-[16/9]">
+            <div className="relative overflow-hidden rounded-xl border border-white/10 bg-[#07080C] aspect-[16/9]">
               <span className="absolute left-3 top-3 z-10 inline-flex items-center gap-1.5 rounded-full bg-black/70 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wider text-emerald-300">
                 <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse" /> Live
               </span>
@@ -122,7 +122,7 @@ export default function PlayerPlatformCaseStudy() {
           </div>
           <div className="grid md:grid-cols-3 gap-4">
             {goals.map(([t, b]) => (
-              <div key={t} className="bg-[#0d122d] border border-white/[0.06] rounded-xl p-5">
+              <div key={t} className="bg-[#0E1016] border border-white/[0.06] rounded-xl p-5">
                 <p className="font-semibold text-white mb-2">{t}</p>
                 <p className="text-sm text-gray-400 leading-relaxed">{b}</p>
               </div>

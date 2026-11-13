@@ -10,20 +10,19 @@ interface ProductNodeCardProps {
   className?: string;
 }
 
-export default function ProductNodeCard({ code, name, desc, logo, accent, visual, className }: ProductNodeCardProps) {
+/** One product of the Nexaro family. 14 Nov 2026 revamp: logo, code in mono, name, one line. */
+export default function ProductNodeCard({ code, name, desc, logo, visual, className }: ProductNodeCardProps) {
   return (
-    <div
-      className={`bg-[#0d122d] rounded-xl p-4 text-center transition-colors group flex flex-col items-center justify-center ${className ?? ""}`}
-      style={{ border: `1px solid ${accent ? accent + "33" : "rgba(255,255,255,0.05)"}` }}
-    >
-      <div className="mb-3 flex justify-center w-full">
-        {visual ?? <img src={logo} alt={name} className="w-full h-auto max-h-[80px] object-contain" />}
+    <div className={`group flex items-center gap-4 rounded-2xl border border-line bg-panel p-5 transition-colors hover:border-line-2 ${className ?? ""}`}>
+      <div className="flex h-14 w-14 shrink-0 items-center justify-center overflow-hidden rounded-xl bg-white/[0.03]">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        {visual ?? (logo ? <img src={logo} alt="" className="h-12 w-12 object-contain" /> : null)}
       </div>
-      <span className="text-xs font-mono block mb-1" style={{ color: accent ? accent + "cc" : "#6b7280" }}>
-        {code}
-      </span>
-      <h4 className="font-bold text-white text-sm group-hover:text-cyan-400 transition-colors">{name}</h4>
-      <p className="text-xs text-gray-400 mt-1">{desc}</p>
+      <div className="min-w-0">
+        <span className="font-mono text-[11px] text-dim">{code}</span>
+        <h4 className="text-[15px] font-medium text-ink">{name}</h4>
+        <p className="mt-0.5 text-sm text-mute">{desc}</p>
+      </div>
     </div>
   );
 }

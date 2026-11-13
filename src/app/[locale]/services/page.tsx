@@ -1,15 +1,15 @@
 "use client";
 
-import { motion } from "framer-motion";
-import GlassCard from "@/components/ui/glass-card";
-import { ArrowRight, CheckCircle, Bot, Building2, Globe, Shield, Trophy } from "lucide-react";
 import Link from "next/link";
+import { ArrowRight } from "lucide-react";
+import NeonButton from "@/components/ui/neon-button";
+import { BrowserFrame, Reveal } from "@/components/ui/motion-bits";
 
 // 12 Nov 2026 audit: the four services we sell (same as the partner deck), plus consulting.
 // Highlights are facts we can show; no figures we cannot back up.
+// 14 Nov 2026 revamp: same text; alternating rows with a real screenshot instead of icon tiles.
 const services = [
   {
-    icon: Building2,
     title: "Business Systems (ERP)",
     desc: "One system for people, projects, clients, money and stock, built around how your company already works.",
     features: [
@@ -19,10 +19,10 @@ const services = [
       "Stock and orders, reports, Arabic and English",
     ],
     highlight: "Modular: switch on only what you need, three looks to choose from",
-    color: "from-cyan-400 to-blue-500",
+    img: "/images/erp/dashboard.webp",
+    url: "nexaro-erp.vercel.app",
   },
   {
-    icon: Globe,
     title: "Websites",
     desc: "Company websites in Arabic and English that load fast on phones and send every enquiry to your inbox.",
     features: [
@@ -32,10 +32,10 @@ const services = [
       "30 days of fixes after launch, optional monthly care",
     ],
     highlight: "Domain, hosting account and content in your name",
-    color: "from-purple-400 to-pink-500",
+    img: "/images/alahsa-festival-home.webp",
+    url: "Alahsa Festival Platform",
   },
   {
-    icon: Trophy,
     title: "Esports Systems",
     desc: "The tournament and community stack that ran Pyramids Cup 8, for organisers and gaming communities.",
     features: [
@@ -45,10 +45,10 @@ const services = [
       "Teams OS staff app: tasks, roles, incidents",
     ],
     highlight: "Pyramids Cup 8: 335 matches, 364 players, run by a staff of five",
-    color: "from-yellow-400 to-orange-500",
+    img: "/case-studies/pc8/league.webp",
+    url: "pyramidsqueue.com",
   },
   {
-    icon: Bot,
     title: "Apps, Automation and AI",
     desc: "Remove the manual steps between your tools, and put an assistant inside the systems your team uses.",
     features: [
@@ -58,10 +58,10 @@ const services = [
       "AI assistants that prepare tasks, replies and reports",
     ],
     highlight: "Built on the same stack as our own daily tools",
-    color: "from-emerald-400 to-teal-500",
+    img: "/images/erp/settings.webp",
+    url: "nexaro-erp.vercel.app/settings",
   },
   {
-    icon: Shield,
     title: "Systems Consulting",
     desc: "A clear map of how your operations run today and what to automate first, before you spend on software.",
     features: [
@@ -71,72 +71,64 @@ const services = [
       "KPI framework design",
     ],
     highlight: "Google PM Certified · CAPM in progress",
-    color: "from-sky-400 to-indigo-500",
+    img: null,
+    url: null,
   },
 ];
 
 export default function ServicesPage() {
   return (
-    <main className="min-h-screen bg-[#0A0E27] text-white pt-32 pb-20 px-4">
-      <div className="max-w-7xl mx-auto">
-        
-        {/* Header */}
-        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="text-center mb-16">
-          <h1 className="font-orbitron text-4xl md:text-6xl font-bold mb-6">
-            Our <span className="text-cyan-400">Services</span>
-          </h1>
-          <p className="text-gray-300 text-lg max-w-2xl mx-auto">
+    <main className="bg-space px-5 pb-24 pt-20 text-ink md:pt-28">
+      <div className="mx-auto max-w-6xl">
+        <Reveal className="max-w-3xl">
+          <p className="eyebrow mb-4">Services</p>
+          <h1 className="text-4xl font-semibold tracking-[-0.03em] md:text-6xl">What we build</h1>
+          <p className="mt-6 text-lg leading-relaxed text-mute">
             Four things we build, each priced once after a short discovery call. The monthly fee covers monitoring; new features are always priced first.
           </p>
-        </motion.div>
+        </Reveal>
 
-        {/* Services Grid */}
-        <div className="grid md:grid-cols-2 gap-8 mb-20">
-          {services.map((service, index) => (
-            <GlassCard key={index} className="relative overflow-hidden group flex flex-col">
-              <div className={`absolute top-0 right-0 w-32 h-32 bg-gradient-to-br ${service.color} opacity-10 rounded-bl-full -mr-8 -mt-8 transition-transform group-hover:scale-110`} />
-
-              <div className="flex items-start gap-4 mb-6">
-                <div className={`p-3 rounded-xl bg-gradient-to-br ${service.color} text-white shadow-lg`}>
-                  <service.icon className="w-6 h-6" />
-                </div>
-                <div>
-                  <h3 className="text-2xl font-bold text-white font-orbitron">{service.title}</h3>
-                  <p className="text-gray-400 mt-1">{service.desc}</p>
-                </div>
-              </div>
-
-              <ul className="grid grid-cols-1 gap-3 mb-6">
-                {service.features.map((feature, i) => (
-                  <li key={i} className="flex items-center gap-2 text-gray-300">
-                    <CheckCircle className="w-4 h-4 text-cyan-400 flex-shrink-0" />
-                    {feature}
-                  </li>
-                ))}
-              </ul>
-
-              {service.highlight && (
-                <div className="inline-block px-4 py-1 rounded-full bg-cyan-400/10 border border-cyan-400/30 text-cyan-400 text-xs font-semibold mb-4">
-                  ★ {service.highlight}
-                </div>
-              )}
-
-              <Link href="/en/contact" className="inline-flex items-center gap-2 text-cyan-400 hover:text-white transition-colors font-medium group-hover:underline mt-auto pt-4">
-                Start a project <ArrowRight className="w-4 h-4" />
-              </Link>
-            </GlassCard>
+        <div className="mt-20 space-y-24 md:space-y-32">
+          {services.map((s, i) => (
+            <section key={s.title} className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
+              <Reveal className={i % 2 ? "lg:order-2" : ""}>
+                <span className="font-mono text-xs text-dim">{String(i + 1).padStart(2, "0")}</span>
+                <h2 className="mt-2 text-3xl font-semibold tracking-tight md:text-4xl">{s.title}</h2>
+                <p className="mt-4 text-lg leading-relaxed text-mute">{s.desc}</p>
+                <ul className="mt-7 space-y-3 border-t border-line pt-7">
+                  {s.features.map((f) => (
+                    <li key={f} className="flex gap-3 text-[15px] text-ink/90">
+                      <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-brand" />
+                      {f}
+                    </li>
+                  ))}
+                </ul>
+                <p className="mt-7 text-sm text-mute"><span className="text-ink">In short:</span> {s.highlight}</p>
+                <Link href="/en/contact" className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-ink hover:text-brand">
+                  Start a project <ArrowRight className="h-4 w-4" />
+                </Link>
+              </Reveal>
+              <Reveal delay={0.1} className={i % 2 ? "lg:order-1" : ""}>
+                {s.img ? (
+                  <BrowserFrame src={s.img} alt={s.title} url={s.url ?? undefined} />
+                ) : (
+                  <div className="flex aspect-[16/10] flex-col justify-end rounded-2xl border border-line bg-panel p-8">
+                    <p className="eyebrow mb-3">Credentials</p>
+                    <p className="text-2xl font-medium tracking-tight">{s.highlight}</p>
+                  </div>
+                )}
+              </Reveal>
+            </section>
           ))}
         </div>
 
-        {/* Bottom CTA */}
-        <div className="text-center py-12 border-t border-[rgba(255,255,255,0.05)]">
-          <h2 className="text-2xl font-bold mb-4">Not sure which one you need?</h2>
-          <p className="text-gray-400 mb-8">Tell us what slows your team down. We will say what we would build first, and what it would cost.</p>
-          <Link href="/en/contact" className="inline-block px-8 py-3 bg-cyan-400 text-black font-bold rounded-lg hover:bg-cyan-300 transition-colors">
-            Get in touch
-          </Link>
-        </div>
-
+        <Reveal className="mt-32 rounded-3xl border border-line bg-panel px-6 py-14 text-center">
+          <h2 className="text-3xl font-semibold tracking-tight">Not sure which one you need?</h2>
+          <p className="mx-auto mt-4 max-w-xl text-mute">Tell us what slows your team down. We will say what we would build first, and what it would cost.</p>
+          <div className="mt-8 flex justify-center">
+            <NeonButton href="/en/contact" size="lg">Get in touch</NeonButton>
+          </div>
+        </Reveal>
       </div>
     </main>
   );
