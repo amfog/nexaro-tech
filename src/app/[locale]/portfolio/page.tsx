@@ -51,6 +51,30 @@ const projects = [
     color: sc("WS-003").color,
     contactOnly: false,
   },
+  // 14 Nov 2026: Nexaro ERP, live demo with an invented company.
+  {
+    id: 16,
+    title: sc("NX-007.E").name,
+    category: "Product",
+    tags: ["ERP", "Business Systems", "Arabic/RTL", "AI"],
+    description: "A modular business system for companies of about 10 to 80 people: people, projects, clients, finance and stock in one place. Switch modules on and off; each role sees only its part.",
+    features: [
+      "Modules you switch on and off (nothing is deleted)",
+      "Access levels 0 to 6, enforced in the database",
+      "Team and client directories, attendance and payroll",
+      "Quotes, invoices with VAT, payments and expenses",
+      "Arabic and English, three looks, backup to USB",
+      "Nexaro AI helper for the CEO (Gemini, Groq or Claude)"
+    ],
+    tech: ["Next.js", "TypeScript", "Supabase", "Postgres", "AI"],
+    liveUrl: sc("NX-007.E").liveUrl ?? null,
+    iframeUrl: sc("NX-007.E").liveUrl,
+    githubUrl: null,
+    logoSrc: sc("NX-007.E").icon,
+    screenshots: ["/images/erp/dashboard.webp", "/images/erp/people.webp", "/images/erp/settings.webp"],
+    color: sc("NX-007.E").color,
+    contactOnly: false,
+  },
   {
     id: 1,
     title: sc("NX-001.L").name,
@@ -70,8 +94,7 @@ const projects = [
     logoSrc: sc("NX-001.L").icon,
     screenshots: [
       "/images/nexaro-life-dashboard.webp",
-      "/images/nexaro-life-ai.webp",
-      "/images/nexaro-life-modules.webp"
+      "/images/nexaro-life-ai.webp"
     ],
     color: sc("NX-001.L").color,
     contactOnly: true,
@@ -95,9 +118,7 @@ const projects = [
     githubUrl: null,
     logoSrc: sc("NX-002.O").icon,
     screenshots: [
-      "/images/vicious-os-dashboard.webp",
-      "/images/vicious-os-players.webp",
-      "/images/vicious-os-ai.webp"
+      "/images/vicious-os-dashboard.webp"
     ],
     color: sc("NX-002.O").color,
     contactOnly: true,
@@ -174,8 +195,7 @@ const projects = [
     logoSrc: sc("WS-002").icon,
     screenshots: [
       "/images/alahsa-festival-home.webp",
-      "/images/alahsa-festival-tickets.webp",
-      "/images/alahsa-festival-schedule.webp"
+      "/images/alahsa-festival-tickets.webp"
     ],
     color: sc("WS-002").color,
     contactOnly: false,
@@ -248,7 +268,7 @@ const projects = [
     iframeUrl: sc("WS-004").liveUrl,
     githubUrl: null,
     logoSrc: sc("WS-004").icon,
-    screenshots: [],
+    screenshots: ["/images/live/vicious-site.webp"],
     color: sc("WS-004").color,
     contactOnly: false,
   },
@@ -270,7 +290,7 @@ const projects = [
     iframeUrl: "https://nexaroip.vercel.app/en/how-it-works",
     githubUrl: null,
     logoSrc: sc("NX-006.P").icon,
-    screenshots: [],
+    screenshots: ["/images/live/nexaro-ip.webp"],
     color: sc("NX-006.P").color,
     contactOnly: true,
   },
@@ -295,8 +315,7 @@ const projects = [
     logoSrc: sc("WS-005").icon,
     screenshots: [
       "/images/phygital-ksa-hero.webp",
-      "/images/phygital-ksa-calendar.webp",
-      "/images/phygital-ksa-directory.webp"
+      "/images/phygital-ksa-calendar.webp"
     ],
     color: sc("WS-005").color,
     contactOnly: false,
@@ -317,11 +336,12 @@ const projects = [
       "Web + Mobile (cross-platform)"
     ],
     tech: ["Flutter", "Supabase", "Groq AI", "Netlify"],
-    liveUrl: "https://precious-moxie-67ff79.netlify.app",
+    // 14 Nov 2026: the old Netlify demo now redirects to pyramidsqueue.com, so no live link.
+    liveUrl: null,
     githubUrl: null,
     logoSrc: sc("NX-003.C").icon,
     color: sc("NX-003.C").color,
-    contactOnly: false,
+    contactOnly: true,
   },
   {
     id: 4,
@@ -341,6 +361,7 @@ const projects = [
     liveUrl: "https://project-buner.vercel.app",
     githubUrl: null,
     logoSrc: sc("NX-004.R").icon,
+    screenshots: ["/images/live/rent-os.webp"],
     color: sc("NX-004.R").color,
     contactOnly: false,
   },
@@ -364,12 +385,12 @@ const projects = [
     logoSrc: sc("NX-005.H").icon,
     color: sc("NX-005.H").color,
     contactOnly: true,
-  },
+  }
 ];
 
 export default function PortfolioPage() {
   return (
-    <main className="min-h-screen bg-[#07080C] text-white pt-24 pb-20 px-4">
+    <main className="min-h-screen bg-[#0A0E27] text-white pt-24 pb-20 px-4">
       <div className="max-w-7xl mx-auto">
 
         {/* Header */}
@@ -440,7 +461,7 @@ export default function PortfolioPage() {
 
                     <div className="flex gap-4">
                       {project.contactOnly ? (
-                        <Link href="/en/contact" className="inline-flex h-9 items-center gap-2 rounded-full bg-white px-4 text-sm font-medium text-black transition-colors hover:bg-white/85">
+                        <Link href="/en/contact" className="relative font-semibold rounded-xl transition-all duration-300 overflow-hidden cursor-pointer bg-gradient-to-r from-neon-cyan to-neon-purple text-space hover:opacity-90 px-4 py-2 text-sm shadow-[0_0_15px_rgba(0,245,255,0.5)] hover:shadow-[0_0_25px_rgba(0,245,255,0.7)] inline-flex items-center gap-2">
                           <Mail className="w-4 h-4" />
                           <span>Reach Out to Learn More</span>
                         </Link>
@@ -464,7 +485,7 @@ export default function PortfolioPage() {
 
                   {/* Right: Visual Display */}
                   <div className={`rounded-xl bg-gradient-to-br ${project.color} p-2 flex items-center justify-center min-h-[250px]`}>
-                    <div className="w-full h-full bg-[#07080C] rounded-lg overflow-hidden relative" style={{minHeight: '220px'}}>
+                    <div className="w-full h-full bg-[#0A0E27] rounded-lg overflow-hidden relative" style={{minHeight: '220px'}}>
                       
                       {/* Iframe Preview (for live sites) */}
                       {project.iframeUrl ? (

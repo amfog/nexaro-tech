@@ -1,62 +1,69 @@
 import Link from "next/link";
 import { useLocale, useTranslations } from "next-intl";
 
-/** 14 Nov 2026 revamp: same links and contact details, quieter layout. */
 export default function Footer() {
   const locale = useLocale();
   const t = useTranslations("footer");
-  const col = "space-y-2.5 text-sm text-mute";
-  const a = "transition-colors hover:text-ink";
 
   return (
-    <footer className="border-t border-line bg-space">
-      <div className="mx-auto max-w-6xl px-5 py-14">
-        <div className="grid gap-10 md:grid-cols-4">
+    <footer className="border-t border-[rgba(255,255,255,0.05)] py-12 bg-[#080b1a]">
+      <div className="max-w-7xl mx-auto px-4">
+        <div className="grid md:grid-cols-4 gap-8 mb-8">
+          
+          {/* Brand */}
           <div>
-            <Link href="/en" className="mb-4 inline-flex items-center gap-2.5">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/nexaro-logo.svg" alt="" className="h-7 w-7" />
-              <span className="text-[15px] font-semibold tracking-tight text-ink">Nexaro Tech</span>
+            <Link href="/" className="inline-block mb-4">
+              <div className="flex items-center gap-2">
+                <img src="/nexaro-logo.svg" alt="Nexaro" className="w-8 h-8" />
+                <span className="font-orbitron font-bold text-lg tracking-wider text-white">
+                  NEXARO<span className="text-cyan-400">.TECH</span>
+                </span>
+              </div>
             </Link>
-            <p className="max-w-xs text-sm leading-relaxed text-mute">Business systems, websites and esports platforms, in Arabic and English.</p>
+            <p className="text-gray-400 text-sm">Business systems, websites and esports platforms, in Arabic and English.</p>
           </div>
-
+          
+          {/* Services */}
           <div>
-            <h4 className="mb-4 text-sm font-medium text-ink">Services</h4>
-            <ul className={col}>
-              <li><Link href="/en/services" className={a}>Business Systems (ERP)</Link></li>
-              <li><Link href="/en/services" className={a}>Websites</Link></li>
-              <li><Link href="/en/services" className={a}>Esports Systems</Link></li>
-              <li><Link href="/en/services" className={a}>Apps, Automation and AI</Link></li>
+            <h4 className="font-rajdhani font-semibold mb-4 text-white">Services</h4>
+            <ul className="space-y-2 text-sm text-gray-400">
+              <li><Link href="/en/services" className="hover:text-cyan-400 transition-colors">Business Systems (ERP)</Link></li>
+              <li><Link href="/en/services" className="hover:text-cyan-400 transition-colors">Websites</Link></li>
+              <li><Link href="/en/services" className="hover:text-cyan-400 transition-colors">Esports Systems</Link></li>
+              <li><Link href="/en/services" className="hover:text-cyan-400 transition-colors">Apps, Automation and AI</Link></li>
             </ul>
           </div>
 
+          {/* Company */}
           <div>
-            <h4 className="mb-4 text-sm font-medium text-ink">Company</h4>
-            <ul className={col}>
-              <li><Link href="/en/about" className={a}>About Us</Link></li>
-              <li><Link href="/en/portfolio" className={a}>Products</Link></li>
-              <li><Link href="/en/case-studies/pyramids-cup-8" className={a}>Case study</Link></li>
-              <li><Link href="/en/contact" className={a}>Contact</Link></li>
+            <h4 className="font-rajdhani font-semibold mb-4 text-white">Company</h4>
+            <ul className="space-y-2 text-sm text-gray-400">
+              <li><Link href="/en/about" className="hover:text-cyan-400 transition-colors">About Us</Link></li>
+              <li><Link href="/en/portfolio" className="hover:text-cyan-400 transition-colors">Products</Link></li>
+              <li><Link href="/en/contact" className="hover:text-cyan-400 transition-colors">Contact</Link></li>
             </ul>
           </div>
 
+          {/* Connect */}
           <div>
-            <h4 className="mb-4 text-sm font-medium text-ink">Connect</h4>
-            <ul className={col}>
-              <li><a href="mailto:nexarotch@gmail.com" className={a}>nexarotch@gmail.com</a></li>
+            <h4 className="font-rajdhani font-semibold mb-4 text-white">Connect</h4>
+            <ul className="space-y-2 text-sm text-gray-400">
+              <li><a href="mailto:nexarotch@gmail.com" className="hover:text-cyan-400 transition-colors">nexarotch@gmail.com</a></li>
               <li>Egypt (Global Remote)</li>
-              <li className="flex gap-4 pt-2">
-                <a href="https://www.facebook.com/Nexarotch" target="_blank" rel="noopener noreferrer" className={a}>Facebook</a>
-                <a href="https://www.linkedin.com/company/nexarotch/" target="_blank" rel="noopener noreferrer" className={a}>LinkedIn</a>
+              <li className="flex gap-4 mt-4">
+                <a href="https://www.facebook.com/Nexarotch" target="_blank" rel="noopener noreferrer" className="hover:text-cyan-400 transition-colors">Facebook</a>
+                <a href="https://www.linkedin.com/company/nexarotch/" target="_blank" rel="noopener noreferrer" className="hover:text-cyan-400 transition-colors">LinkedIn</a>
               </li>
             </ul>
           </div>
         </div>
-
-        <div className="mt-12 flex flex-col gap-2 border-t border-line pt-6 text-xs text-dim sm:flex-row sm:items-center sm:justify-between">
-          <span>&copy; {new Date().getFullYear()} Nexaro.tech. All rights reserved.</span>
-          <Link href={`/${locale}/legal`} className={a}>{t("legal")}</Link>
+        
+        <div className="border-t border-[rgba(255,255,255,0.05)] pt-8 text-center text-sm text-gray-500">
+          © {new Date().getFullYear()} Nexaro.tech. All rights reserved.
+          <span className="mx-2" aria-hidden="true">·</span>
+          <Link href={`/${locale}/legal`} className="hover:text-cyan-400 transition-colors">
+            {t("legal")}
+          </Link>
         </div>
       </div>
     </footer>

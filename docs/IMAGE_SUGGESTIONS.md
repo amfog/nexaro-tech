@@ -3,6 +3,10 @@
 Real images beat stock photos and icons. Only use images we own or have permission to use.
 Save as WebP (about 1600 px wide, under 200 KB) in `public/images/`, then tell me the file names.
 
+## Taken from the live apps (14 Nov, in `public/images/live/`)
+Vicious website, Nexaro IP (how it works), Rent OS dashboard, Teams OS website, Ahmed Kamal IP
+(Arabic). Plus the English ERP demo screens in `public/images/erp/`.
+
 ## Already used (real, in the repo)
 - Nexaro ERP demo, English: dashboard, team, modules (`public/images/erp/`).
 - Pyramids Cup 8: home, league, profiles, inhouse, player card (`public/case-studies/pc8/`).

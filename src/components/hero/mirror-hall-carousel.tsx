@@ -295,7 +295,7 @@ export default function MirrorHallCarousel() {
           height: 100%;
           border-radius: 8px;
           overflow: hidden;
-          background: #0E1016;
+          background: #0d122d;
         }
 
         .mh-card-shot-frame {

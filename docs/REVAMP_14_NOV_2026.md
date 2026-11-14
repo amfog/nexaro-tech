@@ -1,5 +1,26 @@
 # Nexaro Tech website revamp (14 Nov 2026)
 
+## Update, later on 14 Nov (owner: "revert everything as it was, but keep the What we build screen;
+## the home looks good but bring back the colours and the background")
+- Reverted to the original look: navbar, footer, About, Products, Contact, Legal, case studies,
+  buttons, cards, fonts, colours (navy, cyan, purple).
+- Kept: the rebuilt **Services** page ("What we build") and the new **Home** layout, now in the
+  original colours with the original grid and particles background back.
+- The original colours now actually load: Tailwind v4 never read `tailwind.config.ts`, so the
+  cyan to purple main button showed as plain text. They are defined in `globals.css` now.
+- **Blog:** 9 real articles with their own pages (`/blog/<slug>`), covers from our screenshots,
+  text in `src/data/blog-posts.ts`: Pyramids Cup 8, the modular ERP, the draft tool, Arabic and
+  English, inhouses, the AI helper that asks first, plus the 3 older posts with full text.
+- **Products:** Nexaro ERP added with its live demo; every live link checked in Chrome on 14 Nov
+  (all open); the CRM demo on Netlify now redirects to pyramidsqueue.com, so CRM is "Reach out";
+  Pyramids Queue points to pyramidsqueue.com; missing screenshot files removed; new screenshots
+  taken from the live apps (`public/images/live/`: Vicious site, Nexaro IP, Rent OS, Teams OS
+  site, Ahmed Kamal IP); the Nexaro IP logo file did not exist, now the Nexaro logo.
+- Seen on the way: on nexaroip.vercel.app/en/how-it-works the step numbers overlap the first
+  letter of each step title ("ign up"). Worth a fix in that project.
+
+## The first revamp (morning of 14 Nov, mostly reverted)
+
 Owner: "Revamp Nexaro Tech like decent companies. No useless emojis like the ones on the website,
 suggested images to be used, animation." Scope chosen: redesign, same content.
 

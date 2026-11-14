@@ -42,7 +42,7 @@ export default function ContactPage() {
   }
 
   return (
-    <main className="min-h-screen bg-[#07080C] text-white pt-32 pb-20 px-4">
+    <main className="min-h-screen bg-[#0A0E27] text-white pt-32 pb-20 px-4">
       <div className="max-w-6xl mx-auto">
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="text-center mb-16">
           <h1 className="font-orbitron text-4xl md:text-6xl font-bold mb-6">
@@ -56,7 +56,7 @@ export default function ContactPage() {
 
         <div className="grid md:grid-cols-2 gap-12">
           <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.2 }} className="space-y-8">
-            <div className="bg-[#0E1016] p-8 rounded-2xl border border-[rgba(255,255,255,0.05)]">
+            <div className="bg-[#0d122d] p-8 rounded-2xl border border-[rgba(255,255,255,0.05)]">
               <h2 className="font-orbitron text-2xl font-bold mb-6 text-white">Contact Info</h2>
               <div className="space-y-6">
                 <div className="flex items-start gap-4">
@@ -87,7 +87,7 @@ export default function ContactPage() {
               </div>
             </div>
 
-            <div className="bg-[#0E1016] p-8 rounded-2xl border border-[rgba(255,255,255,0.05)]">
+            <div className="bg-[#0d122d] p-8 rounded-2xl border border-[rgba(255,255,255,0.05)]">
               <h2 className="font-orbitron text-lg font-bold mb-4 text-white">Helpful to mention</h2>
               <ul className="space-y-2 text-sm text-gray-400 list-disc ps-5">
                 <li>How many people will use the system, and in which departments</li>
@@ -99,7 +99,7 @@ export default function ContactPage() {
           </motion.div>
 
           <motion.div initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.4 }}>
-            <form onSubmit={send} className="bg-[#0E1016] p-8 rounded-2xl border border-[rgba(255,255,255,0.05)] space-y-6">
+            <form onSubmit={send} className="bg-[#0d122d] p-8 rounded-2xl border border-[rgba(255,255,255,0.05)] space-y-6">
               <h2 className="font-orbitron text-2xl font-bold mb-4 text-white">Send a Message</h2>
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="space-y-2">
@@ -119,7 +119,7 @@ export default function ContactPage() {
                 <div className="space-y-2">
                   <label htmlFor="c-type" className="text-sm text-gray-400">Project type</label>
                   <select id="c-type" value={type} onChange={(e) => setType(e.target.value)} className={`${field} appearance-none`}>
-                    {TYPES.map((t) => <option key={t} className="bg-[#0E1016]">{t}</option>)}
+                    {TYPES.map((t) => <option key={t} className="bg-[#0d122d]">{t}</option>)}
                   </select>
                 </div>
               </div>

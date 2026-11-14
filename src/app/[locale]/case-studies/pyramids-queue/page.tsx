@@ -79,7 +79,7 @@ const circuits = ["Türkiye", "Spain", "Italy", "France", "DACH", "CIS", "MENA"]
 
 export default function PyramidsQueueCaseStudy() {
   return (
-    <main className="min-h-screen bg-[#07080C] text-white pt-24 pb-24 px-4">
+    <main className="min-h-screen bg-[#0A0E27] text-white pt-24 pb-24 px-4">
       <div className="max-w-5xl mx-auto">
 
         {/* Header */}
@@ -161,7 +161,7 @@ export default function PyramidsQueueCaseStudy() {
             {systems.map((s) => (
               <div
                 key={s.name}
-                className="bg-[#0E1016] border border-[rgba(255,255,255,0.06)] rounded-xl overflow-hidden"
+                className="bg-[#0d122d] border border-[rgba(255,255,255,0.06)] rounded-xl overflow-hidden"
               >
                 <div className={`h-1 bg-gradient-to-r ${s.bar}`} />
                 <div className="p-6">
@@ -195,7 +195,7 @@ export default function PyramidsQueueCaseStudy() {
           <ol className="space-y-4">
             {steps.map((body, i) => (
               <li key={i} className="flex gap-4 items-start">
-                <span className="flex-shrink-0 w-10 h-10 rounded-full border border-line-2 bg-panel-2 text-ink font-mono text-sm flex items-center justify-center">
+                <span className="flex-shrink-0 w-10 h-10 rounded-full bg-gradient-to-r from-neon-cyan to-neon-purple text-space font-orbitron font-bold flex items-center justify-center">
                   {i + 1}
                 </span>
                 <div className="flex-1 bg-[rgba(255,255,255,0.02)] border border-[rgba(255,255,255,0.06)] rounded-xl px-5 py-4 text-gray-300 leading-relaxed">
@@ -303,7 +303,7 @@ export default function PyramidsQueueCaseStudy() {
             {proof.map((p) => (
               <div
                 key={p.label}
-                className="bg-[#0E1016] border border-[rgba(255,255,255,0.06)] rounded-xl p-6"
+                className="bg-[#0d122d] border border-[rgba(255,255,255,0.06)] rounded-xl p-6"
               >
                 <div className={`font-orbitron text-3xl md:text-4xl font-bold ${p.accent}`}>
                   {p.value}

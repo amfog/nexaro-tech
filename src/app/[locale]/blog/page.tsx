@@ -1,35 +1,18 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, ArrowRight } from "lucide-react";
 import Link from "next/link";
+import { blogPosts } from "@/data/blog-posts";
 
-const posts = [
-  {
-    title: "Building Nexaro Life: Our AI OS Journey",
-    date: "April 2026",
-    excerpt: "How we architected a personal AI operating system with privacy-first design.",
-    tags: ["AI", "Product", "Architecture"]
-  },
-  {
-    title: "Event Tech in Saudi Arabia: Lessons from Alahsa",
-    date: "March 2026",
-    excerpt: "Key insights from building festival platforms for large-scale events.",
-    tags: ["Event Tech", "Case Study", "KSA"]
-  },
-  {
-    title: "Why We Chose Next.js 16 for Nexaro.tech",
-    date: "February 2026",
-    excerpt: "Technical decisions behind our cyberpunk-minimal website rebuild.",
-    tags: ["Next.js", "Web Dev", "Design"]
-  }
-];
-
+// 14 Nov 2026 (owner: "increase the blog and add things from our work"): nine real articles,
+// each with its own page (blog/[slug]) and a cover from our own screenshots. Original colours.
 export default function BlogPage() {
+  const [first, ...rest] = blogPosts;
   return (
-    <main className="min-h-screen bg-[#07080C] text-white pt-32 pb-20 px-4">
-      <div className="max-w-4xl mx-auto">
-        
+    <main className="min-h-screen bg-[#0A0E27] text-white pt-32 pb-20 px-4">
+      <div className="max-w-6xl mx-auto">
+
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="mb-12">
           <Link href="/en" className="inline-flex items-center gap-2 text-gray-400 hover:text-cyan-400 mb-6 transition-colors">
             <ArrowLeft className="w-4 h-4" /> Back to Home
@@ -38,37 +21,54 @@ export default function BlogPage() {
             Resources & <span className="text-cyan-400">Insights</span>
           </h1>
           <p className="text-gray-300 text-lg">
-            Technical articles, case studies, and thoughts from the Nexaro team.
+            Notes from building business systems, websites and esports platforms: what we built, what broke, and what we learned.
           </p>
         </motion.div>
 
-        <div className="space-y-6">
-          {posts.map((post, index) => (
-            <motion.article
-              key={index}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.1 }}
-              className="bg-[#0E1016] p-6 rounded-xl border border-[rgba(255,255,255,0.05)] hover:border-cyan-400/30 transition-colors cursor-pointer group"
-            >
+        {/* Featured */}
+        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }}>
+          <Link href={`/en/blog/${first.slug}`} className="group grid md:grid-cols-2 gap-6 bg-[#0d122d] rounded-2xl border border-[rgba(255,255,255,0.05)] hover:border-cyan-400/30 transition-colors overflow-hidden mb-8">
+            <div className="overflow-hidden">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src={first.cover} alt="" className="w-full h-full min-h-56 object-cover object-left-top group-hover:scale-[1.03] transition-transform duration-700" />
+            </div>
+            <div className="p-6 md:p-8 flex flex-col">
               <div className="flex flex-wrap gap-2 mb-3">
-                {post.tags.map(tag => (
-                  <span key={tag} className="text-xs text-cyan-400 bg-cyan-400/10 px-2 py-1 rounded">
-                    {tag}
-                  </span>
-                ))}
+                {first.tags.map((tag) => <span key={tag} className="text-xs text-cyan-400 bg-cyan-400/10 px-2 py-1 rounded">{tag}</span>)}
               </div>
-              <h2 className="text-xl font-bold text-white mb-2 group-hover:text-cyan-400 transition-colors">
-                {post.title}
-              </h2>
-              <p className="text-gray-400 text-sm mb-3">{post.date}</p>
-              <p className="text-gray-300">{post.excerpt}</p>
+              <h2 className="text-2xl md:text-3xl font-bold text-white mb-2 group-hover:text-cyan-400 transition-colors">{first.title}</h2>
+              <p className="text-gray-400 text-sm mb-4">{first.date}</p>
+              <p className="text-gray-300">{first.excerpt}</p>
+              <span className="mt-auto pt-6 inline-flex items-center gap-2 text-cyan-400 text-sm">Read the article <ArrowRight className="w-4 h-4" /></span>
+            </div>
+          </Link>
+        </motion.div>
+
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {rest.map((post, index) => (
+            <motion.article
+              key={post.slug}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: (index % 3) * 0.08 }}
+            >
+              <Link href={`/en/blog/${post.slug}`} className="group flex h-full flex-col bg-[#0d122d] rounded-xl border border-[rgba(255,255,255,0.05)] hover:border-cyan-400/30 transition-colors overflow-hidden">
+                <div className="aspect-[16/9] overflow-hidden">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src={post.cover} alt="" loading="lazy" className="w-full h-full object-cover object-top group-hover:scale-[1.04] transition-transform duration-700" />
+                </div>
+                <div className="p-5 flex flex-col flex-1">
+                  <div className="flex flex-wrap gap-2 mb-3">
+                    {post.tags.map((tag) => <span key={tag} className="text-xs text-cyan-400 bg-cyan-400/10 px-2 py-1 rounded">{tag}</span>)}
+                  </div>
+                  <h2 className="text-lg font-bold text-white mb-1 group-hover:text-cyan-400 transition-colors">{post.title}</h2>
+                  <p className="text-gray-500 text-xs mb-3">{post.date}</p>
+                  <p className="text-gray-300 text-sm">{post.excerpt}</p>
+                </div>
+              </Link>
             </motion.article>
           ))}
-        </div>
-
-        <div className="text-center mt-12 text-gray-500 text-sm">
-          More articles coming soon. Follow us for updates.
         </div>
 
       </div>

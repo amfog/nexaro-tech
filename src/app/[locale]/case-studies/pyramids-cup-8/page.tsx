@@ -202,7 +202,7 @@ function Bars({ rows, max, color, unit }: { rows: readonly (readonly [string, nu
 
 export default function PyramidsCup8CaseStudy() {
   return (
-    <main className="min-h-screen bg-[#07080C] text-white pt-24 pb-24 px-4">
+    <main className="min-h-screen bg-[#0A0E27] text-white pt-24 pb-24 px-4">
       <div className="max-w-5xl mx-auto">
         {/* Header */}
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
@@ -240,7 +240,7 @@ export default function PyramidsCup8CaseStudy() {
         <Section icon={BarChart3} title="Cup 8 at a glance" kicker="The numbers">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {headline.map((s) => (
-              <div key={s.label} className="bg-[#0E1016] border border-white/[0.06] rounded-xl p-5">
+              <div key={s.label} className="bg-[#0d122d] border border-white/[0.06] rounded-xl p-5">
                 <div className="font-orbitron text-3xl font-bold text-cyan-400">{s.value}</div>
                 <div className="text-sm text-white mt-1">{s.label}</div>
                 <div className="text-xs text-gray-500 mt-1">{s.note}</div>
@@ -268,7 +268,7 @@ export default function PyramidsCup8CaseStudy() {
                 Arabic and English, with a public record any captain can check without asking an admin.
               </p>
             </div>
-            <div className="lg:col-span-3 bg-[#0E1016] border border-white/[0.06] rounded-xl divide-y divide-white/5">
+            <div className="lg:col-span-3 bg-[#0d122d] border border-white/[0.06] rounded-xl divide-y divide-white/5">
               {facts.map(([k, v]) => (
                 <div key={k} className="flex gap-4 px-5 py-3 text-sm">
                   <span className="w-36 shrink-0 text-gray-500">{k}</span>
@@ -288,7 +288,7 @@ export default function PyramidsCup8CaseStudy() {
           </p>
           <div className="grid md:grid-cols-5 gap-3">
             {stages.map((s, i) => (
-              <div key={s.name} className={`rounded-xl border p-4 ${i === 4 ? "border-yellow-500/40 bg-yellow-500/[0.05]" : "border-white/[0.06] bg-[#0E1016]"}`}>
+              <div key={s.name} className={`rounded-xl border p-4 ${i === 4 ? "border-yellow-500/40 bg-yellow-500/[0.05]" : "border-white/[0.06] bg-[#0d122d]"}`}>
                 <p className={`font-orbitron text-sm font-bold ${i === 4 ? "text-yellow-400" : "text-cyan-400"}`}>{s.name}</p>
                 <p className="text-[11px] uppercase tracking-wider text-gray-500 mt-1 mb-3">{s.when}</p>
                 <p className="text-xs text-gray-300 leading-relaxed">{s.body}</p>
@@ -306,7 +306,7 @@ export default function PyramidsCup8CaseStudy() {
           <div className="grid lg:grid-cols-3 gap-6 items-start">
             <div className="lg:col-span-2 grid sm:grid-cols-2 gap-4">
               {playoffs.map((m) => (
-                <div key={m.label} className={`rounded-xl border p-5 ${m.final ? "border-yellow-500/50 bg-yellow-500/[0.05]" : "border-white/[0.06] bg-[#0E1016]"}`}>
+                <div key={m.label} className={`rounded-xl border p-5 ${m.final ? "border-yellow-500/50 bg-yellow-500/[0.05]" : "border-white/[0.06] bg-[#0d122d]"}`}>
                   <div className="flex items-center justify-between mb-3">
                     <p className={`font-orbitron text-xs font-bold uppercase tracking-wider ${m.final ? "text-yellow-400" : "text-cyan-400"}`}>{m.label}</p>
                     <p className="text-[11px] text-gray-500">{m.when}</p>
@@ -350,7 +350,7 @@ export default function PyramidsCup8CaseStudy() {
         {/* Live */}
         <Section icon={Radio} title="The public record, live" kicker="pyramidsqueue.com">
           <div className="rounded-2xl bg-gradient-to-br from-yellow-500/20 to-cyan-500/10 p-1.5">
-            <div className="relative overflow-hidden rounded-xl border border-white/10 bg-[#07080C] aspect-[16/9]">
+            <div className="relative overflow-hidden rounded-xl border border-white/10 bg-[#0A0E27] aspect-[16/9]">
               <iframe
                 src="https://pyramidsqueue.com/season"
                 title="pyramidsqueue.com season page, live"
@@ -373,7 +373,7 @@ export default function PyramidsCup8CaseStudy() {
           </p>
           <div className="grid md:grid-cols-2 gap-4">
             {challenge.map((c, i) => (
-              <div key={c.title} className="flex gap-4 bg-[#0E1016] border border-white/[0.06] rounded-xl p-5">
+              <div key={c.title} className="flex gap-4 bg-[#0d122d] border border-white/[0.06] rounded-xl p-5">
                 <span className="font-orbitron text-2xl font-bold text-purple-400 w-8 shrink-0">{i + 1}</span>
                 <div>
                   <p className="font-semibold text-white mb-1">{c.title}</p>
@@ -392,7 +392,7 @@ export default function PyramidsCup8CaseStudy() {
           </p>
           <div className="grid md:grid-cols-2 gap-6">
             {stack.map((s) => (
-              <div key={s.name} className="bg-[#0E1016] border border-white/[0.06] rounded-xl overflow-hidden">
+              <div key={s.name} className="bg-[#0d122d] border border-white/[0.06] rounded-xl overflow-hidden">
                 <div className={`h-1 bg-gradient-to-r ${s.bar}`} />
                 <div className="p-6">
                   <h3 className={`font-orbitron text-lg font-bold ${s.accent}`}>{s.name}</h3>
@@ -456,7 +456,7 @@ export default function PyramidsCup8CaseStudy() {
             against a player identity so &ldquo;how many warnings&rdquo; is a query, not a scroll.
           </p>
           <div className="grid md:grid-cols-2 gap-6">
-            <div className="bg-[#0E1016] border border-white/[0.06] rounded-xl p-6">
+            <div className="bg-[#0d122d] border border-white/[0.06] rounded-xl p-6">
               <p className="font-orbitron text-sm font-bold text-cyan-400 mb-4">Handled by the system</p>
               <ul className="space-y-2.5">
                 {automated.map((a) => (
@@ -467,7 +467,7 @@ export default function PyramidsCup8CaseStudy() {
                 ))}
               </ul>
             </div>
-            <div className="bg-[#0E1016] border border-white/[0.06] rounded-xl p-6">
+            <div className="bg-[#0d122d] border border-white/[0.06] rounded-xl p-6">
               <p className="font-orbitron text-sm font-bold text-yellow-400 mb-4">Still decided by a person</p>
               <ul className="space-y-2.5">
                 {human.map((a) => (
@@ -497,7 +497,7 @@ export default function PyramidsCup8CaseStudy() {
         <Section icon={Wrench} title="Where the system was tested" kicker="What went wrong, and what changed">
           <div className="space-y-4">
             {incidents.map((x) => (
-              <div key={x.title} className="bg-[#0E1016] border border-white/[0.06] rounded-xl p-6 grid md:grid-cols-3 gap-4">
+              <div key={x.title} className="bg-[#0d122d] border border-white/[0.06] rounded-xl p-6 grid md:grid-cols-3 gap-4">
                 <div>
                   <p className="font-semibold text-white">{x.title}</p>
                   <p className="text-xs text-gray-500 mt-1">{x.when}</p>
@@ -543,7 +543,7 @@ export default function PyramidsCup8CaseStudy() {
               ["5,161", "messages in a week", "week to 10 October"],
               ["6,001", "voice minutes in a week", "week to 10 October"],
             ].map(([v, l, n]) => (
-              <div key={l} className="bg-[#0E1016] border border-white/[0.06] rounded-xl p-5">
+              <div key={l} className="bg-[#0d122d] border border-white/[0.06] rounded-xl p-5">
                 <p className="font-orbitron text-2xl font-bold text-cyan-400">{v}</p>
                 <p className="text-sm text-white mt-1">{l}</p>
                 <p className="text-xs text-gray-500 mt-1">{n}</p>
@@ -567,7 +567,7 @@ export default function PyramidsCup8CaseStudy() {
         <Section icon={Trophy} title="What Cup 8 proved" kicker="Outcomes">
           <div className="grid md:grid-cols-2 gap-4">
             {proved.map(([t, b], i) => (
-              <div key={t} className="flex gap-4 bg-[#0E1016] border border-white/[0.06] rounded-xl p-5">
+              <div key={t} className="flex gap-4 bg-[#0d122d] border border-white/[0.06] rounded-xl p-5">
                 <span className="font-orbitron text-lg font-bold text-cyan-400 w-8 shrink-0">0{i + 1}</span>
                 <div>
                   <p className="font-semibold text-white mb-1">{t}</p>

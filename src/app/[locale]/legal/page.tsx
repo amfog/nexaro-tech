@@ -76,7 +76,7 @@ export default async function LegalPage({ params }: Params) {
   ];
 
   return (
-    <div className="min-h-screen bg-[#07080C] text-white pt-16 pb-20 px-4">
+    <div className="min-h-screen bg-[#0A0E27] text-white pt-16 pb-20 px-4">
       <div className="max-w-3xl mx-auto">
         <header className="mb-10">
           <h1 className="font-orbitron text-4xl md:text-5xl font-bold mb-4">

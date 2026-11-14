@@ -1,95 +1,68 @@
 @import "tailwindcss";
 
-/*
- * Nexaro Tech design system (revamp, 14 Nov 2026).
- * Calm product-company look: near-black ink, one cyan accent used sparingly, white primary
- * buttons, hairline borders, real product screenshots instead of icons and effects.
- *
- * Tailwind v4 reads its theme from here (tailwind.config.ts is not loaded by v4). The old class
- * names the pages still use (bg-space, text-neon-cyan, font-orbitron, font-rajdhani) are mapped to
- * the new tokens below, so every page picks up the new look without a rewrite.
- */
-@theme {
-  --color-space: #07080c;
-  --color-space-light: #0e1016;
-  --color-space-dark: #050608;
-  --color-panel: #0e1016;
-  --color-panel-2: #13151d;
-  --color-line: rgba(255, 255, 255, 0.08);
-  --color-line-2: rgba(255, 255, 255, 0.14);
-  --color-ink: #ededf2;
-  --color-mute: #9aa0ad;
-  --color-dim: #6b7180;
-  --color-brand: #2dd4e8;
-  --color-brand-2: #8b7cf6;
-  --color-neon-cyan: #2dd4e8;
-  --color-neon-purple: #8b7cf6;
-  --color-gold: #e0b84c;
-
-  --font-sans: var(--font-geist), var(--font-tajawal), ui-sans-serif, system-ui, sans-serif;
-  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
-  --font-orbitron: var(--font-geist), var(--font-tajawal), ui-sans-serif, system-ui, sans-serif;
-  --font-rajdhani: var(--font-geist), var(--font-tajawal), ui-sans-serif, system-ui, sans-serif;
-  --font-inter: var(--font-geist), var(--font-tajawal), ui-sans-serif, system-ui, sans-serif;
-  --font-tajawal: var(--font-tajawal), ui-sans-serif, system-ui, sans-serif;
-
-  --animate-aurora: aurora 18s ease-in-out infinite alternate;
-  --animate-marquee: marquee 45s linear infinite;
-  @keyframes aurora {
-    0% { transform: translate3d(-6%, -4%, 0) scale(1); opacity: 0.55; }
-    50% { transform: translate3d(5%, 3%, 0) scale(1.08); opacity: 0.8; }
-    100% { transform: translate3d(-3%, 6%, 0) scale(1.02); opacity: 0.6; }
-  }
-  @keyframes marquee {
-    from { transform: translateX(0); }
-    to { transform: translateX(-50%); }
-  }
-}
-
 :root {
-  --background: #07080c;
-  --foreground: #ededf2;
-  color-scheme: dark;
+  --background: #0A0E27;
+  --foreground: #FFFFFF;
 }
-
-html { scroll-behavior: smooth; }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-sans);
-  -webkit-font-smoothing: antialiased;
-  text-rendering: optimizeLegibility;
+  font-family: var(--font-inter), sans-serif;
 }
 
-/* Headings: tight, confident, no neon. */
-h1, h2, h3 { letter-spacing: -0.02em; }
-
-::selection { background: rgba(45, 212, 232, 0.25); }
-
-/* Quiet scrollbar */
+/* Custom Scrollbar */
 ::-webkit-scrollbar { width: 8px; }
-::-webkit-scrollbar-track { background: transparent; }
-::-webkit-scrollbar-thumb { background: rgba(255, 255, 255, 0.12); border-radius: 4px; }
+::-webkit-scrollbar-track { background: rgba(255,255,255,0.05); }
+::-webkit-scrollbar-thumb { background: rgba(0, 245, 255, 0.3); border-radius: 4px; }
 
-/* Eyebrow label used above section titles */
+/*
+ * 14 Nov 2026: tokens for the rebuilt Home and Services pages, in the ORIGINAL colours (navy,
+ * cyan, purple). Tailwind v4 does not read tailwind.config.ts, so the neon and space colours the
+ * site was designed with never loaded (the main button showed as plain text). Defining them here
+ * makes the original design work as intended. Fonts are left as they were.
+ */
+@theme {
+  --color-space: #0A0E27;
+  --color-space-light: #13183F;
+  --color-space-dark: #050714;
+  --color-neon-cyan: #00F5FF;
+  --color-neon-purple: #B829F7;
+  --color-panel: #0d122d;
+  --color-panel-2: #111737;
+  --color-line: rgba(255, 255, 255, 0.08);
+  --color-line-2: rgba(255, 255, 255, 0.16);
+  --color-ink: #FFFFFF;
+  --color-mute: #cbd2e1;
+  --color-dim: #8b93a7;
+  --color-brand: #22d3ee;
+  --color-brand-2: #a855f7;
+  --color-gold: #FFD700;
+
+  --animate-aurora: aurora 18s ease-in-out infinite alternate;
+  @keyframes aurora {
+    0% { transform: translate3d(-6%, -4%, 0) scale(1); opacity: 0.55; }
+    50% { transform: translate3d(5%, 3%, 0) scale(1.08); opacity: 0.85; }
+    100% { transform: translate3d(-3%, 6%, 0) scale(1.02); opacity: 0.6; }
+  }
+}
+
 .eyebrow {
-  font-family: var(--font-mono);
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
   font-size: 12px;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--color-brand);
 }
 
-/* Faint grid that fades out, behind the hero only */
 .hero-grid {
   background-image:
-    linear-gradient(rgba(255, 255, 255, 0.045) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.045) 1px, transparent 1px);
-  background-size: 56px 56px;
-  mask-image: radial-gradient(ellipse 70% 60% at 50% 0%, #000 40%, transparent 100%);
+    linear-gradient(rgba(0, 245, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 245, 255, 0.05) 1px, transparent 1px);
+  background-size: 50px 50px;
+  mask-image: radial-gradient(ellipse 75% 65% at 50% 0%, #000 40%, transparent 100%);
 }
 
 @media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
+  .animate-aurora { animation: none; }
 }

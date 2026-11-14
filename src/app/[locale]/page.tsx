@@ -17,6 +17,7 @@ import NeonButton from "@/components/ui/neon-button";
 import TechMarquee from "@/components/ui/tech-marquee";
 import ProductNodeCard from "@/components/products/product-node-card";
 import { Aurora, BrowserFrame, CountUp, Reveal } from "@/components/ui/motion-bits";
+import ParticlesBg from "@/components/ui/particles-bg";
 
 const STATS = [
   { value: "335", label: "Matches" },
@@ -126,6 +127,10 @@ function ErpSpotlight() {
 export default function HomePage() {
   return (
     <main className="relative overflow-x-hidden bg-space text-ink">
+      {/* 14 Nov 2026 (owner): the original background is back: the faint cyan grid and the particles. */}
+      <div className="pointer-events-none fixed inset-0 z-0 bg-[linear-gradient(rgba(0,245,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(0,245,255,0.03)_1px,transparent_1px)] bg-[size:50px_50px] opacity-20" />
+      <ParticlesBg />
+      <div className="relative z-10">
       {/* 1. HERO */}
       <section className="relative px-5 pb-10 pt-20 md:pt-28">
         <Aurora />
@@ -141,7 +146,7 @@ export default function HomePage() {
             <h1 className="mt-7 text-5xl font-semibold leading-[1.02] tracking-[-0.035em] text-ink md:text-7xl">
               Systems your business
               <br />
-              <span className="bg-gradient-to-r from-white via-white to-brand bg-clip-text text-transparent">runs on</span>
+              <span className="bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">runs on</span>
             </h1>
           </Reveal>
           <Reveal delay={0.16}>
@@ -252,7 +257,7 @@ export default function HomePage() {
       </section>
 
       {/* 4. SERVICES: screenshots instead of icon tiles */}
-      <section className="border-t border-line px-5 py-24">
+      <section className="border-t border-line bg-[#0d122d]/80 px-5 py-24">
         <div className="mx-auto max-w-6xl">
           <SectionHead eyebrow="What we do" title="Four things we build" sub="Each one priced once, after a short discovery call." />
           <div className="grid gap-5 md:grid-cols-2">
@@ -356,7 +361,7 @@ export default function HomePage() {
       </section>
 
       {/* 9. PRODUCT FAMILY */}
-      <section className="px-5 py-24">
+      <section className="bg-[#080b1a]/80 px-5 py-24">
         <div className="mx-auto max-w-6xl">
           <SectionHead eyebrow="The Nexaro node family" title="Products we build on and reuse" sub="So every client project starts further ahead." />
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -426,6 +431,7 @@ export default function HomePage() {
         <p className="mb-6 text-center text-sm text-dim">Built with</p>
         <TechMarquee />
       </section>
+      </div>
     </main>
   );
 }
