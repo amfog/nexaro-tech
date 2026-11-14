@@ -32,8 +32,9 @@ const services = [
       "30 days of fixes after launch, optional monthly care",
     ],
     highlight: "Domain, hosting account and content in your name",
-    img: "/images/alahsa-festival-home.webp",
-    url: "Alahsa Festival Platform",
+    // 14 Nov 2026 (owner): Pyramids Queue in What we build: pyramidsqueue.com is our own site.
+    img: "/case-studies/pc8/home.webp",
+    url: "pyramidsqueue.com",
   },
   {
     title: "Esports Systems",
@@ -70,9 +71,11 @@ const services = [
       "Team onboarding playbooks",
       "KPI framework design",
     ],
-    highlight: "Google PM Certified · CAPM in progress",
-    img: null,
-    url: null,
+    // 14 Nov 2026 (owner): PMP, not CAPM; and use Pyramids Queue in What we build: the
+    // operations we mapped and run for Pyramids Queue (Teams OS workflows) instead of an empty card.
+    highlight: "Google PM Certified · PMP in progress",
+    img: "/images/teams-os-ops-tasks.webp",
+    url: "Teams OS: Pyramids Queue ops tasks",
   },
 ];
 
