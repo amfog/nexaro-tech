@@ -127,14 +127,12 @@ function ErpSpotlight() {
 export default function HomePage() {
   return (
     <main className="relative overflow-x-hidden bg-space text-ink">
-      {/* 14 Nov 2026 (owner): the original background is back: the faint cyan grid and the particles. */}
-      <div className="pointer-events-none fixed inset-0 z-0 bg-[linear-gradient(rgba(0,245,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(0,245,255,0.03)_1px,transparent_1px)] bg-[size:50px_50px] opacity-20" />
+      {/* 14 Nov 2026 (owner): the particles are back; the grid is gone. */}
       <ParticlesBg />
       <div className="relative z-10">
       {/* 1. HERO */}
       <section className="relative px-5 pb-10 pt-20 md:pt-28">
         <Aurora />
-        <div aria-hidden className="hero-grid pointer-events-none absolute inset-0" />
         <div className="relative mx-auto max-w-4xl text-center">
           <Reveal>
             <span className="inline-flex items-center gap-2 rounded-full border border-line-2 bg-white/[0.03] px-3.5 py-1.5 text-[13px] text-mute">
@@ -162,22 +160,6 @@ export default function HomePage() {
         <Reveal delay={0.3} className="relative mx-auto mt-16 max-w-5xl">
           <BrowserFrame src="/images/erp/dashboard.webp" alt="Nexaro ERP dashboard with projects, tasks, invoices and a six month income chart" url="nexaro-erp.vercel.app" tilt priority />
         </Reveal>
-      </section>
-
-      {/* 2. TRUST STRIP: real projects only */}
-      <section className="px-5 py-14">
-        <p className="mb-7 text-center text-sm text-dim">Platforms we have shipped for</p>
-        <div className="mx-auto flex max-w-4xl flex-wrap items-center justify-center gap-x-12 gap-y-6 opacity-70 grayscale">
-          {[
-            { src: "/pyramids-queue.png", alt: "Pyramids Queue", h: "h-10" },
-            { src: "/vicious-os.svg", alt: "The Vicious Esports", h: "h-10" },
-            { src: "/phygital-ksa-logo.png", alt: "Phygital KSA", h: "h-8" },
-            { src: "/alahsa-festival.svg", alt: "Alahsa Festival", h: "h-10" },
-          ].map((l) => (
-            // eslint-disable-next-line @next/next/no-img-element
-            <img key={l.alt} src={l.src} alt={l.alt} title={l.alt} className={`${l.h} w-auto object-contain`} />
-          ))}
-        </div>
       </section>
 
       {/* 3. FEATURED CASE STUDY: Pyramids Cup 8 (numbers as before) */}

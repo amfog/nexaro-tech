@@ -6,6 +6,32 @@ import NeonButton from "@/components/ui/neon-button";
 import { ExternalLink, ArrowLeft, Code, Mail, FileText } from "lucide-react";
 import Link from "next/link";
 import { showcaseItems } from "@/data/nexaro-showcase";
+import { useEffect, useState } from "react";
+
+/** Shows an app's screenshots one after another (fade every 3.5 s). */
+function ScreenCycler({ srcs, title }: { srcs: string[]; title: string }) {
+  const [i, setI] = useState(0);
+  useEffect(() => {
+    if (srcs.length < 2) return;
+    const t = setInterval(() => setI((n) => (n + 1) % srcs.length), 3500);
+    return () => clearInterval(t);
+  }, [srcs.length]);
+  return (
+    <div className="absolute inset-0">
+      {srcs.map((src, k) => (
+        // eslint-disable-next-line @next/next/no-img-element
+        <img
+          key={src}
+          src={src}
+          alt={`${title} screen ${k + 1}`}
+          loading="lazy"
+          className="absolute inset-0 h-full w-full object-cover object-left-top transition-opacity duration-700"
+          style={{ opacity: k === i ? 1 : 0 }}
+        />
+      ))}
+    </div>
+  );
+}
 
 function sc(code: string) {
   const item = showcaseItems.find((i) => i.code === code);
@@ -68,7 +94,8 @@ const projects = [
     ],
     tech: ["Next.js", "TypeScript", "Supabase", "Postgres", "AI"],
     liveUrl: sc("NX-007.E").liveUrl ?? null,
-    iframeUrl: sc("NX-007.E").liveUrl,
+    // No live frame: the ERP refuses to be framed by other sites on purpose (it holds money and
+    // people data), so the card shows its screenshots and "View Live" opens the demo.
     githubUrl: null,
     logoSrc: sc("NX-007.E").icon,
     screenshots: ["/images/erp/dashboard.webp", "/images/erp/people.webp", "/images/erp/settings.webp"],
@@ -499,24 +526,9 @@ export default function PortfolioPage() {
                           />
                         </div>
                       ) : project.screenshots?.length ? (
-                        /* Auto-Swapping: Logo ↔ Screenshots on Hover */
-                        <div className="flex items-center justify-center h-full p-4 relative">
-                          {/* Logo (default) */}
-                          <img
-                            src={project.logoSrc}
-                            alt={`${project.title} Logo`}
-                            className="w-full h-auto object-contain max-h-[180px] transition-opacity duration-500 group-hover:opacity-0"
-                          />
-                          
-                          {/* Screenshot (shows on hover) */}
-                          <div className="absolute inset-0 flex items-center justify-center p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                            <img
-                              src={project.screenshots[0]}
-                              alt={`${project.title} Screenshot`}
-                              className="w-full h-auto object-contain max-h-[180px] rounded-lg border border-[rgba(255,255,255,0.1)]"
-                            />
-                          </div>
-                        </div>
+                        /* 14 Nov 2026: the real screen, not the logo (owner: "make sure the applications
+                           look nice in products"). Several screens cycle slowly. */
+                        <ScreenCycler srcs={project.screenshots} title={project.title} />
                       ) : (
                         /* Logo Only (no screenshots) */
                         <div className="flex items-center justify-center h-full p-4">
