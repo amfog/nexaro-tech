@@ -13,94 +13,87 @@ const navLinks = [
   { href: "/en/blog", label: "Blog" },
 ];
 
+/**
+ * 14 Nov 2026 (owner: "Raycast for Nexaro Tech with our colours"): a floating glass pill, like
+ * Raycast's, in our navy with the cyan to purple button. Same links as before.
+ */
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <>
-      {/* Desktop Navbar */}
-      <motion.header 
-        initial={{ y: -100 }}
-        animate={{ y: 0 }}
-        className="fixed top-0 left-0 right-0 z-50 bg-[#0A0E27]/90 backdrop-blur-md border-b border-[rgba(255,255,255,0.05)]"
+    <header className="fixed inset-x-0 top-3 z-50 px-3">
+      <motion.div
+        initial={{ y: -20, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.5 }}
+        className="mx-auto max-w-5xl rounded-2xl border border-white/10 bg-[#0A0E27]/70 shadow-[inset_0_1px_0_rgba(255,255,255,0.08),0_10px_40px_-10px_rgba(0,0,0,0.6)] backdrop-blur-xl"
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-16">
-            
-            {/* LOGO */}
-            <Link href="/en" className="flex items-center gap-2 group">
-              <img src="/nexaro-logo.svg" alt="Nexaro" className="w-8 h-8" />
-              <span className="font-orbitron font-bold text-sm tracking-wider text-white group-hover:text-cyan-400 transition-colors">
-                NEXARO<span className="text-cyan-400">.TECH</span>
-              </span>
-            </Link>
-
-            {/* Desktop Links */}
-            <nav className="hidden md:flex items-center gap-8">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  className="text-sm font-medium text-gray-300 hover:text-cyan-400 transition-colors"
-                >
-                  {link.label}
-                </Link>
-              ))}
-            </nav>
-
-            {/* CTA Button */}
-            <div className="hidden md:block">
-              <Link
-                href="/en/contact"
-                className="inline-flex items-center px-4 py-2 bg-cyan-400 text-black text-sm font-semibold rounded-lg hover:bg-cyan-300 transition-colors"
-              >
-                Get in touch
-              </Link>
-            </div>
-
-            {/* Mobile Toggle */}
-            <button 
-              onClick={() => setIsOpen(!isOpen)} 
-              className="md:hidden p-2 text-white"
-            >
-              {isOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
-            </button>
-          </div>
-        </div>
-      </motion.header>
-
-      {/* Mobile Menu */}
-      {/* Mobile Menu */}
-<AnimatePresence>
-  {isOpen && (
-    <motion.div
-      initial={{ opacity: 0, height: 0 }}
-      animate={{ opacity: 1, height: "auto" }}
-      exit={{ opacity: 0, height: 0 }}
-      className="md:hidden bg-[#0A0E27] border-b border-[rgba(255,255,255,0.05)]"
-    >
-      <div className="px-4 py-4 space-y-4">
-        {navLinks.map((link) => (
-          <Link
-            key={link.href}
-            href={link.href}
-            onClick={() => setIsOpen(false)}
-            className="block text-base font-medium text-gray-300 hover:text-cyan-400 transition-colors py-2"
-          >
-            {link.label}  {/* This should show the label, not the logo */}
+        <div className="flex h-14 items-center justify-between px-4">
+          <Link href="/en" className="flex items-center gap-2 group">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/nexaro-logo.svg" alt="Nexaro" className="h-7 w-7" />
+            <span className="text-sm font-bold tracking-wider text-white transition-colors group-hover:text-cyan-400">
+              NEXARO<span className="text-cyan-400">.TECH</span>
+            </span>
           </Link>
-        ))}
-        <Link
-          href="/en/contact"
-          onClick={() => setIsOpen(false)}
-          className="block w-full text-center px-4 py-3 bg-cyan-400 text-black font-semibold rounded-lg hover:bg-cyan-300 transition-colors"
-        >
-          Get in touch
-        </Link>
-      </div>
-    </motion.div>
-  )}
-</AnimatePresence>
-    </>
+
+          <nav className="hidden items-center gap-1 md:flex">
+            {navLinks.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className="rounded-lg px-3 py-1.5 text-sm font-medium text-gray-300 transition-colors hover:bg-white/[0.06] hover:text-white"
+              >
+                {link.label}
+              </Link>
+            ))}
+          </nav>
+
+          <div className="hidden md:block">
+            <Link
+              href="/en/contact"
+              className="inline-flex items-center rounded-xl bg-gradient-to-r from-[#00F5FF] to-[#B829F7] px-4 py-2 text-sm font-semibold text-[#0A0E27] shadow-[0_0_20px_rgba(0,245,255,0.35)] transition-opacity hover:opacity-90"
+            >
+              Get in touch
+            </Link>
+          </div>
+
+          <button onClick={() => setIsOpen(!isOpen)} className="p-2 text-white md:hidden" aria-label={isOpen ? "Close menu" : "Open menu"} aria-expanded={isOpen}>
+            {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+          </button>
+        </div>
+
+        <AnimatePresence>
+          {isOpen && (
+            <motion.div
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: "auto" }}
+              exit={{ opacity: 0, height: 0 }}
+              className="overflow-hidden border-t border-white/10 md:hidden"
+            >
+              <div className="space-y-1 px-4 py-3">
+                {navLinks.map((link) => (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    onClick={() => setIsOpen(false)}
+                    className="block rounded-lg px-2 py-2.5 text-base font-medium text-gray-300 transition-colors hover:bg-white/[0.06] hover:text-white"
+                  >
+                    {link.label}
+                  </Link>
+                ))}
+                <Link
+                  href="/en/contact"
+                  onClick={() => setIsOpen(false)}
+                  className="mt-2 block rounded-xl bg-gradient-to-r from-[#00F5FF] to-[#B829F7] py-3 text-center font-semibold text-[#0A0E27]"
+                >
+                  Get in touch
+                </Link>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </motion.div>
+    </header>
   );
 }

@@ -1,5 +1,15 @@
 # Nexaro Tech website revamp (14 Nov 2026)
 
+## Raycast style, in our colours (14 Nov, owner's pick from docs/STYLE_BOARD.html)
+- Home hero: glowing diagonal light bars in cyan to purple drift slowly behind and above the
+  headline, with film grain (`LightStreaks` in `components/ui/motion-bits.tsx`, CSS only). It
+  replaces the particles on Home.
+- Navbar on every page: a floating glass pill (navy, blur, thin border) with the cyan to purple
+  Get in touch button. Same links.
+- Service cards: a soft cyan light follows the mouse (`SpotlightCard`); the ERP screenshot has a
+  cyan and purple glow under it. Flat navy sections instead of the alternating panels.
+- All motion stops for people who ask for reduced motion. Checked: tsc and next build.
+
 ## Update, later on 14 Nov (owner: "revert everything as it was, but keep the What we build screen;
 ## the home looks good but bring back the colours and the background")
 - Reverted to the original look: navbar, footer, About, Products, Contact, Legal, case studies,

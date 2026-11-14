@@ -16,8 +16,7 @@ import { ArrowRight, ArrowUpRight } from "lucide-react";
 import NeonButton from "@/components/ui/neon-button";
 import TechMarquee from "@/components/ui/tech-marquee";
 import ProductNodeCard from "@/components/products/product-node-card";
-import { Aurora, BrowserFrame, CountUp, Reveal } from "@/components/ui/motion-bits";
-import ParticlesBg from "@/components/ui/particles-bg";
+import { Aurora, BrowserFrame, CountUp, LightStreaks, Reveal, SpotlightCard } from "@/components/ui/motion-bits";
 
 const STATS = [
   { value: "335", label: "Matches" },
@@ -127,21 +126,20 @@ function ErpSpotlight() {
 export default function HomePage() {
   return (
     <main className="relative overflow-x-hidden bg-space text-ink">
-      {/* 14 Nov 2026 (owner): the particles are back; the grid is gone. */}
-      <ParticlesBg />
+      {/* 14 Nov 2026 (owner: "Raycast for Nexaro Tech with our colours"): the hero art replaces the particles. */}
       <div className="relative z-10">
       {/* 1. HERO */}
-      <section className="relative px-5 pb-10 pt-20 md:pt-28">
-        <Aurora />
+      <section className="relative px-5 pb-10 pt-24 md:pt-36">
+        <LightStreaks />
         <div className="relative mx-auto max-w-4xl text-center">
           <Reveal>
-            <span className="inline-flex items-center gap-2 rounded-full border border-line-2 bg-white/[0.03] px-3.5 py-1.5 text-[13px] text-mute">
+            <span className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/[0.06] px-3.5 py-1.5 text-[13px] text-mute shadow-[inset_0_1px_0_rgba(255,255,255,0.1)] backdrop-blur">
               <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-emerald-400" />
               Now booking new projects
             </span>
           </Reveal>
           <Reveal delay={0.08}>
-            <h1 className="mt-7 text-5xl font-semibold leading-[1.02] tracking-[-0.035em] text-ink md:text-7xl">
+            <h1 className="mt-7 text-5xl font-semibold leading-[1.02] tracking-[-0.035em] text-ink [text-shadow:0_4px_40px_rgba(10,14,39,0.9)] md:text-7xl">
               Systems your business
               <br />
               <span className="bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">runs on</span>
@@ -157,7 +155,7 @@ export default function HomePage() {
             <NeonButton href="/en/portfolio" size="lg" variant="secondary">View our work</NeonButton>
           </Reveal>
         </div>
-        <Reveal delay={0.3} className="relative mx-auto mt-16 max-w-5xl">
+        <Reveal delay={0.3} className="nx-glow-under relative isolate mx-auto mt-16 max-w-5xl">
           <BrowserFrame src="/images/erp/dashboard.webp" alt="Nexaro ERP dashboard with projects, tasks, invoices and a six month income chart" url="nexaro-erp.vercel.app" tilt priority />
         </Reveal>
       </section>
@@ -239,13 +237,14 @@ export default function HomePage() {
       </section>
 
       {/* 4. SERVICES: screenshots instead of icon tiles */}
-      <section className="border-t border-line bg-[#0d122d]/80 px-5 py-24">
+      <section className="border-t border-line px-5 py-24">
         <div className="mx-auto max-w-6xl">
           <SectionHead eyebrow="What we do" title="Four things we build" sub="Each one priced once, after a short discovery call." />
           <div className="grid gap-5 md:grid-cols-2">
             {SERVICES.map((s, i) => (
               <Reveal key={s.n} delay={(i % 2) * 0.08}>
-                <Link href="/en/services" className="group block h-full overflow-hidden rounded-2xl border border-line bg-panel transition-colors hover:border-line-2">
+                <Link href="/en/services" className="group block h-full">
+                  <SpotlightCard className="h-full transition-colors hover:border-white/20">
                   <div className="p-7">
                     <span className="font-mono text-xs text-dim">{s.n}</span>
                     <h3 className="mt-2 text-xl font-semibold tracking-tight">{s.title}</h3>
@@ -255,6 +254,7 @@ export default function HomePage() {
                     {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img src={s.img} alt={s.alt} loading="lazy" className="w-full object-cover object-top transition-transform duration-700 ease-out group-hover:-translate-y-3 group-hover:scale-[1.02]" />
                   </div>
+                  </SpotlightCard>
                 </Link>
               </Reveal>
             ))}
@@ -343,7 +343,7 @@ export default function HomePage() {
       </section>
 
       {/* 9. PRODUCT FAMILY */}
-      <section className="bg-[#080b1a]/80 px-5 py-24">
+      <section className="border-t border-line px-5 py-24">
         <div className="mx-auto max-w-6xl">
           <SectionHead eyebrow="The Nexaro node family" title="Products we build on and reuse" sub="So every client project starts further ahead." />
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">

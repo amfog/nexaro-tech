@@ -80,3 +80,67 @@ export function Aurora({ className }: { className?: string }) {
     </div>
   );
 }
+
+/**
+ * Raycast-style hero art in Nexaro colours (14 Nov 2026, owner: "Raycast for Nexaro Tech with our
+ * colours"): glowing diagonal light bars, cyan to purple, that drift slowly behind the headline,
+ * with film grain on top. Pure CSS; stops moving for reduced motion.
+ */
+export function LightStreaks({ className }: { className?: string }) {
+  const bars = [
+    { w: 620, top: 40, left: 10, blur: 26, o: 0.9, d: 0 },
+    { w: 520, top: 120, left: 90, blur: 18, o: 0.75, d: -2 },
+    { w: 700, top: 200, left: -20, blur: 34, o: 0.6, d: -4 },
+    { w: 460, top: 280, left: 140, blur: 16, o: 0.85, d: -6 },
+    { w: 600, top: 360, left: 40, blur: 28, o: 0.55, d: -3 },
+    { w: 380, top: 440, left: 180, blur: 20, o: 0.7, d: -5 },
+  ];
+  return (
+    <div aria-hidden className={cn("pointer-events-none absolute inset-x-0 top-0 h-[720px] overflow-hidden", className)}>
+      <div className="absolute left-1/2 top-[-150px] h-[560px] w-[820px] -translate-x-[78%] [mask-image:radial-gradient(closest-side,#000_55%,transparent)] md:top-[-130px]">
+        <div className="absolute inset-0 rotate-[-32deg]">
+          {bars.map((b, i) => (
+            <span
+              key={i}
+              className="nx-streak absolute block h-[64px] rounded-full mix-blend-screen"
+              style={{
+                width: b.w, top: b.top, left: b.left, opacity: b.o, filter: `blur(${b.blur}px)`,
+                background: "linear-gradient(90deg, transparent, #00F5FF 25%, #8b5cf6 60%, #B829F7 75%, transparent)",
+                animationDelay: `${b.d}s`,
+              }}
+            />
+          ))}
+          {/* thin bright cores give the bars their "light" look */}
+          {bars.slice(0, 4).map((b, i) => (
+            <span
+              key={`c${i}`}
+              className="nx-streak absolute block h-[6px] rounded-full"
+              style={{ width: b.w * 0.6, top: b.top + 29, left: b.left + b.w * 0.2, opacity: 0.7, filter: "blur(2px)", background: "linear-gradient(90deg, transparent, #e0fdff, #f0d9ff, transparent)", animationDelay: `${b.d}s` }}
+            />
+          ))}
+        </div>
+      </div>
+      <div className="nx-grain absolute inset-0 opacity-[0.07]" />
+      <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-b from-transparent to-[#0A0E27]" />
+    </div>
+  );
+}
+
+/** A card with a soft cyan light that follows the mouse (Raycast-style). */
+export function SpotlightCard({ children, className }: { children: ReactNode; className?: string }) {
+  const ref = useRef<HTMLDivElement>(null);
+  return (
+    <div
+      ref={ref}
+      onMouseMove={(e) => {
+        const r = ref.current?.getBoundingClientRect();
+        if (!r) return;
+        ref.current!.style.setProperty("--mx", `${e.clientX - r.left}px`);
+        ref.current!.style.setProperty("--my", `${e.clientY - r.top}px`);
+      }}
+      className={cn("nx-spot relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-b from-white/[0.06] to-white/[0.01] shadow-[inset_0_1px_0_rgba(255,255,255,0.08)]", className)}
+    >
+      {children}
+    </div>
+  );
+}
